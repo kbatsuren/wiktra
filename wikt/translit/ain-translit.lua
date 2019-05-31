@@ -1,0 +1,1020 @@
+--[[ This module is experimental. 
+The details of its operation have not yet been fully decided upon. Do not deploy widely until the module is finished.
+This module will transliterate Ainu language text.
+]]
+local export = {}
+local gmatch = mw.ustring.gmatch
+local find = mw.ustring.find
+local gsub = mw.ustring.gsub
+
+local corresp = {
+	-- main
+	["ア"]   = "¤a", ["イ"]   = "¤i", ["ウ"]   = "¤u", ["エ"]   = "¤e", ["オ"]   = "¤o",
+	["カ"]   = "ka", ["キ"]   = "ki", ["ク"]   = "ku", ["ケ"]   = "ke", ["コ"]   = "ko",
+	["シャ"] = "sa", ["シ"]   = "si", ["シュ"] = "su", ["シェ"] = "se", ["ショ"] = "so",
+	["タ"]   = "ta", ["チ"]   = "ci", ["ト゚"]   = "tu", ["テ"]   = "te", ["ト"]   = "to",
+	["チャ"] = "ca",                  ["ツ"]   = "cu", ["セ゚"]   = "ce", ["チョ"] = "co",
+	["ナ"]   = "na", ["ニ"]   = "ni", ["ヌ"]   = "nu", ["ネ"]   = "ne", ["ノ"]   = "no",
+	["ハ"]   = "ha", ["ヒ"]   = "hi", ["フ"]   = "hu", ["ヘ"]   = "he", ["ホ"]   = "ho",
+	["バ"]   = "ba", ["ビ"]   = "bi", ["ブ"]   = "bu", ["ベ"]   = "be", ["ボ"]   = "bo",
+	["パ"]   = "pa", ["ピ"]   = "pi", ["プ"]   = "pu", ["ペ"]   = "pe", ["ポ"]   = "po",
+	["マ"]   = "ma", ["ミ"]   = "mi", ["ム"]   = "mu", ["メ"]   = "me", ["モ"]   = "mo",
+	["ヤ"]   = "ya",                  ["ユ"]   = "yu", ["イェ"] = "ye", ["ヨ"]   = "yo",
+	["ラ"]   = "ra", ["リ"]   = "ri", ["ル"]   = "ru", ["レ"]   = "re", ["ロ"]   = "ro",
+	["ワ"]   = "wa", ["ウィ"] = "wi",                  ["ウェ"] = "we", ["ウォ"] = "wo",
+
+	-- finals
+	["ㇵ"] = "h¤", ["ㇶ"] = "h¤", ["ㇷ"] = "h¤", ["ㇸ"] = "h¤", ["ㇹ"] = "h¤",
+	["ㇻ"] = "r¤", ["ㇼ"] = "r¤", ["ㇽ"] = "r¤", ["ㇾ"] = "r¤", ["ㇿ"] = "r¤",
+	["ㇰ"] = "k¤",
+	["ㇱ"] = "s¤",
+	["ㇳ"] = "t¤",
+	["ㇴ"] = "n¤",
+	["ㇺ"] = "m¤",
+	["ㇷ゚"] = "p¤",
+
+	-- misc
+	["ィ"] = "y¤", ["ゥ"] = "w¤",
+	["ー"] = "̄",
+	["・"] = "=",
+
+	-- alt spellings?
+	["サ"] = "sa", ["ス"] = "su", ["セ"] = "se", ["ソ"] = "so",
+	["ツ゚"] = "tu",
+	["チュ"] = "cu", ["チェ"] = "ce",
+	["ヰ"] = "wi", ["ヱ"] = "we", ["ヲ"] = "wo",
+
+	["ㇲ"] = "s¤",
+	["ッ"] = "x¤",
+	["ン"] = "n¤",
+
+	["トゥ"] = "tu",
+}
+
+function export.tr(text, lang, sc)
+	local result = {}
+	for string in gmatch(text, '.[ィゥェォャュョ゚]?') do
+		if corresp[string] then -- try to convert character sequences
+			string = corresp[string]
+		else
+			local str_result = {}
+			for char in gmatch(string, '.') do -- try again over every individual character
+				table.insert(str_result, corresp[char] or char)
+			end
+			string = table.concat(str_result)
+		end
+		table.insert(result, string)
+	end
+	text = table.concat(result)
+	text = mw.ustring.toNFC(text)
+
+	if find(text, 'x¤[kbp]') then -- 'ッ'
+		text = gsub(text, 'x¤([kbp])', '%1¤%1')
+	else
+		text = gsub(text, 'x¤', 't¤')
+	end
+
+	text = gsub(text, 'n¤([mbp])', 'n-%1')
+
+	text = gsub(text, '([aiueo])¤i', '%1y') -- change 'アイ'→'ai', 'エイ'→'ei', etc. to 'ay', 'ey'
+	text = gsub(text, '([aiueo])¤u', '%1w') -- change 'アウ'→'au', 'エウ'→'eu', etc. to 'aw', 'ew'
+	text = gsub(text, '¤', '')
+
+	return text
+end
+ 
+return export
+
+-- Text	Expected	Actual
+-- Passed	アイヌ・イタㇰ	aynu=itak	aynu=itak
+-- Passed	カィ ; クィ ; コィ ; カゥ ; キゥ ; ケゥ ; コゥ ; ケィ	kay ; kuy ; koy ; kaw ; kiw ; kew ; kow ; key	kay ; kuy ; koy ; kaw ; kiw ; kew ; kow ; key
+-- Passed	カー ; キー ; クー ; ケー ; コー	kā ; kī ; kū ; kē ; kō	kā ; kī ; kū ; kē ; kō
+-- Passed	アィヌ モシㇼ	aynu mosir	aynu mosir
+-- Failed	チ カㇻ アィヌ イタㇰ ウィキペンチア カンピソ アナㇰネ	ci=kar aynu itak wikipencia kanpiso anakne	ci kar aynu itak wikipencia kan-piso anakne
+-- Passed	ペッ ; ペㇳ	pet ; pet	pet ; pet
+-- Failed	オッタ	orta	otta
+-- Failed	アッペ	akpe	appe
+-- Passed	イワン ; イワㇴ	iwan ; iwan	iwan ; iwan
+-- Passed	ケㇺ	kem	kem
+-- Passed	ケゥ	kew	kew
+-- Passed	チュㇷ゚ケㇱ	cupkes	cupkes
+-- Passed	ポンペ	pon-pe	pon-pe
+-- Passed	タンモシㇼ	tan-mosir	tan-mosir
+-- Passed	レプンクㇽ ; レプㇴクㇽ	repunkur ; repunkur	repunkur ; repunkur
+-- Passed	エトゥ ピㇼカ	etu pirka	etu pirka
+-- Passed	オンネㇷ゚	onnep	onnep
+-- Passed	ケマ フレ	kema hure	kema hure
+-- Passed	コマイ	komay	komay
+-- Passed	カンカイ	kankay	kankay
+-- Passed	スサㇺ	susam	susam
+-- Passed	トゥナカイ	tunakay	tunakay
+-- Passed	ノンノ	nonno	nonno
+-- Passed	ハㇱカㇷ゚	haskap	haskap
+-- Passed	ポㇰ	pok	pok
+-- Passed	セイ	sey	sey
+-- Passed	ラッコ	rakko	rakko
+-- Passed	ルイペ	ruype	ruype
+-- Passed	チャペ	cape	cape
+-- Passed	アペ	ape	ape
+-- Passed	カㇻ	kar	kar
+-- Passed	キナ	kina	kina
+-- Passed	ラㇻ	rar	rar
+-- Passed	トゥスㇱケ	tususke	tususke
+-- Passed	ア-	a-	a-
+-- Passed	アィアィ	ayay	ayay
+-- Passed	アィヌ	aynu	aynu
+-- Failed	アィヌモシㇼ	aynu-mosir	aynumosir
+-- Passed	アイ	ay	ay
+-- Passed	アイヌ	aynu	aynu
+-- Failed	アイヌイタㇰ	aynu itak	aynuytak
+-- Failed	アイル	airu	ayru
+-- Passed	アエㇷ゚	aep	aep
+-- Passed	アカㇺ	akam	akam
+-- Passed	アキ	aki	aki
+-- Passed	アシペケッ	asipeket	asipeket
+-- Passed	アシㇰネ	asikne	asikne
+-- Passed	アチポ	acipo	acipo
+-- Failed	アチャ	acha	aca
+-- Passed	アチャポ	acapo	acapo
+-- Failed	アッツシ	attush	atcusi
+-- Passed	アットゥㇱ	attus	attus
+-- Passed	アトゥ	atu	atu
+-- Passed	アパ	apa	apa
+-- Passed	アフン	ahun	ahun
+-- Passed	アフㇷ゚	ahup	ahup
+-- Failed	アプトアㇱ	aptoash	aputoas
+-- Failed	アプトアㇱパ	aptoashpa	aputoaspa
+-- Passed	アベ	abe	abe
+-- Passed	アベチクニ	abecikuni	abecikuni
+-- Failed	アベバシュイ	abebashui	abebasuy
+-- Passed	アペ	ape	ape
+-- Passed	アママ	amama	amama
+-- Passed	アマㇺ	amam	amam
+-- Passed	アミ	ami	ami
+-- Passed	アミヒ	amihi	amihi
+-- Passed	アムシペ	amusipe	amusipe
+-- Passed	アムㇱペ	amuspe	amuspe
+-- Passed	アリㇷ゚	arip	arip
+-- Passed	アン	an	an
+-- Passed	アンケㇱ	ankes	ankes
+-- Passed	アンチカㇻ	ancikar	ancikar
+-- Passed	アントゥキ	antuki	antuki
+-- Passed	アㇰ	ak	ak
+-- Failed	アㇷ゚カシ	apkash	apkasi
+-- Passed	アㇷ゚カㇱ	apkas	apkas
+-- Passed	アㇷ゚ト	apto	apto
+-- Passed	アㇺ	am	am
+-- Passed	アㇺアㇺ	amam	amam
+-- Passed	アㇻワン	arwan	arwan
+-- Passed	イサ チセ	isa cise	isa cise
+-- Passed	イサㇺ	isam	isam
+-- Passed	イソ	iso	iso
+-- Passed	イタコ	itako	itako
+-- Passed	イタㇰ	itak	itak
+-- Passed	イタㇵ	itah	itah
+-- Passed	イナゥ	inaw	inaw
+-- Passed	イナオ	inao	inao
+-- Passed	イネ	ine	ine
+-- Passed	イワ	iwa	iwa
+-- Passed	イワン	iwan	iwan
+-- Failed	ウォセカムィ	wose-kamuy	wosekamuy
+-- Passed	ウタラ	utara	utara
+-- Passed	ウタリ	utari	utari
+-- Passed	ウタレ	utare	utare
+-- Passed	ウナㇻペ	unarpe	unarpe
+-- Passed	ウパㇱ	upas	upas
+-- Failed	ウンマ	umma	un-ma
+-- Passed	エアニ	eani	eani
+-- Passed	エカㇱ	ekas	ekas
+-- Passed	エサマン	esaman	esaman
+-- Failed	エツ゚	’etu	etu
+-- Passed	エトゥ	etu	etu
+-- Passed	エトㇽ	etor	etor
+-- Passed	エムシ	emusi	emusi
+-- Failed	エムシイ	emusi	emusiy
+-- Passed	オウペカ	owpeka	owpeka
+-- Passed	オッカヨ	okkayo	okkayo
+-- Passed	オナ	ona	ona
+-- Passed	カパㇷ゚	kapap	kapap
+-- Passed	カムィ	kamuy	kamuy
+-- Failed	カムィチェㇷ゚	kamuy-cep	kamuycep
+-- Failed	カムィフㇺベ	kamuy-humbe	kamuyhumbe
+-- Failed	カムィモシㇼ	kamuy-mosir	kamuymosir
+-- Failed	カムイモシリ	kamuimosiri	kamuymosiri
+-- Passed	カㇺビ	kambi	kambi
+-- Failed	カㇺビソㇱ	kambisosh	kambisos
+-- Passed	キキㇼ	kikir	kikir
+-- Passed	キサㇻ	kisar	kisar
+-- Failed	キム	kim	kimu
+-- Passed	クアニ	kuani	kuani
+-- Passed	クㇷ゚	kup	kup
+-- Failed	ケス	kes	kesu
+-- Failed	ケム	kem	kemu
+-- Passed	ケモリッ	kemorit	kemorit
+-- Passed	ケラ	kera	kera
+-- Passed	コタン	kotan	kotan
+-- Passed	コッ	kot	kot
+-- Failed	コンボ	kombo	kon-bo
+-- Passed	コㇿ	kor	kor
+-- Passed	サパ	sapa	sapa
+-- Passed	サポ	sapo	sapo
+-- Passed	シサㇺ	sisam	sisam
+-- Passed	シネ	sine	sine
+-- Passed	シネペサン	sinepesan	sinepesan
+-- Failed	シュマリ	shumari	sumari
+-- Passed	シㇰ	sik	sik
+-- Passed	シㇼ	sir	sir
+-- Passed	スス	susu	susu
+-- Passed	セ゚	ce	ce
+-- Passed	セタ	seta	seta
+-- Passed	ソ	so	so
+-- Passed	チイェネ	ciyene	ciyene
+-- Passed	チイェヘ	ciyehe	ciyehe
+-- Passed	チェㇷ゚	cep	cep
+-- Passed	チセ	cise	cise
+-- Failed	チャシ	chasi	casi
+-- Passed	チャペ	cape	cape
+-- Passed	チュㇷ゚	cup	cup
+-- Passed	チㇱ	cis	cis
+-- Passed	ツ゚	tu	tu
+-- Passed	ツ゚ペサン	tupesan	tupesan
+-- Failed	ツ゚ンプ	tunpu	tun-pu
+-- Passed	テㇰ	tek	tek
+-- Passed	ト	to	to
+-- Passed	ト゚	tu	tu
+-- Passed	トゥキ	tuki	tuki
+-- Passed	トゥナカィ	tunakay	tunakay
+-- Passed	トゥレㇱ	tures	tures
+-- Passed	トペ	tope	tope
+-- Passed	トンコリ	tonkori	tonkori
+-- Passed	ナイ	nay	nay
+-- Passed	ナン	nan	nan
+-- Passed	ニ	ni	ni
+-- Passed	ニㇱ	nis	nis
+-- Passed	ヌカㇽ	nukar	nukar
+-- Passed	ヌチャ	nuca	nuca
+-- Passed	ヌプリ	nupuri	nupuri
+-- Passed	ヌマリ	numari	numari
+-- Passed	ヌマン	numan	numan
+-- Passed	ネトパケ	netopake	netopake
+-- Passed	ハポ	hapo	hapo
+-- Failed	ハンペ	hanpe	han-pe
+-- Failed	ハㇱカプ	haskap	haskapu
+-- Passed	ハㇺ	ham	ham
+-- Passed	パケ	pake	pake
+-- Failed	パシユイ	pashui	pasiyuy
+-- Failed	パスイ	pasui	pasuy
+-- Passed	ピリカ	pirika	pirika
+-- Passed	フ	hu	hu
+-- Passed	フチ	huci	huci
+-- Passed	フッチ	hutci	hutci
+-- Failed	フンチ・ヌプリ	hunci nupuri	hunci=nupuri
+-- Failed	フンペ	humpe	hun-pe
+-- Passed	フㇺベ	humbe	humbe
+-- Passed	プクサ	pukusa	pukusa
+-- Failed	ペツ	pet	pecu
+-- Passed	ホシピ	hosipi	hosipi
+-- Passed	ホシピレ	hosipire	hosipire
+-- Failed	ホッケ	hotke	hokke
+-- Failed	ホッケレ	hotkere	hokkere
+-- Passed	ホㇰ	hok	hok
+-- Passed	ホㇿケゥ	horkew	horkew
+-- Passed	ポル	poru	poru
+-- Failed	マウ	mau	maw
+-- Passed	マタキ	mataki	mataki
+-- Passed	ミチ	mici	mici
+-- Passed	ムックリ	mukkuri	mukkuri
+-- Passed	メノコ	menoko	menoko
+-- Passed	モシリ	mosiri	mosiri
+-- Passed	モシㇼ	mosir	mosir
+-- Passed	モユㇰ	moyuk	moyuk
+-- Passed	ユポ	yupo	yupo
+-- Passed	ユㇰ	yuk	yuk
+-- Failed	ライ	rai	ray
+-- Passed	ラッコ	rakko	rakko
+-- Passed	レ	re	re
+-- Passed	レエㇷ゚	reep	reep
+-- Passed	レハムㇱ	rehamus	rehamus
+-- Failed	レプンカムィ	repun-kamuy	repunkamuy
+-- Passed	レラ	rera	rera
+-- Passed	ワッカ	wakka	wakka
+-- Passed	ワン	wan	wan
+-- Failed	[[<u>レ</u>ラ]]	rera	<u>re</u>ra
+-- Failed	ぺ	-pe	ぺ
+-- Failed	ぺ	pe	ぺ
+-- Passed	アイ	ay	ay
+-- Failed	アイカㇷ゚	aykap	aykap
+-- Passed	アエㇷ゚	aep	aep
+-- Passed	アオカ	aoka	aoka
+-- Passed	アオカイ	aokay	aokay
+-- Passed	アクス	akusu	akusu
+-- Passed	アシ	asi	asi
+-- Passed	アシヌマ	asinuma	asinuma
+-- Passed	アシㇰネ	asikne	asikne
+-- Passed	アシㇰネン	asiknen	asiknen
+-- Passed	アシㇰネㇷ゚	asiknep	asiknep
+-- Failed	アシㇽ / アシㇼ	asir	asir / asir
+-- Passed	アスㇽ	asur	asur
+-- Passed	アタイ	atay	atay
+-- Passed	アチャポ	acapo	acapo
+-- Failed	アッコチケ	atkocike	akkocike
+-- Failed	アトゥイ　/　アト゚イ（アト゜イ）	atuy	atuy　/　atuy（ato゜i）
+-- Passed	アニ	ani	ani
+-- Passed	アヌ	anu	anu
+-- Failed	[[アヌ<u>タ</u>リ]]	anutari	anu<u>ta</u>ri
+-- Passed	アノカイ	anokay	anokay
+-- Passed	アパ	apa	apa
+-- Passed	アフン	ahun	ahun
+-- Passed	アフンケ	ahunke	ahunke
+-- Failed	アフンパㇻ / アフンパㇽ	ahunpar	ahun-par / ahun-par
+-- Failed	アフンポル	ahunporu	ahun-poru
+-- Failed	アフンルパㇻ / アフンルパㇽ	ahunrupar	ahunrupar / ahunrupar
+-- Failed	アフㇷ゚	ahup	ahup
+-- Passed	アフㇷ゚テ	ahupte	ahupte
+-- Passed	アプンノ	apunno	apunno
+-- Passed	アペ	ape	ape
+-- Passed	アペアリ	apeari	apeari
+-- Passed	アペパスイ	apepasuy	apepasuy
+-- Passed	アマㇺ	amam	amam
+-- Passed	アミㇷ゚	amip	amip
+-- Passed	アリ	ari	ari
+-- Passed	アリキキ	arikiki	arikiki
+-- Passed	アン	an	an
+-- Failed	アンぺ	anpe	anぺ
+-- Passed	アンノㇱキ	annoski	annoski
+-- Passed	アㇱ	as	as
+-- Passed	アㇱカイ	askay	askay
+-- Failed	アㇱケペㇳ / アㇱケペッ	askepet	askepet / askepet
+-- Failed	アㇳ / アッ	at	at / at
+-- Passed	アㇷ゚カㇱ	apkas	apkas
+-- Passed	アㇷ゚ト	apto	apto
+-- Passed	アㇺ	am	am
+-- Failed	アㇺキㇼ / アㇺキㇽ	amkir	amkir / amkir
+-- Failed	アㇻ/アㇽ	-ar	ar/ar
+-- Failed	アㇻカ / アㇽカ	arka	arka / arka
+-- Failed	アㇻキ / アㇽキ	arki	arki / arki
+-- Failed	アㇻスイ / アㇽスイ	arsuy	arsuy / arsuy
+-- Failed	アㇻパ / アㇽパ	arpa	arpa / arpa
+-- Passed	アㇻワニウ	arwaniw	arwaniw
+-- Passed	アㇻワン	arwan	arwan
+-- Failed	アㇻワンペ	arwanpe	arwan-pe
+-- Failed	イゥ/イウ	-iw	iw/iw
+-- Failed	イゥ/イウ	iw	iw/iw
+-- Passed	イェ	ye	ye
+-- Passed	イオマンテ	iomante	iomante
+-- Passed	イカㇱマ	ikasma	ikasma
+-- Passed	イキ	iki	iki
+-- Passed	イク	iku	iku
+-- Passed	イクパスイ	ikupasuy	ikupasuy
+-- Passed	イクルイ	ikuruy	ikuruy
+-- Passed	イクレ	ikure	ikure
+-- Failed	イサ　チセ	isa cise	isa　cise
+-- Failed	イサ　ニㇱパ	isa nispa	isa　nispa
+-- Passed	イサㇺ	isam	isam
+-- Passed	イシタイキ	isitayki	isitayki
+-- Passed	イセポ	isepo	isepo
+-- Passed	イソイタㇰ	isoytak	isoytak
+-- Passed	イタコ	itako	itako
+-- Passed	イタンキ	itanki	itanki
+-- Passed	イタㇰ	itak	itak
+-- Passed	イチェン	icen	icen
+-- Passed	イチャッケレレ	icakkerere	icakkerere
+-- Failed	イチャㇰケレ/イチャッケレ	icakkere	icakkere/icakkere
+-- Passed	イッカ	ikka	ikka
+-- Passed	イッカクㇽ	ikkakur	ikkakur
+-- Passed	イテキ	iteki	iteki
+-- Passed	イテセ	itese	itese
+-- Passed	イナウケ	inawke	inawke
+-- Passed	イナン	inan	inan
+-- Passed	イヌイェ	inuye	inuye
+-- Passed	イネ	ine	ine
+-- Passed	イネン	inen	inen
+-- Passed	イネㇷ゚	inep	inep
+-- Passed	イフライェ	ihuraye	ihuraye
+-- Passed	イペ	ipe	ipe
+-- Passed	イペパスイ	ipepasuy	ipepasuy
+-- Passed	イペルスイ	iperusuy	iperusuy
+-- Passed	イペレ	ipere	ipere
+-- Passed	イメル	imeru	imeru
+-- Passed	イヤイイライケレ	iyayiraykere	iyayiraykere
+-- Failed	イヤイライケレ	iyairaykere	iyayraykere
+-- Passed	イヨッタ	iyotta	iyotta
+-- Passed	イヨハイ	iyohay	iyohay
+-- Passed	イララ	irara	irara
+-- Passed	イルㇱカ	iruska	iruska
+-- Passed	イワニウ	iwaniw	iwaniw
+-- Passed	イワンケ	iwanke	iwanke
+-- Failed	イワンペ	iwanpe	iwan-pe
+-- Failed	イワㇴ / イワン	iwan	iwan / iwan
+-- Passed	インネ	inne	inne
+-- Passed	イ・	i=	i=
+-- Passed	イㇱラㇺ	isram	isram
+-- Failed	イㇼワクタㇻ	irwakutar	irwakutar
+-- Passed	ウェン	wen	wen
+-- Passed	ウェンクㇽ	wenkur	wenkur
+-- Passed	ウタロカ	utaroka	utaroka
+-- Passed	ウタㇻ	utar	utar
+-- Passed	ウパㇱ	upas	upas
+-- Passed	ウパㇱクマ	upaskuma	upaskuma
+-- Passed	ウㇱ	us	us
+-- Failed	ウㇴ/ウン	un	un/un
+-- Passed	エアニ	eani	eani
+-- Failed	エイ・	e=i=	ey=
+-- Passed	エソロ	esoro	esoro
+-- Failed	[[エチウ<u>タ</u>リ]]	eciutari	eciw<u>ta</u>ri
+-- Passed	エチオカ	ecioka	ecioka
+-- Passed	エチオカイ	eciokay	eciokay
+-- Passed	エチ・	eci=	eci=
+-- Passed	エンカ	enka	enka
+-- Failed	エンカㇱ	enkasi	enkas
+-- Failed	エンカㇱケ	enkasike	enkaske
+-- Passed	エ・	e=	e=
+-- Passed	エㇰ	ek	ek
+-- Failed	エㇰテ:ette の語源自覚的な綴り。エッテ。	ekte	ekte:ette の語源自覚的な綴り。ette。
+-- Passed	オカ	oka	oka
+-- Passed	オカイ	okay	okay
+-- Passed	オナ	ona	ona
+-- Failed	オハイヌ	ohainu	ohaynu
+-- Failed	オハインカㇻ	ohainkar	ohaynkar
+-- Passed	オマナン	omanan	omanan
+-- Failed	オマㇴ/オマン	oman	oman/oman
+-- Passed	オヤパ	oyapa	oyapa
+-- Passed	オロ	oro	oro
+-- Failed	オロ	oroke	oro
+-- Failed	オワ・イヌ	owa inu	owa=inu
+-- Passed	オン	on	on
+-- Passed	オㇿ	or	or
+-- Passed	カシ	kasi	kasi
+-- Passed	カシケ	kasike	kasike
+-- Passed	カネ	kane	kane
+-- Failed	カパチㇼ / カパッチㇼ	kapatcir	kapacir / kapatcir
+-- Failed	カㇳチ/カッチ	katci	katci/katci
+-- Passed	ク・イ・	ku=i=	ku=i=
+-- Passed	クㇱ	kus	kus
+-- Passed	コトㇺ	kotom	kotom
+-- Passed	コㇱマ	kosma	kosma
+-- Failed	コㇿ / コㇽ	kor	kor / kor
+-- Passed	コㇿポックㇽ	korpokkur	korpokkur
+-- Passed	サン	san	san
+-- Passed	サンタン	santan	santan
+-- Passed	サㇷ゚	sap	sap
+-- Failed	シサミタㇰ	sisam itak	sisamitak
+-- Failed	シサㇺ / シサム	sisam	sisam / sisamu
+-- Failed	シチョㇿポㇰ / シチョㇽポㇰ	sicorpok	sicorpok / sicorpok
+-- Passed	シネペサニウ	sinepesaniw	sinepesaniw
+-- Passed	シネペサン	sinepesan	sinepesan
+-- Failed	シネペサンペ	sinepesanpe	sinepesan-pe
+-- Failed	シネㇴ / シネン	sinen	sinen / sinen
+-- Passed	シネㇷ゚	sinep	sinep
+-- Passed	シロマ	siroma	siroma
+-- Passed	シンリッ	sinrit	sinrit
+-- Failed	シㇶ	six	sih
+-- Failed	シㇼ / シㇽ	sir	sir / sir
+-- Passed	ス	su	su
+-- Passed	ソンノ	sonno	sonno
+-- Passed	タネ	tane	tane
+-- Passed	タント	tanto	tanto
+-- Failed	タンパ	tanpa	tan-pa
+-- Passed	チキㇼ	cikir	cikir
+-- Passed	チセ	cise	cise
+-- Failed	チョㇿポキ / チョㇽポキ	corpoki	corpoki / corpoki
+-- Failed	チョㇿポキケ / チョㇽポキケ	corpokike	corpokike / corpokike
+-- Failed	チョㇿポッケ / チョㇽポッケ	corpokke	corpokke / corpokke
+-- Failed	チョㇿポㇰ / チョㇽポㇰ	corpok	corpok / corpok
+-- Failed	チョㇿポㇰタ / チョㇽポㇰタ	corpok-ta	corpokta / corpokta
+-- Failed	テ	-te	te
+-- Passed	テ	te	te
+-- Passed	テエタ	teeta	teeta
+-- Failed	ト゚ / ツ゚゚゚゚, トゥ	tu	tu / tu゚゚゚, tu
+-- Failed	トゥペサニウ / ト゚ペサニウ（ト゜ペサニウ）	tupesaniw	tupesaniw / tupesaniw（to゜pesaniw）
+-- Failed	トゥペサン / ト゚ペサン	tupesan	tupesan / tupesan
+-- Failed	トゥペサンペ / ト゚ペサンペ	tupesanpe	tupesan-pe / tupesan-pe
+-- Failed	トゥㇷ゚ / ト゚ㇷ゚ （ト゜プ）	tup	tup / tup （to゜pu）
+-- Passed	ナ	na	na
+-- Passed	ニサッタ	nisatta	nisatta
+-- Passed	ニㇱパ	nispa	nispa
+-- Passed	ヌマン	numan	numan
+-- Passed	ハウ	haw	haw
+-- Passed	ハウェアン	hawean	hawean
+-- Passed	ハッ	hat	hat
+-- Failed	ハㇺペ/ハンペ	hampe	hampe/han-pe
+-- Passed	パ	pa	pa
+-- Passed	パイェ	paye	paye
+-- Passed	パイェカ	payeka	payeka
+-- Passed	パイェカイ	payekay	payekay
+-- Passed	パセ	pase	pase
+-- Failed	パㇻ / パㇽ	par	par / par
+-- Passed	ヒネ	hine	hine
+-- Passed	ピㇱカニ	piskani	piskani
+-- Passed	ピㇱカニケ	piskanike	piskanike
+-- Passed	ピㇱカン	piskan	piskan
+-- Passed	ピㇼカ	pirka	pirka
+-- Passed	フㇱコ	husko	husko
+-- Passed	フㇺ	hum	hum
+-- Failed	ペㇳ/ペッ	pet	pet/pet
+-- Passed	ホッネン	hotnen	hotnen
+-- Passed	ホッネㇷ゚	hotnep	hotnep
+-- Passed	ホプニ	hopuni	hopuni
+-- Passed	ポキ	poki	poki
+-- Passed	ポル	poru	poru
+-- Passed	ポㇰ	pok	pok
+-- Passed	ミ	mi	mi
+-- Failed	[[メニ{{要出典}}]]	meni	meni{{要出典}}
+-- Passed	モコㇿ	mokor	mokor
+-- Failed	ヤイェユカㇻ / ヤイェユカㇽ	yayeyukar	yayeyukar / yayeyukar
+-- Failed	ヤㇻ/ヤㇽ	-yar	yar/yar
+-- Passed	リコマ	rikoma	rikoma
+-- Failed	ルヤンペ	ruyanpe	ruyan-pe
+-- Failed	レ	-re	re
+-- Passed	レ	re	re
+-- Passed	レン	ren	ren
+-- Passed	レㇰポ	rekpo	rekpo
+-- Passed	レㇷ゚	rep	rep
+-- Passed	ワ	wa	wa
+-- Passed	ワニウ	waniw	waniw
+-- Failed	ワンペ	wanpe	wan-pe
+-- Failed	ㇴ / ン	-n	n / n
+-- Failed	ㇴ / ン	n	n / n
+-- Failed	ㇷ゚	-p	p
+-- Passed	ㇷ゚	p	p
+-- Failed	（子音＋ェ）	-e	（子音＋ェ）
+-- local p = require('Module:UnitTests')
+-- local m = require('Module:ain-translit')
+
+-- function p:tr(kana, roman)
+-- 	self:equals('[[' .. kana .. ']]', m.tr(kana), roman)
+-- end
+
+-- function p:test_all()
+-- 	local examples = {
+-- 		{ "アイヌ・イタㇰ", "aynu=itak" },
+-- 		{ "カィ ; クィ ; コィ ; カゥ ; キゥ ; ケゥ ; コゥ ; ケィ", "kay ; kuy ; koy ; kaw ; kiw ; kew ; kow ; key" },
+-- 		{ "カー ; キー ; クー ; ケー ; コー", "kā ; kī ; kū ; kē ; kō" },
+-- 		{ "アィヌ モシㇼ", "aynu mosir" },
+
+-- 		-- [[incubator:Wp/ain/Main Page]]
+-- 		{ "チ カㇻ アィヌ イタㇰ ウィキペンチア カンピソ アナㇰネ", "ci=kar aynu itak wikipencia kanpiso anakne" },
+
+-- 		-- [[:ja:Wiktionary:アイヌ語のカナ表記#記述]]
+-- 		{ "ペッ ; ペㇳ", "pet ; pet" },
+-- 		{ "オッタ", "orta" },
+-- 		{ "アッペ", "akpe" },
+-- 		{ "イワン ; イワㇴ", "iwan ; iwan" },
+-- 		{ "ケㇺ", "kem" },
+-- 		{ "ケゥ", "kew" },
+-- 		{ "チュㇷ゚ケㇱ", "cupkes" },
+-- 		{ "ポンペ", "pon-pe" },
+-- 		{ "タンモシㇼ", "tan-mosir" },
+-- 		{ "レプンクㇽ ; レプㇴクㇽ", "repunkur ; repunkur" },
+
+-- 		-- [[w:ja:アイヌ語#日本語に溶け込んだアイヌ語]]
+-- 		{ "エトゥ ピㇼカ", "etu pirka" },
+-- 		{ "オンネㇷ゚", "onnep" },
+-- 		{ "ケマ フレ", "kema hure" },
+-- 		{ "コマイ", "komay" },
+-- 		{ "カンカイ", "kankay" },
+-- 		{ "スサㇺ", "susam" },
+-- 		{ "トゥナカイ", "tunakay" },
+-- 		{ "ノンノ", "nonno" },
+-- 		{ "ハㇱカㇷ゚", "haskap" },
+-- 		{ "ポㇰ", "pok" },
+-- 		{ "セイ", "sey" },
+-- 		{ "ラッコ", "rakko" },
+-- 		{ "ルイペ", "ruype" },
+
+-- 		-- [[w:ja:アイヌ語#雑学]]
+-- 		{ "チャペ", "cape" },
+-- 		{ "アペ", "ape" },
+-- 		{ "カㇻ", "kar" },
+-- 		{ "キナ", "kina" },
+-- 		{ "ラㇻ", "rar" },
+-- 		{ "トゥスㇱケ", "tususke" },
+
+-- 		-- [[w:ja:アイヌ語の語彙一覧]]
+
+-- 		-- en.wiktionary
+-- 		{ "ア-", "a-" },
+-- 		{ "アィアィ", "ayay" },
+-- 		{ "アィヌ", "aynu" },
+-- 		{ "アィヌモシㇼ", "aynu-mosir" },
+-- 		{ "アイ", "ay" },
+-- 		{ "アイヌ", "aynu" },
+-- 		{ "アイヌイタㇰ", "aynu itak" },
+-- 		{ "アイル", "airu" },
+-- 		{ "アエㇷ゚", "aep" },
+-- 		{ "アカㇺ", "akam" },
+-- 		{ "アキ", "aki" },
+-- 		{ "アシペケッ", "asipeket" },
+-- 		{ "アシㇰネ", "asikne" },
+-- 		{ "アチポ", "acipo" },
+-- 		{ "アチャ", "acha" },
+-- 		{ "アチャポ", "acapo" },
+-- 		{ "アッツシ", "attush" },
+-- 		{ "アットゥㇱ", "attus" },
+-- 		{ "アトゥ", "atu" },
+-- 		{ "アパ", "apa" },
+-- 		{ "アフン", "ahun" },
+-- 		{ "アフㇷ゚", "ahup" },
+-- 		{ "アプトアㇱ", "aptoash" },
+-- 		{ "アプトアㇱパ", "aptoashpa" },
+-- 		{ "アベ", "abe" },
+-- 		{ "アベチクニ", "abecikuni" },
+-- 		{ "アベバシュイ", "abebashui" },
+-- 		{ "アペ", "ape" },
+-- 		{ "アママ", "amama" },
+-- 		{ "アマㇺ", "amam" },
+-- 		{ "アミ", "ami" },
+-- 		{ "アミヒ", "amihi" },
+-- 		{ "アムシペ", "amusipe" },
+-- 		{ "アムㇱペ", "amuspe" },
+-- 		{ "アリㇷ゚", "arip" },
+-- 		{ "アン", "an" },
+-- 		{ "アンケㇱ", "ankes" },
+-- 		{ "アンチカㇻ", "ancikar" },
+-- 		{ "アントゥキ", "antuki" },
+-- 		{ "アㇰ", "ak" },
+-- 		{ "アㇷ゚カシ", "apkash" },
+-- 		{ "アㇷ゚カㇱ", "apkas" },
+-- 		{ "アㇷ゚ト", "apto" },
+-- 		{ "アㇺ", "am" },
+-- 		{ "アㇺアㇺ", "amam" },
+-- 		{ "アㇻワン", "arwan" },
+-- 		{ "イサ チセ", "isa cise" },
+-- 		{ "イサㇺ", "isam" },
+-- 		{ "イソ", "iso" },
+-- 		{ "イタコ", "itako" },
+-- 		{ "イタㇰ", "itak" },
+-- 		{ "イタㇵ", "itah" },
+-- 		{ "イナゥ", "inaw" },
+-- 		{ "イナオ", "inao" },
+-- 		{ "イネ", "ine" },
+-- 		{ "イワ", "iwa" },
+-- 		{ "イワン", "iwan" },
+-- 		{ "ウォセカムィ", "wose-kamuy" },
+-- 		{ "ウタラ", "utara" },
+-- 		{ "ウタリ", "utari" },
+-- 		{ "ウタレ", "utare" },
+-- 		{ "ウナㇻペ", "unarpe" },
+-- 		{ "ウパㇱ", "upas" },
+-- 		{ "ウンマ", "umma" },
+-- 		{ "エアニ", "eani" },
+-- 		{ "エカㇱ", "ekas" },
+-- 		{ "エサマン", "esaman" },
+-- 		{ "エツ゚", "’etu" },
+-- 		{ "エトゥ", "etu" },
+-- 		{ "エトㇽ", "etor" },
+-- 		{ "エムシ", "emusi" },
+-- 		{ "エムシイ", "emusi" },
+-- 		{ "オウペカ", "owpeka" },
+-- 		{ "オッカヨ", "okkayo" },
+-- 		{ "オナ", "ona" },
+-- 		{ "カパㇷ゚", "kapap" },
+-- 		{ "カムィ", "kamuy" },
+-- 		{ "カムィチェㇷ゚", "kamuy-cep" },
+-- 		{ "カムィフㇺベ", "kamuy-humbe" },
+-- 		{ "カムィモシㇼ", "kamuy-mosir" },
+-- 		{ "カムイモシリ", "kamuimosiri" },
+-- 		{ "カㇺビ", "kambi" },
+-- 		{ "カㇺビソㇱ", "kambisosh" },
+-- 		{ "キキㇼ", "kikir" },
+-- 		{ "キサㇻ", "kisar" },
+-- 		{ "キム", "kim" },
+-- 		{ "クアニ", "kuani" },
+-- 		{ "クㇷ゚", "kup" },
+-- 		{ "ケス", "kes" },
+-- 		{ "ケム", "kem" },
+-- 		{ "ケモリッ", "kemorit" },
+-- 		{ "ケラ", "kera" },
+-- 		{ "コタン", "kotan" },
+-- 		{ "コッ", "kot" },
+-- 		{ "コンボ", "kombo" },
+-- 		{ "コㇿ", "kor" },
+-- 		{ "サパ", "sapa" },
+-- 		{ "サポ", "sapo" },
+-- 		{ "シサㇺ", "sisam" },
+-- 		{ "シネ", "sine" },
+-- 		{ "シネペサン", "sinepesan" },
+-- 		{ "シュマリ", "shumari" },
+-- 		{ "シㇰ", "sik" },
+-- 		{ "シㇼ", "sir" },
+-- 		{ "スス", "susu" },
+-- 		{ "セ゚", "ce" },
+-- 		{ "セタ", "seta" },
+-- 		{ "ソ", "so" },
+-- 		{ "チイェネ", "ciyene" },
+-- 		{ "チイェヘ", "ciyehe" },
+-- 		{ "チェㇷ゚", "cep" },
+-- 		{ "チセ", "cise" },
+-- 		{ "チャシ", "chasi" },
+-- 		{ "チャペ", "cape" },
+-- 		{ "チュㇷ゚", "cup" },
+-- 		{ "チㇱ", "cis" },
+-- 		{ "ツ゚", "tu" },
+-- 		{ "ツ゚ペサン", "tupesan" },
+-- 		{ "ツ゚ンプ", "tunpu" },
+-- 		{ "テㇰ", "tek" },
+-- 		{ "ト", "to" },
+-- 		{ "ト゚", "tu" },
+-- 		{ "トゥキ", "tuki" },
+-- 		{ "トゥナカィ", "tunakay" },
+-- 		{ "トゥレㇱ", "tures" },
+-- 		{ "トペ", "tope" },
+-- 		{ "トンコリ", "tonkori" },
+-- 		{ "ナイ", "nay" },
+-- 		{ "ナン", "nan" },
+-- 		{ "ニ", "ni" },
+-- 		{ "ニㇱ", "nis" },
+-- 		{ "ヌカㇽ", "nukar" },
+-- 		{ "ヌチャ", "nuca" },
+-- 		{ "ヌプリ", "nupuri" },
+-- 		{ "ヌマリ", "numari" },
+-- 		{ "ヌマン", "numan" },
+-- 		{ "ネトパケ", "netopake" },
+-- 		{ "ハポ", "hapo" },
+-- 		{ "ハンペ", "hanpe" },
+-- 		{ "ハㇱカプ", "haskap" },
+-- 		{ "ハㇺ", "ham" },
+-- 		{ "パケ", "pake" },
+-- 		{ "パシユイ", "pashui" },
+-- 		{ "パスイ", "pasui" },
+-- 		{ "ピリカ", "pirika" },
+-- 		{ "フ", "hu" },
+-- 		{ "フチ", "huci" },
+-- 		{ "フッチ", "hutci" },
+-- 		{ "フンチ・ヌプリ", "hunci nupuri" },
+-- 		{ "フンペ", "humpe" },
+-- 		{ "フㇺベ", "humbe" },
+-- 		{ "プクサ", "pukusa" },
+-- 		{ "ペツ", "pet" },
+-- 		{ "ホシピ", "hosipi" },
+-- 		{ "ホシピレ", "hosipire" },
+-- 		{ "ホッケ", "hotke" },
+-- 		{ "ホッケレ", "hotkere" },
+-- 		{ "ホㇰ", "hok" },
+-- 		{ "ホㇿケゥ", "horkew" },
+-- 		{ "ポル", "poru" },
+-- 		{ "マウ", "mau" },
+-- 		{ "マタキ", "mataki" },
+-- 		{ "ミチ", "mici" },
+-- 		{ "ムックリ", "mukkuri" },
+-- 		{ "メノコ", "menoko" },
+-- 		{ "モシリ", "mosiri" },
+-- 		{ "モシㇼ", "mosir" },
+-- 		{ "モユㇰ", "moyuk" },
+-- 		{ "ユポ", "yupo" },
+-- 		{ "ユㇰ", "yuk" },
+-- 		{ "ライ", "rai" },
+-- 		{ "ラッコ", "rakko" },
+-- 		{ "レ", "re" },
+-- 		{ "レエㇷ゚", "reep" },
+-- 		{ "レハムㇱ", "rehamus" },
+-- 		{ "レプンカムィ", "repun-kamuy" },
+-- 		{ "レラ", "rera" },
+-- 		{ "ワッカ", "wakka" },
+-- 		{ "ワン", "wan" },
+
+-- 		-- ja.wiktionary
+-- 		{ "&lt;u&gt;レ&lt;/u&gt;ラ", "rera" },
+-- 		{ "ぺ", "-pe" },
+-- 		{ "ぺ", "pe" },
+-- 		{ "アイ", "ay" },
+-- 		{ "アイカㇷ゚ ", "aykap" },
+-- 		{ "アエㇷ゚", "aep" },
+-- 		{ "アオカ", "aoka" },
+-- 		{ "アオカイ", "aokay" },
+-- 		{ "アクス", "akusu" },
+-- 		{ "アシ", "asi" },
+-- 		{ "アシヌマ", "asinuma" },
+-- 		{ "アシㇰネ", "asikne" },
+-- 		{ "アシㇰネン", "asiknen" },
+-- 		{ "アシㇰネㇷ゚", "asiknep" },
+-- 		{ "アシㇽ / アシㇼ", "asir" },
+-- 		{ "アスㇽ", "asur" },
+-- 		{ "アタイ", "atay" },
+-- 		{ "アチャポ", "acapo" },
+-- 		{ "アッコチケ", "atkocike" },
+-- 		{ "アトゥイ　/　アト゚イ（アト゜イ）", "atuy" },
+-- 		{ "アニ", "ani" },
+-- 		{ "アヌ", "anu" },
+-- 		{ "アヌ&lt;u&gt;タ&lt;/u&gt;リ", "anutari" },
+-- 		{ "アノカイ", "anokay" },
+-- 		{ "アパ", "apa" },
+-- 		{ "アフン", "ahun" },
+-- 		{ "アフンケ", "ahunke" },
+-- 		{ "アフンパㇻ / アフンパㇽ", "ahunpar" },
+-- 		{ "アフンポル", "ahunporu" },
+-- 		{ "アフンルパㇻ / アフンルパㇽ", "ahunrupar" },
+-- 		{ "アフㇷ゚ ", "ahup" },
+-- 		{ "アフㇷ゚テ", "ahupte" },
+-- 		{ "アプンノ", "apunno" },
+-- 		{ "アペ", "ape" },
+-- 		{ "アペアリ", "apeari" },
+-- 		{ "アペパスイ", "apepasuy" },
+-- 		{ "アマㇺ", "amam" },
+-- 		{ "アミㇷ゚", "amip" },
+-- 		{ "アリ", "ari" },
+-- 		{ "アリキキ", "arikiki" },
+-- 		{ "アン", "an" },
+-- 		{ "アンぺ", "anpe" },
+-- 		{ "アンノㇱキ", "annoski" },
+-- 		{ "アㇱ", "as" },
+-- 		{ "アㇱカイ", "askay" },
+-- 		{ "アㇱケペㇳ / アㇱケペッ", "askepet" },
+-- 		{ "アㇳ / アッ", "at" },
+-- 		{ "アㇷ゚カㇱ", "apkas" },
+-- 		{ "アㇷ゚ト", "apto" },
+-- 		{ "アㇺ", "am" },
+-- 		{ "アㇺキㇼ / アㇺキㇽ", "amkir" },
+-- 		{ "アㇻ/アㇽ", "-ar" },
+-- 		{ "アㇻカ / アㇽカ", "arka" },
+-- 		{ "アㇻキ / アㇽキ", "arki" },
+-- 		{ "アㇻスイ / アㇽスイ", "arsuy" },
+-- 		{ "アㇻパ / アㇽパ", "arpa" },
+-- 		{ "アㇻワニウ", "arwaniw" },
+-- 		{ "アㇻワン", "arwan" },
+-- 		{ "アㇻワンペ", "arwanpe" },
+-- 		{ "イゥ/イウ", "-iw" },
+-- 		{ "イゥ/イウ", "iw" },
+-- 		{ "イェ", "ye" },
+-- 		{ "イオマンテ", "iomante" },
+-- 		{ "イカㇱマ", "ikasma" },
+-- 		{ "イキ", "iki" },
+-- 		{ "イク", "iku" },
+-- 		{ "イクパスイ", "ikupasuy" },
+-- 		{ "イクルイ", "ikuruy" },
+-- 		{ "イクレ", "ikure" },
+-- 		{ "イサ　チセ", "isa cise" },
+-- 		{ "イサ　ニㇱパ", "isa nispa" },
+-- 		{ "イサㇺ", "isam" },
+-- 		{ "イシタイキ", "isitayki" },
+-- 		{ "イセポ", "isepo" },
+-- 		{ "イソイタㇰ", "isoytak" },
+-- 		{ "イタコ", "itako" },
+-- 		{ "イタンキ", "itanki" },
+-- 		{ "イタㇰ", "itak" },
+-- 		{ "イチェン", "icen" },
+-- 		{ "イチャッケレレ", "icakkerere" },
+-- 		{ "イチャㇰケレ/イチャッケレ", "icakkere" },
+-- 		{ "イッカ", "ikka" },
+-- 		{ "イッカクㇽ", "ikkakur" },
+-- 		{ "イテキ", "iteki" },
+-- 		{ "イテセ", "itese" },
+-- 		{ "イナウケ", "inawke" },
+-- 		{ "イナン", "inan" },
+-- 		{ "イヌイェ", "inuye" },
+-- 		{ "イネ", "ine" },
+-- 		{ "イネン", "inen" },
+-- 		{ "イネㇷ゚", "inep" },
+-- 		{ "イフライェ", "ihuraye" },
+-- 		{ "イペ", "ipe" },
+-- 		{ "イペパスイ", "ipepasuy" },
+-- 		{ "イペルスイ", "iperusuy" },
+-- 		{ "イペレ", "ipere" },
+-- 		{ "イメル", "imeru" },
+-- 		{ "イヤイイライケレ", "iyayiraykere" },
+-- 		{ "イヤイライケレ", "iyairaykere" },
+-- 		{ "イヨッタ", "iyotta" },
+-- 		{ "イヨハイ", "iyohay" },
+-- 		{ "イララ", "irara" },
+-- 		{ "イルㇱカ", "iruska" },
+-- 		{ "イワニウ", "iwaniw" },
+-- 		{ "イワンケ", "iwanke" },
+-- 		{ "イワンペ", "iwanpe" },
+-- 		{ "イワㇴ / イワン", "iwan" },
+-- 		{ "インネ", "inne" },
+-- 		{ "イ・", "i=" },
+-- 		{ "イㇱラㇺ", "isram" },
+-- 		{ "イㇼワクタㇻ ", "irwakutar" },
+-- 		{ "ウェン", "wen" },
+-- 		{ "ウェンクㇽ", "wenkur" },
+-- 		{ "ウタロカ", "utaroka" },
+-- 		{ "ウタㇻ", "utar" },
+-- 		{ "ウパㇱ", "upas" },
+-- 		{ "ウパㇱクマ", "upaskuma" },
+-- 		{ "ウㇱ", "us" },
+-- 		{ "ウㇴ/ウン", "un" },
+-- 		{ "エアニ", "eani" },
+-- 		{ "エイ・", "e=i=" },
+-- 		{ "エソロ", "esoro" },
+-- 		{ "エチウ&lt;u&gt;タ&lt;/u&gt;リ", "eciutari" },
+-- 		{ "エチオカ", "ecioka" },
+-- 		{ "エチオカイ", "eciokay" },
+-- 		{ "エチ・", "eci=" },
+-- 		{ "エンカ", "enka" },
+-- 		{ "エンカㇱ", "enkasi" },
+-- 		{ "エンカㇱケ", "enkasike" },
+-- 		{ "エ・", "e=" },
+-- 		{ "エㇰ", "ek" },
+-- 		{ "エㇰテ:ette の語源自覚的な綴り。エッテ。", "ekte" },
+-- 		{ "オカ", "oka" },
+-- 		{ "オカイ", "okay" },
+-- 		{ "オナ", "ona" },
+-- 		{ "オハイヌ", "ohainu" },
+-- 		{ "オハインカㇻ", "ohainkar" },
+-- 		{ "オマナン", "omanan" },
+-- 		{ "オマㇴ/オマン", "oman" },
+-- 		{ "オヤパ", "oyapa" },
+-- 		{ "オロ", "oro" },
+-- 		{ "オロ", "oroke" },
+-- 		{ "オワ・イヌ", "owa inu" },
+-- 		{ "オン", "on" },
+-- 		{ "オㇿ", "or" },
+-- 		{ "カシ", "kasi" },
+-- 		{ "カシケ", "kasike" },
+-- 		{ "カネ", "kane" },
+-- 		{ "カパチㇼ / カパッチㇼ", "kapatcir" },
+-- 		{ "カㇳチ/カッチ", "katci" },
+-- 		{ "ク・イ・", "ku=i=" },
+-- 		{ "クㇱ", "kus" },
+-- 		{ "コトㇺ", "kotom" },
+-- 		{ "コㇱマ", "kosma" },
+-- 		{ "コㇿ / コㇽ", "kor" },
+-- 		{ "コㇿポックㇽ", "korpokkur" },
+-- 		{ "サン", "san" },
+-- 		{ "サンタン", "santan" },
+-- 		{ "サㇷ゚", "sap" },
+-- 		{ "シサミタㇰ", "sisam itak" },
+-- 		{ "シサㇺ / シサム", "sisam" },
+-- 		{ "シチョㇿポㇰ / シチョㇽポㇰ", "sicorpok" },
+-- 		{ "シネペサニウ", "sinepesaniw" },
+-- 		{ "シネペサン", "sinepesan" },
+-- 		{ "シネペサンペ", "sinepesanpe" },
+-- 		{ "シネㇴ / シネン", "sinen" },
+-- 		{ "シネㇷ゚", "sinep" },
+-- 		{ "シロマ", "siroma" },
+-- 		{ "シンリッ", "sinrit" },
+-- 		{ "シㇶ", "six" },
+-- 		{ "シㇼ / シㇽ", "sir" },
+-- 		{ "ス", "su" },
+-- 		{ "ソンノ", "sonno" },
+-- 		{ "タネ", "tane" },
+-- 		{ "タント", "tanto" },
+-- 		{ "タンパ", "tanpa" },
+-- 		{ "チキㇼ", "cikir" },
+-- 		{ "チセ", "cise" },
+-- 		{ "チョㇿポキ / チョㇽポキ", "corpoki" },
+-- 		{ "チョㇿポキケ / チョㇽポキケ", "corpokike" },
+-- 		{ "チョㇿポッケ / チョㇽポッケ", "corpokke" },
+-- 		{ "チョㇿポㇰ / チョㇽポㇰ", "corpok" },
+-- 		{ "チョㇿポㇰタ / チョㇽポㇰタ", "corpok-ta" },
+-- 		{ "テ", "-te" },
+-- 		{ "テ", "te" },
+-- 		{ "テエタ", "teeta" },
+-- 		{ "ト゚ / ツ゚゚゚゚, トゥ", "tu" },
+-- 		{ "トゥペサニウ / ト゚ペサニウ（ト゜ペサニウ）", "tupesaniw" },
+-- 		{ "トゥペサン / ト゚ペサン", "tupesan" },
+-- 		{ "トゥペサンペ / ト゚ペサンペ", "tupesanpe" },
+-- 		{ "トゥㇷ゚ / ト゚ㇷ゚ （ト゜プ）", "tup" },
+-- 		{ "ナ", "na" },
+-- 		{ "ニサッタ", "nisatta" },
+-- 		{ "ニㇱパ", "nispa" },
+-- 		{ "ヌマン", "numan" },
+-- 		{ "ハウ", "haw" },
+-- 		{ "ハウェアン", "hawean" },
+-- 		{ "ハッ", "hat" },
+-- 		{ "ハㇺペ/ハンペ", "hampe" },
+-- 		{ "パ", "pa" },
+-- 		{ "パイェ", "paye" },
+-- 		{ "パイェカ", "payeka" },
+-- 		{ "パイェカイ", "payekay" },
+-- 		{ "パセ", "pase" },
+-- 		{ "パㇻ / パㇽ", "par" },
+-- 		{ "ヒネ", "hine" },
+-- 		{ "ピㇱカニ", "piskani" },
+-- 		{ "ピㇱカニケ", "piskanike" },
+-- 		{ "ピㇱカン", "piskan" },
+-- 		{ "ピㇼカ", "pirka" },
+-- 		{ "フㇱコ", "husko" },
+-- 		{ "フㇺ", "hum" },
+-- 		{ "ペㇳ/ペッ", "pet" },
+-- 		{ "ホッネン", "hotnen" },
+-- 		{ "ホッネㇷ゚", "hotnep" },
+-- 		{ "ホプニ", "hopuni" },
+-- 		{ "ポキ", "poki" },
+-- 		{ "ポル", "poru" },
+-- 		{ "ポㇰ", "pok" },
+-- 		{ "ミ", "mi" },
+-- 		{ "メニ{{要出典}}", "meni" },
+-- 		{ "モコㇿ", "mokor" },
+-- 		{ "ヤイェユカㇻ / ヤイェユカㇽ", "yayeyukar" },
+-- 		{ "ヤㇻ/ヤㇽ", "-yar" },
+-- 		{ "リコマ", "rikoma" },
+-- 		{ "ルヤンペ", "ruyanpe" },
+-- 		{ "レ", "-re" },
+-- 		{ "レ", "re" },
+-- 		{ "レン", "ren" },
+-- 		{ "レㇰポ", "rekpo" },
+-- 		{ "レㇷ゚", "rep" },
+-- 		{ "ワ", "wa" },
+-- 		{ "ワニウ", "waniw" },
+-- 		{ "ワンペ", "wanpe" },
+-- 		{ "ㇴ / ン", "-n" },
+-- 		{ "ㇴ / ン", "n" },
+-- 		{ "ㇷ゚", "-p" },
+-- 		{ "ㇷ゚", "p" },
+-- 		{ "（子音＋ェ）", "-e" },
+-- 	}
+-- 	self:iterate(examples, "tr")
+-- end
+ 
+-- return p
