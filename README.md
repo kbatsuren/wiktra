@@ -3,6 +3,8 @@
 Wiktra is a unicode transliteration tool as a python port of Wiktionary transliteration modules that are written in Lua at the following link.
 https://en.wiktionary.org/wiki/Category:Transliteration_modules
 
+Currently, Wiktra supports 122 languages (using non-roman orthography) and the following table displays their language name and corresponding 3-letter codes.
+
 ## Installation
 
 
