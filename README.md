@@ -1,6 +1,6 @@
 # Wiktra - A Python tool of Wiktionary Transliteration modules
 
-Wiktra is a python tool as a port of Wiktionary transliteration modules that are written in lua at the following link.
+Wiktra is a unicode transliteration tool as a python port of Wiktionary transliteration modules that are written in Lua at the following link.
 https://en.wiktionary.org/wiki/Category:Transliteration_modules
 
 # Usage
