@@ -12,12 +12,11 @@ Wiktra tool has one main function called translite that has two parameters named
 ```
 import Wiktra as WT
 print(WT.translite('москва','rus'));
-
 ```
-
 
 ## License
 This tool is available under the Creative Commons Attribution-ShareAlike License. Read more about this license from https://creativecommons.org/licenses/by-sa/3.0/.
+
 
 ## Reference
 For the acedemic use, please cite the following article:
