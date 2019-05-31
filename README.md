@@ -7,7 +7,7 @@ Currently, Wiktra supports 122 languages (using non-roman orthography) and the f
 
 ## Installation
 
-### Setup
+## Setup
 
 As much as you want to use your favorite version of Python, it is recommended to employ 3.5 version on the grounds that the module utilizes lupa-1.8. Lupa enables Python to adopt functionalities of Lua language, in which most of the transliteration modules are written.
 
@@ -27,7 +27,7 @@ Start your Python (3.5.x):
 ```sh
 $ python
 ```
-### Example
+## Example
 
 After placing the package directory inside your project directory or paths subscribed by Python, just run the following:
 
