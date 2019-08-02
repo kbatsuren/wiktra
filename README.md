@@ -5,9 +5,7 @@ https://en.wiktionary.org/wiki/Category:Transliteration_modules
 
 Currently, Wiktra supports 122 languages (using non-roman orthography) and the following table displays their language name and corresponding 3-letter codes.
 
-## Installation
-
-## Setup
+## Installation && Setup
 
 As much as you want to use your favorite version of Python, it is recommended to employ 3.5 version on the grounds that the module utilizes lupa-1.8. Lupa enables Python to adopt functionalities of Lua language, in which most of the transliteration modules are written.
 
@@ -45,6 +43,10 @@ tr('монгол бичлэг', 'mon')
 tr('हिंदी लिपि', 'hin')
 > hindee lipi
 ```
+
+## Example comparison with the state-of-the-art universal transliteration tools
+![alt text](http://ukc.disi.unitn.it/wp-content/uploads/2019/08/comparison_wiktra.jpg)
+
 
 ## License
 This tool is available under the Creative Commons Attribution-ShareAlike License. Read more about this license from https://creativecommons.org/licenses/by-sa/3.0/.
