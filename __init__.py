@@ -1,3 +1,3 @@
-from .wiktra import *
+from .Wiktra import *
 
 __all__ = ['translite']
