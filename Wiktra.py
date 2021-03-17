@@ -2,6 +2,8 @@ import lupa
 from lupa import LuaRuntime
 
 lua = LuaRuntime(unpack_returned_tuples=True)
+lua.execute("dir = io.popen'cd':read'*l'")
+lua.execute('package.path = package.path .. ";" .. dir.."\\\?.lua"')
 lua.execute("mw = require('wikt.mw')")
 lua.execute("mw.text = require('wikt.mw-text')")
 lua.execute("mw.ustring = require ('wikt.ustring.ustring')")
