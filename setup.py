@@ -6,6 +6,6 @@ setup(
    description='Wiktionary Transiltration tool',
    author='Khuyagbaatar Batsuren',
    author_email='khuyagbaatar@gmail.com',
-   packages=[''],  #same as name
+   packages=['','wikt'],  #same as name
    install_requires=[], #external packages as dependencies
 )
