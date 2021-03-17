@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-   name='',
+   name='Wiktra',
    version='1.0',
    description='Wiktionary Transiltration tool',
    author='Khuyagbaatar Batsuren',
