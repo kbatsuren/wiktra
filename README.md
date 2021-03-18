@@ -32,7 +32,7 @@ This error is raising due to lupa is not able to find a current directory.
 Easiest way to fix this issue is as follows:
   
 In Windows you can see similar error: 
-![image](https://user-images.githubusercontent.com/50955407/111557353-77052680-87c7-11eb-9f80-f2222b8ba612.png)
+![image](https://user-images.githubusercontent.com/50955407/111557773-4671bc80-87c8-11eb-909d-bbb028b8b4a4.png)
 
 Here all you need to do is two things. 
   1) create a folder 'lua' in 'C:\ProgramData\Miniconda3\'
