@@ -26,6 +26,20 @@ Start your Python (3.5.x):
 ```sh
 $ python
 ```
+
+## Fixing LuaError: [string "<python>"]:1: module 'wikt.mw' not found:
+This error is raising due to lupa is not able to find a current directory. 
+Easiest way to fix this issue is as follows:
+  
+In Windows you can see similar error: 
+![image](https://user-images.githubusercontent.com/50955407/111557353-77052680-87c7-11eb-9f80-f2222b8ba612.png)
+
+Here all you need to do is two things. 
+  1) create a folder 'lua' in 'C:\ProgramData\Miniconda3\'
+  2) copy the entire folder of wikt into 'C:\ProgramData\Miniconda3\lua'
+
+It should be similar to Linux and MacOs.
+
 ## Example
 
 After placing the package directory inside your project directory or paths subscribed by Python, just run the following:
