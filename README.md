@@ -13,6 +13,7 @@ The following commands prepare a python environment via Anaconda, which promotes
 
 First:
 ```sh
+$ pip install lupa
 $ conda create -n scr2scr_env python=3.5
 ```
 
