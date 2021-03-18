@@ -27,7 +27,7 @@ Start your Python (3.5.x):
 $ python
 ```
 
-## Fixing LuaError: [string "<python>"]:1: module 'wikt.mw' not found:
+## Fixing LuaError: module 'wikt.mw' not found:
 This error is raising due to lupa is not able to find a current directory. 
 Easiest way to fix this issue is as follows:
   
