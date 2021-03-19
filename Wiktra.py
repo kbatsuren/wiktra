@@ -41,7 +41,7 @@ lang_map = {
     'tha' : ('th', 'Thai'),
     'lep' : ('lep', 'Lepc'),
     'eng' : ('en', 'Latn'),
-    'aba' : ('abq', 'Latn'),
+    'abq' : ('abq', 'Latn'),
     'bua' : ('bua', 'Cyrl'),
     'lez' : ('lez', 'Cyrl'),
     'mon' : ('mon', 'Cyrl'),
