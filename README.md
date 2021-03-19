@@ -92,7 +92,7 @@ tr('हिंदी लिपि', 'hin')
 | 22  | Bashkir                      | bak          | ba              | Cyrillic                 |                                                               |
 | 23  | Bats                         | bbl          | bbl             | Georgian script          | [tests](https://en.wiktionary.org/wiki/Module:Geor-translit/testcases) |
 | 24  | Belarusian                   | bel          | be              | Cyrillic                 |                                                               |
-| 25  | Bengali                      | ben          | bn              | Beng                     |                                                               |
+| 25  | Bengali                      | ben          | bn              | Beng                     | [tests](https://en.wiktionary.org/wiki/Module:bn-translit/testcases)   |
 | 26  | Berber*                      | ber          | ber             | Tfng                     |                                                               |
 | 27  | Bhadrawahi                   | bhd          | bhd             | Devanagari               |                                                               |
 | 28  | Bhojpuri                     | bho          | bho             | Devanagari               |                                                               |
@@ -136,7 +136,7 @@ tr('हिंदी लिपि', 'hin')
 | 66  | Harari                       | har          | har             | Ethiopic                 | [tests](https://en.wiktionary.org/wiki/Module:Ethi-translit/testcases) |
 | 67  | Haryanvi                     | bgc          | bgc             | Devanagari               |                                                               |
 | 68  | Hebrew                       | heb          | he              | Hebrew                   |                                                               |
-| 69  | Hindi                        | hin          | hi              | Devanagari               |                                                               |
+| 69  | Hindi                        | hin          | hi              | Devanagari               | [tests](https://en.wiktionary.org/wiki/Module:hi-translit/testcases)   |
 | 70  | Ingush                       | inh          | inh             | Cyrillic                 |                                                               |
 | 71  | Inuktitut                    | iku          | iu              | Cans                     |                                                               |
 | 72  | Javanese (also Old Javanese) | jav          | jv              | Latn                     |                                                               |
