@@ -11,7 +11,7 @@ lua.execute("mw.ustring = require ('wikt.ustring.ustring')")
 lang_map = {
     'rus' : ('ru', 'Cyrl'),
     'cre' : ('cr', 'Cans'),
-    'bra' : ('brah', 'Arab'),
+    'brah' : ('brah', 'Brah'),
     'prt' : ('prti', 'Parthian'),
     'ete' : ('cprt', 'Cprt'),
     'ave' : ('avst', 'Avst'),
