@@ -112,7 +112,7 @@ lang_map = {
     'sah' : ('sah', 'Cyrl'),
     'chm' : ('chm', 'Cyrl'),
     'kaz' : ('kk', 'Cyrl'),
-    'kjk' : ('kjh', 'Cyrl'),
+    'kjh' : ('kjh', 'Cyrl'),
     'fas' : ('fa', 'fa-Arab'),
     'iii' : ('ii', 'Yiii'),
     'tgk' : ('tg', 'Cyrl'),
