@@ -71,10 +71,10 @@ tr('हिंदी लिपि', 'hin')
 | 1   | Abaza                        | abq          | abq             | Latn                     |                                                               |
 | 2   | Abkhazian                    | abk          | ab              | Cyrillic                 |                                                               |
 | 3   | Adyghe                       | ady          | ady             | Cyrillic                 |                                                               |
-| 4   | Ahom                         | aho          | aho             | Ahom                     | [Ahom testcases](https://en.wiktionary.org/wiki/Module:Ahom-translit/testcases) |
-| 5   | Ainu                         | ain          | ain             | Kana                     | [Ainu testcases](https://en.wiktionary.org/wiki/Module:ain-translit/testcases)  |
+| 4   | Ahom                         | aho          | aho             | Ahom                     | [tests](https://en.wiktionary.org/wiki/Module:Ahom-translit/testcases) |
+| 5   | Ainu                         | ain          | ain             | Kana                     | [tests](https://en.wiktionary.org/wiki/Module:ain-translit/testcases)  |
 | 6   | Altai, Southern              | alt          | altai           | Cyrillic                 |                                                               |
-| 7   | Amharic                      | amh          | am              | Ethiopic                 | [Amharic testcases](https://en.wiktionary.org/wiki/Module:Ethi-translit/testcases) |
+| 7   | Amharic                      | amh          | am              | Ethiopic                 | [tests](https://en.wiktionary.org/wiki/Module:Ethi-translit/testcases) |
 | 8   | Ancient Greek                | grc-c        | grc             | Cypriot script           |                                                               |
 | 9   | Ancient Greek                | grc          | grc             | Greek (Polythonic)       | [tests](https://en.wiktionary.org/wiki/Module:grc-translit/testcases)  |
 | 10  | Ancient Macedonian           | xmk          | xmk             | Greek (Polythonic)       | [tests](https://en.wiktionary.org/wiki/Module:grc-translit/testcases)  |
@@ -205,7 +205,7 @@ tr('हिंदी लिपि', 'hin')
 | 135 | Old East Slavic              | orv          | orv             | Old Cyrillic alphabets   |                                                               |
 | 136 | Old Georgian                 | oge          | oge             | Georgian script          | [tests](https://en.wiktionary.org/wiki/Module:Geor-translit/testcases) |
 | 137 | Old Hindi                    | inc-ohi      | inc-ohi         | Devanagari               | [tests](https://en.wiktionary.org/wiki/Module:sa-translit/testcases)   |
-| 138 | Old Italic,  Etruscan, Old Latin, North Picene, Oscan, South Picene, Camunic, Faliscan, Lemnian, Lepontic, Raetic, Umbrian and Venetic                  | ita-old      | ital            | Old Italic script        |                                                               |
+| 138 | Old Italic                   | Old Italic script        |                                                               |
 | 139 | Old Marathi                  | omr          | omr             | Devanagari               |                                                               |
 | 140 | Old Novgorodian              | zle-ono-c    | zle-ono         | Old Cyrillic alphabets   |                                                               |
 | 141 | Old Novgorodian              | zle-ono-g    | zle-ono         | Glagolitic alphabets     |                                                               |
