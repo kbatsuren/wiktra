@@ -47,7 +47,7 @@ lang_map = {
     'kum' : ('kum', 'Cyrl'),
     'arm' : ('armn', 'Armn'),
     'bud' : ('bdk', 'Cyrl'),
-    'dun' : ('dng', 'Cyrl'),
+    'dng' : ('dng', 'Cyrl'),
     'urd' : ('ur', 'ur-Arab'),
     'got' : ('goth', 'Goth'),
     'kip' : ('qwm', 'Latn'),
