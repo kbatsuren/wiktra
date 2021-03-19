@@ -9,6 +9,7 @@ lua.execute("mw.text = require('wikt.mw-text')")
 lua.execute("mw.ustring = require ('wikt.ustring.ustring')")
 
 lang_map = {
+    'inc-mas': ('inc-mas',''),
     'amh' : ('ethi','Ethi'),
     'byn' : ('ethi','Ethi'),
     'sem-cha' : ('ethi','Ethi'),
@@ -24,6 +25,8 @@ lang_map = {
     'ete' : ('cprt', 'Cprt'),
     'ave' : ('avst', 'Avst'),
     'guj' : ('gu', 'Gujr'),
+    'vgr' : ('gu', 'Gujr'),
+    'kfr' : ('gu', 'Gujr'),
     'yuk' : ('ykg', 'Cyrl'),
     'ady' : ('ady', 'Cyrl'),
     'ava' : ('av', 'Cyrl'),
