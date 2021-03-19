@@ -54,7 +54,7 @@ The package offers only function `translite` and it prompts you to provide two p
 tr('монгол бичлэг', 'mon')
 > mongol bichleg
 
-#hindu script
+#devanagari script
 tr('हिंदी लिपि', 'hin')
 > hindee lipi
 ```
