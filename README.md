@@ -71,7 +71,7 @@ tr('हिंदी लिपि', 'hin')
 | 1   | Abaza                        | abq          | abq             | Latn                     |                                                               |
 | 2   | Abkhazian                    | abk          | ab              | Cyrillic                 |                                                               |
 | 3   | Adyghe                       | ady          | ady             | Cyrillic                 |                                                               |
-| 4   | Ahom                         | aho          | aho             | Ahom                     | https://en.wiktionary.org/wiki/Module:Ahom-translit/testcases |
+| 4   | Ahom                         | aho          | aho             | Ahom                     | [Ahom testcases](https://en.wiktionary.org/wiki/Module:Ahom-translit/testcases) |
 | 5   | Ainu                         | ain          | ain             | Kana                     | https://en.wiktionary.org/wiki/Module:ain-translit/testcases  |
 | 6   | Altai, Southern              | alt          | altai           | Cyrillic                 |                                                               |
 | 7   | Amharic                      | amh          | am              | Ethiopic                 | https://en.wiktionary.org/wiki/Module:Ethi-translit/testcases |
@@ -261,6 +261,7 @@ tr('हिंदी लिपि', 'hin')
 
 ## License
 This tool is available under the Creative Commons Attribution-ShareAlike License. Read more about this license from https://creativecommons.org/licenses/by-sa/3.0/.
+
 
 ## Reference
 For the acedemic use, please cite the following article:
