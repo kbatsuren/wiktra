@@ -139,7 +139,7 @@ tr('हिंदी लिपि', 'hin')
 | 69  | Hindi                        | hin          | hi              | Devanagari               | [tests](https://en.wiktionary.org/wiki/Module:hi-translit/testcases)   |
 | 70  | Ingush                       | inh          | inh             | Cyrillic                 |                                                               |
 | 71  | Inuktitut                    | iku          | iu              | Cans                     |                                                               |
-| 72  | Javanese (also Old Javanese) | jav          | jv              | Latn                     |                                                               |
+| 72  | Javanese  | jav          | jv              | Latn                     |                                                               |
 | 73  | Kabardian                    | kbd          | kbd             | Cyrillic                 |                                                               |
 | 74  | Kachchi                      | kfr          | kfr             | Gujarati                 | [tests](https://en.wiktionary.org/wiki/Module:gu-translit/testcases)   |
 | 75  | Kalmyk                       | xal          | xal             | Cyrillic                 | [tests](https://en.wiktionary.org/wiki/Module:xal-translit/testcases)  |
