@@ -220,7 +220,7 @@ tr('हिंदी लिपि', 'hin')
 | 150 | Pangwali                     | pgg          | pgg             | Devanagari               |                                                               |
 | 151 | Parthian                     | xpr          | xpr             | Manichaean script        |                                                               |
 | 152 | Parthian                     | xpr          | xpr             | Parthian                 |                                                               |
-| 153 | Persian                      | fas          | fa              | fa-Arab                  |                                                               |
+| 153 | Persian                      | fas          | fa              | fa-Arab                  | [tests](https://en.wiktionary.org/wiki/Module:fa-translit/testcases)   |
 | 154 | Phrygian                     | xpg          | xpg             | Greek (Polythonic)       | [tests](https://en.wiktionary.org/wiki/Module:grc-translit/testcases)  |
 | 155 | Pontic Greek                 | pnt          | pnt             | Greek (Polythonic)       | [tests](https://en.wiktionary.org/wiki/Module:grc-translit/testcases)  |
 | 156 | Punjabi                      | pan          | pal             | Guru                     |                                                               |
