@@ -149,6 +149,7 @@ tr('हिंदी लिपि', 'hin')
 | 79  | Karaim                       | kdr          | kdr             | Cyrillic                 |                                                               |
 | 80  | Karakalpak                   | kaa          | kaa             | Latn                     |                                                               |
 | 81  | Kashmiri                     | kas          | ks              | Kashmiri arabic          |                                                               |
+| 81  | Kashmiri                     | kas-d        | ks              | Kashmiri devanagri          |                                                               |
 | 82  | Kazakh                       | kaz          | kk              | Cyrillic                 |                                                               |
 | 83  | Khakas                       | kjh          | kjh             | Cyrillic                 |                                                               |
 | 84  | Khanty                       | kca          | kca             | Cyrillic                 |                                                               |
@@ -223,7 +224,7 @@ tr('हिंदी लिपि', 'hin')
 | 153 | Persian                      | fas          | fa              | fa-Arab                  | [tests](https://en.wiktionary.org/wiki/Module:fa-translit/testcases)   |
 | 154 | Phrygian                     | xpg          | xpg             | Greek (Polythonic)       | [tests](https://en.wiktionary.org/wiki/Module:grc-translit/testcases)  |
 | 155 | Pontic Greek                 | pnt          | pnt             | Greek (Polythonic)       | [tests](https://en.wiktionary.org/wiki/Module:grc-translit/testcases)  |
-| 156 | Punjabi                      | pan          | pal             | Guru                     |                                                               |
+| 156 | Punjabi                      | pan          | pal             | Guru                     | [tests](https://en.wiktionary.org/wiki/Module:Guru-translit/testcases) |
 | 157 | Qatabanian                   | xqt          | xqt             | Old South Arabian script |                                                               |
 | 158 | Russian                      | rus          | ru              | Cyrillic                 | [tests](https://en.wiktionary.org/wiki/Module:ru-translit/testcases)   |
 | 159 | Rusyn                        | rue          | rue             | Cyrillic                 |                                                               |
@@ -257,7 +258,6 @@ tr('हिंदी लिपि', 'hin')
 | 187 | Wakhi                        | wbl          | wbl             | Cyrillic                 |                                                               |
 | 188 | Yagnobi                      | yai          | yai             | Cyrillic                 |                                                               |
 | 189 | Yakut                        | sah          | sah             | Cyrillic                 |                                                               |
-
 
 ## License
 This tool is available under the Creative Commons Attribution-ShareAlike License. Read more about this license from https://creativecommons.org/licenses/by-sa/3.0/.
