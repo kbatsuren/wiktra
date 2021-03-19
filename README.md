@@ -205,7 +205,7 @@ tr('हिंदी लिपि', 'hin')
 | 135 | Old East Slavic              | orv          | orv             | Old Cyrillic alphabets   |                                                               |
 | 136 | Old Georgian                 | oge          | oge             | Georgian script          | https://en.wiktionary.org/wiki/Module:Geor-translit/testcases |
 | 137 | Old Hindi                    | inc-ohi      | inc-ohi         | Deva                     | https://en.wiktionary.org/wiki/Module:sa-translit/testcases   |
-| 138 | Old Italic                   | ita-old      | ital            | Old Italic script        |                                                               |
+| 138 | Old Italic,  Etruscan, Old Latin, North Picene, Oscan, South Picene, Camunic, Faliscan, Lemnian, Lepontic, Raetic, Umbrian and Venetic                  | ita-old      | ital            | Old Italic script        |                                                               |
 | 139 | Old Marathi                  | omr          | omr             | Deva                     |                                                               |
 | 140 | Old Novgorodian              | zle-ono-c    | zle-ono         | Old Cyrillic alphabets   |                                                               |
 | 141 | Old Novgorodian              | zle-ono-g    | zle-ono         | Glagolitic alphabets     |                                                               |
