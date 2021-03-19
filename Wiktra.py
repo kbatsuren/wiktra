@@ -12,7 +12,8 @@ lang_map = {
     'amh' : ('ethi','Ethi')
     'rus' : ('ru', 'Cyrl'),
     'cre' : ('cr', 'Cans'),
-    'brah' : ('brah', 'Brah'),
+    'pka' : ('brah', 'Brah'),
+    'inc-ash' : ('brah', 'Brah'),
     'prt' : ('prti', 'Parthian'),
     'ete' : ('cprt', 'Cprt'),
     'ave' : ('avst', 'Avst'),
@@ -131,6 +132,8 @@ lang_map = {
     'div' : ('dv', 'Thaa'),
     'ber' : ('ber', 'Tfng'),
     'grc' : ('grc', 'polythonic'),
+    'xmk' : ('grc', 'polythonic'),
+    'grc-c' : ('cprt', 'Cprt'),
     'evn' : ('evn', 'Cyrl')
 }
 
