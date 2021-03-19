@@ -130,6 +130,7 @@ lang_map = {
     'oss' : ('os', 'Cyrl'),
     'che' : ('ce', 'Cyrl'),
     'kas' : ('ks', 'ks-Arab'),
+    'kas-d' : ('ks-deva', 'ks-Deva'),
     'pal-p' : ('phli', 'Phli'),
     'sah' : ('sah', 'Cyrl'),
     'chm' : ('chm', 'Cyrl'),
