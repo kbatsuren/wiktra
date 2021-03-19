@@ -72,17 +72,17 @@ tr('हिंदी लिपि', 'hin')
 | 2   | Abkhazian                    | abk          | ab              | Cyrillic                 |                                                               |
 | 3   | Adyghe                       | ady          | ady             | Cyrillic                 |                                                               |
 | 4   | Ahom                         | aho          | aho             | Ahom                     | [Ahom testcases](https://en.wiktionary.org/wiki/Module:Ahom-translit/testcases) |
-| 5   | Ainu                         | ain          | ain             | Kana                     | https://en.wiktionary.org/wiki/Module:ain-translit/testcases  |
+| 5   | Ainu                         | ain          | ain             | Kana                     | [Ainu testcases](https://en.wiktionary.org/wiki/Module:ain-translit/testcases)  |
 | 6   | Altai, Southern              | alt          | altai           | Cyrillic                 |                                                               |
-| 7   | Amharic                      | amh          | am              | Ethiopic                 | https://en.wiktionary.org/wiki/Module:Ethi-translit/testcases |
+| 7   | Amharic                      | amh          | am              | Ethiopic                 | [Amharic testcases](https://en.wiktionary.org/wiki/Module:Ethi-translit/testcases) |
 | 8   | Ancient Greek                | grc-c        | grc             | Cypriot script           |                                                               |
-| 9   | Ancient Greek                | grc          | grc             | Greek (Polythonic)       | https://en.wiktionary.org/wiki/Module:grc-translit/testcases  |
-| 10  | Ancient Macedonian           | xmk          | xmk             | Greek (Polythonic)       | https://en.wiktionary.org/wiki/Module:grc-translit/testcases  |
-| 11  | Arabic                       | ara          | ar              | Arab                     | https://en.wiktionary.org/wiki/Module:ar-translit/testcases   |
+| 9   | Ancient Greek                | grc          | grc             | Greek (Polythonic)       | [tests](https://en.wiktionary.org/wiki/Module:grc-translit/testcases)  |
+| 10  | Ancient Macedonian           | xmk          | xmk             | Greek (Polythonic)       | [tests](https://en.wiktionary.org/wiki/Module:grc-translit/testcases)  |
+| 11  | Arabic                       | ara          | ar              | Arab                     | [tests](https://en.wiktionary.org/wiki/Module:ar-translit/testcases)   |
 | 12  | Ardhamagadhi Prakrit         | pka          | pka             | Brahmi                   |                                                               |
 | 13  | Armenian                     | arm          | armn            | Armn                     |                                                               |
 | 14  | Ashokan Prakrit              | inc-ash      | inc-ash         | Brahmi                   |                                                               |
-| 15  | Ashokan Prakrit              | inc-ash-k    | inc-ash         | Kharoshthi script        | https://en.wiktionary.org/wiki/Module:Khar-translit/testcases |
+| 15  | Ashokan Prakrit              | inc-ash-k    | inc-ash         | Kharoshthi script        | [tests](https://en.wiktionary.org/wiki/Module:Khar-translit/testcases) |
 | 16  | Assamese                     | asm          | as              | as-Beng                  |                                                               |
 | 17  | Avaric                       | ava          | av              | Cyrillic                 |                                                               |
 | 18  | Avestan                      | ave          | avst            | Avst                     |                                                               |
@@ -90,14 +90,14 @@ tr('हिंदी लिपि', 'hin')
 | 20  | Bactrian                     | xbc          | xbc             | Grek                     |                                                               |
 | 21  | Bagheli                      | bfy          | bfy             | Devanagari               |                                                               |
 | 22  | Bashkir                      | bak          | ba              | Cyrillic                 |                                                               |
-| 23  | Bats                         | bbl          | bbl             | Georgian script          | https://en.wiktionary.org/wiki/Module:Geor-translit/testcases |
+| 23  | Bats                         | bbl          | bbl             | Georgian script          | [tests](https://en.wiktionary.org/wiki/Module:Geor-translit/testcases) |
 | 24  | Belarusian                   | bel          | be              | Cyrillic                 |                                                               |
 | 25  | Bengali                      | ben          | bn              | Beng                     |                                                               |
 | 26  | Berber*                      | ber          | ber             | Tfng                     |                                                               |
 | 27  | Bhadrawahi                   | bhd          | bhd             | Devanagari               |                                                               |
 | 28  | Bhojpuri                     | bho          | bho             | Devanagari               |                                                               |
 | 29  | Bilaspuri                    | kfs          | kfs             | Devanagari               |                                                               |
-| 30  | Blin                         | byn          | byn             | Ethiopic                 | https://en.wiktionary.org/wiki/Module:Ethi-translit/testcases |
+| 30  | Blin                         | byn          | byn             | Ethiopic                 | [tests](https://en.wiktionary.org/wiki/Module:Ethi-translit/testcases) |
 | 31  | Braj                         | bra          | bra             | Devanagari               |                                                               |
 | 32  | Budukh                       | bud          | bdk             | Cyrillic                 |                                                               |
 | 33  | Bulgarian                    | bul          | bg              | Cyrillic                 |                                                               |
@@ -105,8 +105,8 @@ tr('हिंदी लिपि', 'hin')
 | 35  | Burmese                      | mya          | my              | Burmese                  |                                                               |
 | 36  | Buryat                       | bua          | bua             | Cyrillic                 |                                                               |
 | 37  | Canadian syllabics           | cans         | cans            | Canadian syllabics       |                                                               |
-| 38  | Cappadocian Greek            | cpg          | cpg             | Greek (Polythonic)       | https://en.wiktionary.org/wiki/Module:grc-translit/testcases  |
-| 39  | Chaha                        | sem-cha      | sem-cha         | Ethiopic                 | https://en.wiktionary.org/wiki/Module:Ethi-translit/testcases |
+| 38  | Cappadocian Greek            | cpg          | cpg             | Greek (Polythonic)       | [tests](https://en.wiktionary.org/wiki/Module:grc-translit/testcases)  |
+| 39  | Chaha                        | sem-cha      | sem-cha         | Ethiopic                 | [tests](https://en.wiktionary.org/wiki/Module:Ethi-translit/testcases) |
 | 40  | Chambeali                    | cdh          | cdh             | Devanagari               |                                                               |
 | 41  | Chechen                      | che          | ce              | Cyrillic                 |                                                               |
 | 42  | Cherokee                     | chr          | cher            | Cher                     |                                                               |
@@ -125,15 +125,15 @@ tr('हिंदी लिपि', 'hin')
 | 55  | Even                         | eve          | eve             | Cyrillic                 |                                                               |
 | 56  | Evenki                       | evn          | evn             | Cyrillic                 |                                                               |
 | 57  | Gaddi                        | gbk          | gbk             | Devanagari               |                                                               |
-| 58  | Gandhari                     | pgd-k        | pgd             | Kharoshthi script        | https://en.wiktionary.org/wiki/Module:Khar-translit/testcases |
+| 58  | Gandhari                     | pgd-k        | pgd             | Kharoshthi script        | [tests](https://en.wiktionary.org/wiki/Module:Khar-translit/testcases) |
 | 59  | Garhwali                     | gbm          | gbm             | Devanagari               |                                                               |
-| 60  | Ge'ez                        | gez          | gez             | Ethiopic                 | https://en.wiktionary.org/wiki/Module:Ethi-translit/testcases |
-| 61  | Georgian                     | geo          | geor            | Georgian script          | https://en.wiktionary.org/wiki/Module:Geor-translit/testcases |
+| 60  | Ge'ez                        | gez          | gez             | Ethiopic                 | [tests](https://en.wiktionary.org/wiki/Module:Ethi-translit/testcases) |
+| 61  | Georgian                     | geo          | geor            | Georgian script          | [tests](https://en.wiktionary.org/wiki/Module:Geor-translit/testcases) |
 | 62  | Gothic                       | got          | goth            | Gothic script            |                                                               |
-| 63  | Gujarati                     | guj          | gu              | Gujarati                 | https://en.wiktionary.org/wiki/Module:gu-translit/testcases   |
+| 63  | Gujarati                     | guj          | gu              | Gujarati                 | [tests](https://en.wiktionary.org/wiki/Module:gu-translit/testcases)   |
 | 64  | Hadrami                      | xhd          | xhd             | Old South Arabian script |                                                               |
 | 65  | Harami                       | xha          | xha             | Old South Arabian script |                                                               |
-| 66  | Harari                       | har          | har             | Ethiopic                 | https://en.wiktionary.org/wiki/Module:Ethi-translit/testcases |
+| 66  | Harari                       | har          | har             | Ethiopic                 | [tests](https://en.wiktionary.org/wiki/Module:Ethi-translit/testcases) |
 | 67  | Haryanvi                     | bgc          | bgc             | Devanagari               |                                                               |
 | 68  | Hebrew                       | heb          | he              | Hebrew                   |                                                               |
 | 69  | Hindi                        | hin          | hi              | Devanagari               |                                                               |
@@ -141,8 +141,8 @@ tr('हिंदी लिपि', 'hin')
 | 71  | Inuktitut                    | iku          | iu              | Cans                     |                                                               |
 | 72  | Javanese (also Old Javanese) | jav          | jv              | Latn                     |                                                               |
 | 73  | Kabardian                    | kbd          | kbd             | Cyrillic                 |                                                               |
-| 74  | Kachchi                      | kfr          | kfr             | Gujarati                 | https://en.wiktionary.org/wiki/Module:gu-translit/testcases   |
-| 75  | Kalmyk                       | xal          | xal             | Cyrillic                 | https://en.wiktionary.org/wiki/Module:xal-translit/testcases  |
+| 74  | Kachchi                      | kfr          | kfr             | Gujarati                 | [tests](https://en.wiktionary.org/wiki/Module:gu-translit/testcases)   |
+| 75  | Kalmyk                       | xal          | xal             | Cyrillic                 | [tests](https://en.wiktionary.org/wiki/Module:xal-translit/testcases)  |
 | 76  | Kangri                       | xnr          | xnr             | Devanagari               |                                                               |
 | 77  | Kannada                      | kan          | kn              | Knda                     |                                                               |
 | 78  | Karachay-Balkar              | krc          | krc             | Cyrillic                 |                                                               |
@@ -167,7 +167,7 @@ tr('हिंदी लिपि', 'hin')
 | 97  | Lak                          | lbe          | lbe             | Cyrillic                 |                                                               |
 | 98  | Lao                          | lao          | lo              | Laoo                     |                                                               |
 | 99  | Latin-to-Tamil               | tam          | en-ta           | Latn                     |                                                               |
-| 100 | Laz                          | lzz          | lzz             | Georgian script          | https://en.wiktionary.org/wiki/Module:Geor-translit/testcases |
+| 100 | Laz                          | lzz          | lzz             | Georgian script          | [tests](https://en.wiktionary.org/wiki/Module:Geor-translit/testcases) |
 | 101 | Lepcha                       | lep          | lep             | Lepcha                   |                                                               |
 | 102 | Lezgi                        | lez          | lez             | Cyrillic                 |                                                               |
 | 103 | Limbu                        | lif          | lif             | Limbu                    |                                                               |
@@ -188,7 +188,7 @@ tr('हिंदी लिपि', 'hin')
 | 118 | Middle   Persian             | pal-m        | pal             | Manichaean script        |                                                               |
 | 119 | Middle Persian               | pal-p        | pal             | Phli                     |                                                               |
 | 120 | Minaean                      | inm          | inm             | Old South Arabian script |                                                               |
-| 121 | Mingrelian                   | xmf          | xmf             | Georgian script          | https://en.wiktionary.org/wiki/Module:Geor-translit/testcases |
+| 121 | Mingrelian                   | xmf          | xmf             | Georgian script          | [tests](https://en.wiktionary.org/wiki/Module:Geor-translit/testcases) |
 | 122 | Moksha                       | mdf          | mdf             | Cyrillic                 |                                                               |
 | 123 | Mongolian                    | mon          | mon             | Cyrillic                 |                                                               |
 | 124 | Mundari                      | unr          | unr             | Devanagari               |                                                               |
@@ -203,29 +203,29 @@ tr('हिंदी लिपि', 'hin')
 | 133 | Old Church Slavonic          | chu-old-c    | cu              | Old Cyrillic alphabets   |                                                               |
 | 134 | Old Church Slavonic          | chu-old-g    | cu              | Glagolitic alphabets     |                                                               |
 | 135 | Old East Slavic              | orv          | orv             | Old Cyrillic alphabets   |                                                               |
-| 136 | Old Georgian                 | oge          | oge             | Georgian script          | https://en.wiktionary.org/wiki/Module:Geor-translit/testcases |
-| 137 | Old Hindi                    | inc-ohi      | inc-ohi         | Devanagari               | https://en.wiktionary.org/wiki/Module:sa-translit/testcases   |
+| 136 | Old Georgian                 | oge          | oge             | Georgian script          | [tests](https://en.wiktionary.org/wiki/Module:Geor-translit/testcases) |
+| 137 | Old Hindi                    | inc-ohi      | inc-ohi         | Devanagari               | [tests](https://en.wiktionary.org/wiki/Module:sa-translit/testcases)   |
 | 138 | Old Italic,  Etruscan, Old Latin, North Picene, Oscan, South Picene, Camunic, Faliscan, Lemnian, Lepontic, Raetic, Umbrian and Venetic                  | ita-old      | ital            | Old Italic script        |                                                               |
 | 139 | Old Marathi                  | omr          | omr             | Devanagari               |                                                               |
 | 140 | Old Novgorodian              | zle-ono-c    | zle-ono         | Old Cyrillic alphabets   |                                                               |
 | 141 | Old Novgorodian              | zle-ono-g    | zle-ono         | Glagolitic alphabets     |                                                               |
-| 142 | Old Ossetic                  | oos          | oos             | Greek (Polythonic)       | https://en.wiktionary.org/wiki/Module:grc-translit/testcases  |
+| 142 | Old Ossetic                  | oos          | oos             | Greek (Polythonic)       | [tests](https://en.wiktionary.org/wiki/Module:grc-translit/testcases)  |
 | 143 | Old Persian                  | peo          | peo             | Old Persian              |                                                               |
 | 144 | Old Tamil                    | oty          | oty             | Brahmi                   |                                                               |
 | 145 | Orya                         | ori          | or              | Oriya                    |                                                               |
 | 146 | Ossetian                     | oss          | os              | Cyrillic                 |                                                               |
-| 147 | Paeonian                     | ine-pae      | ine-pae         | Greek (Polythonic)       | https://en.wiktionary.org/wiki/Module:grc-translit/testcases  |
+| 147 | Paeonian                     | ine-pae      | ine-pae         | Greek (Polythonic)       | [tests](https://en.wiktionary.org/wiki/Module:grc-translit/testcases)  |
 | 148 | Paisaci Prakrit              | inc-psc      | inc-psc         | Brahmi                   |                                                               |
 | 149 | Palya Bareli                 | bpx          | bpx             | Devanagari               |                                                               |
 | 150 | Pangwali                     | pgg          | pgg             | Devanagari               |                                                               |
 | 151 | Parthian                     | xpr          | xpr             | Manichaean script        |                                                               |
 | 152 | Parthian                     | xpr          | xpr             | Parthian                 |                                                               |
 | 153 | Persian                      | fas          | fa              | fa-Arab                  |                                                               |
-| 154 | Phrygian                     | xpg          | xpg             | Greek (Polythonic)       | https://en.wiktionary.org/wiki/Module:grc-translit/testcases  |
-| 155 | Pontic Greek                 | pnt          | pnt             | Greek (Polythonic)       | https://en.wiktionary.org/wiki/Module:grc-translit/testcases  |
+| 154 | Phrygian                     | xpg          | xpg             | Greek (Polythonic)       | [tests](https://en.wiktionary.org/wiki/Module:grc-translit/testcases)  |
+| 155 | Pontic Greek                 | pnt          | pnt             | Greek (Polythonic)       | [tests](https://en.wiktionary.org/wiki/Module:grc-translit/testcases)  |
 | 156 | Punjabi                      | pan          | pal             | Guru                     |                                                               |
 | 157 | Qatabanian                   | xqt          | xqt             | Old South Arabian script |                                                               |
-| 158 | Russian                      | rus          | ru              | Cyrillic                 | https://en.wiktionary.org/wiki/Module:ru-translit/testcases   |
+| 158 | Russian                      | rus          | ru              | Cyrillic                 | [tests](https://en.wiktionary.org/wiki/Module:ru-translit/testcases)   |
 | 159 | Rusyn                        | rue          | rue             | Cyrillic                 |                                                               |
 | 160 | Sabaean                      | xsa          | xsa             | Old South Arabian script |                                                               |
 | 161 | Sambalpuri                   | spv          | spv             | Oriya                    |                                                               |
@@ -239,20 +239,20 @@ tr('हिंदी लिपि', 'hin')
 | 169 | Takka Apabhramsa             | inc-tak      | inc-tak         | Devanagari               |                                                               |
 | 170 | Tamil                        | tam          | ta              | Tamil                    |                                                               |
 | 171 | Tatar                        | tat          | tt              | Cyrillic                 |                                                               |
-| 172 | Telugu                       | tel          | te              | Telu                     | https://en.wiktionary.org/wiki/Module:te-translit/testcases   |
-| 173 | Thai*                        | tha          | th              | Thai                     | https://en.wiktionary.org/wiki/Module:th-translit/testcases   |
+| 172 | Telugu                       | tel          | te              | Telu                     | [tests](https://en.wiktionary.org/wiki/Module:te-translit/testcases)   |
+| 173 | Thai*                        | tha          | th              | Thai                     | [tests](https://en.wiktionary.org/wiki/Module:th-translit/testcases)   |
 | 174 | Thracian                     | txh          | txh             | Greek                    |                                                               |
-| 175 | Tibetan                      | bod          | bo              | Tibetan                  | https://en.wiktionary.org/wiki/Module:bo-translit/testcases   |
-| 176 | Tigre                        | tig          | tig             | Ethiopic                 | https://en.wiktionary.org/wiki/Module:Ethi-translit/testcases |
-| 177 | Tigrinya                     | tir          | ti              | Ethiopic                 | https://en.wiktionary.org/wiki/Module:Ethi-translit/testcases |
+| 175 | Tibetan                      | bod          | bo              | Tibetan                  | [tests](https://en.wiktionary.org/wiki/Module:bo-translit/testcases)   |
+| 176 | Tigre                        | tig          | tig             | Ethiopic                 | [tests](https://en.wiktionary.org/wiki/Module:Ethi-translit/testcases) |
+| 177 | Tigrinya                     | tir          | ti              | Ethiopic                 | [tests](https://en.wiktionary.org/wiki/Module:Ethi-translit/testcases) |
 | 178 | Tuvan                        | tyv          | tyv             | Cyrillic                 |                                                               |
 | 179 | Udi                          | udi          | udi             | Cyrillic                 |                                                               |
-| 180 | Udi                          | udi          | udi             | Georgian script          | https://en.wiktionary.org/wiki/Module:Geor-translit/testcases |
+| 180 | Udi                          | udi          | udi             | Georgian script          | [tests](https://en.wiktionary.org/wiki/Module:Geor-translit/testcases) |
 | 181 | Udmurt                       | udm          | udm             | Cyrillic                 |                                                               |
-| 182 | Ukrainian                    | ukr          | uk              | Cyrillic                 | https://en.wiktionary.org/wiki/Module:uk-translit/testcases   |
+| 182 | Ukrainian                    | ukr          | uk              | Cyrillic                 | [tests](https://en.wiktionary.org/wiki/Module:uk-translit/testcases)   |
 | 183 | Urdu                         | urd          | ur              | Urdu Arabic              |                                                               |
-| 184 | Uyghur                       | uig          | ug              | Uyghur Arabic            | https://en.wiktionary.org/wiki/Module:ug-translit/testcases   |
-| 185 | Vaghri                       | vgr          | vgr             | Gujarati                 | https://en.wiktionary.org/wiki/Module:gu-translit/testcases   |
+| 184 | Uyghur                       | uig          | ug              | Uyghur Arabic            | [tests](https://en.wiktionary.org/wiki/Module:ug-translit/testcases)   |
+| 185 | Vaghri                       | vgr          | vgr             | Gujarati                 | [tests](https://en.wiktionary.org/wiki/Module:gu-translit/testcases)   |
 | 186 | Vracada Apabhramsa           | inc-vra      | inc-vra         | Devanagari               |                                                               |
 | 187 | Wakhi                        | wbl          | wbl             | Cyrillic                 |                                                               |
 | 188 | Yagnobi                      | yai          | yai             | Cyrillic                 |                                                               |
