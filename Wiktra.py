@@ -51,7 +51,7 @@ lang_map = {
     'dng' : ('dng', 'Cyrl'),
     'urd' : ('ur', 'ur-Arab'),
     'got' : ('goth', 'Goth'),
-    'qwm' : ('qwm', 'Latn'),
+    'qwm' : ('armn', 'Latn'),
     'ben' : ('bn', 'Beng'),
     'lif' : ('lif', 'Limb'),
     'pra' : ('inc-ash', 'Brah'),
