@@ -68,7 +68,7 @@ tr('हिंदी लिपि', 'hin')
 
 |     | Language                     | iso-3 in use | wiktionary code | Supporting script        | examples                                                      |
 |-----|------------------------------|--------------|-----------------|--------------------------|---------------------------------------------------------------|
-| 1   | Abaza                        | abq          | abq             | Latn                     |                                                               |
+| 1   | Abaza                        | abq          | abq             | Cyrillic                 |                                                               |
 | 2   | Abkhazian                    | abk          | ab              | Cyrillic                 |                                                               |
 | 3   | Adyghe                       | ady          | ady             | Cyrillic                 |                                                               |
 | 4   | Ahom                         | aho          | aho             | Ahom                     | [tests](https://en.wiktionary.org/wiki/Module:Ahom-translit/testcases) |
@@ -139,7 +139,7 @@ tr('हिंदी लिपि', 'hin')
 | 69  | Hindi                        | hin          | hi              | Devanagari               | [tests](https://en.wiktionary.org/wiki/Module:hi-translit/testcases)   |
 | 70  | Ingush                       | inh          | inh             | Cyrillic                 |                                                               |
 | 71  | Inuktitut                    | iku          | iu              | Cans                     |                                                               |
-| 72  | Javanese  | jav          | jv              | Latn                     |                                                               |
+| 72  | Javanese                     | jav          | jv              | Javanese                 |                                                               |
 | 73  | Kabardian                    | kbd          | kbd             | Cyrillic                 |                                                               |
 | 74  | Kachchi                      | kfr          | kfr             | Gujarati                 | [tests](https://en.wiktionary.org/wiki/Module:gu-translit/testcases)   |
 | 75  | Kalmyk                       | xal          | xal             | Cyrillic                 | [tests](https://en.wiktionary.org/wiki/Module:xal-translit/testcases)  |
@@ -147,9 +147,9 @@ tr('हिंदी लिपि', 'hin')
 | 77  | Kannada                      | kan          | kn              | Knda                     |                                                               |
 | 78  | Karachay-Balkar              | krc          | krc             | Cyrillic                 |                                                               |
 | 79  | Karaim                       | kdr          | kdr             | Cyrillic                 |                                                               |
-| 80  | Karakalpak                   | kaa          | kaa             | Latn                     |                                                               |
+| 80  | Karakalpak                   | kaa          | kaa             | Cyrillic                 |                                                               |
 | 81  | Kashmiri                     | kas          | ks              | Kashmiri arabic          |                                                               |
-| 81  | Kashmiri                     | kas-d        | ks              | Kashmiri devanagri          |                                                               |
+| 81  | Kashmiri                     | kas-d        | ks              | Kashmiri devanagri       |                                                               |
 | 82  | Kazakh                       | kaz          | kk              | Cyrillic                 |                                                               |
 | 83  | Khakas                       | kjh          | kjh             | Cyrillic                 |                                                               |
 | 84  | Khanty                       | kca          | kca             | Cyrillic                 |                                                               |
@@ -157,7 +157,7 @@ tr('हिंदी लिपि', 'hin')
 | 86  | Khmer                        | khm          | km              | Khmer script             |                                                               |
 | 87  | Khotanese                    | kho          | kho             | Brahmi                   |                                                               |
 | 88  | Kildin Sami                  | sjd          | sjd             | Cyrillic                 |                                                               |
-| 89  | Kipchak                      | qwm          | qwm             | Latn                     |                                                               |
+| 89  | Kipchak                      | qwm          | qwm             | Armn                     |                                                               |
 | 90  | Komi-Permyak                 | koi          | koi             | Cyrillic                 |                                                               |
 | 91  | Komi-Zyrian                  | kpv          | kpv             | Cyrillic                 |                                                               |
 | 92  | Konkani                      | kok          | kok             | Devanagari               |                                                               |
