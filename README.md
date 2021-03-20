@@ -199,7 +199,7 @@ tr('हिंदी लिपि', 'hin')
 | 128 | Newar                        | new          | new             | Devanagari               |                                                               |
 | 129 | Nivkh                        | niv          | niv             | Cyrillic                 |                                                               |
 | 130 | Nogai                        | nog          | nog             | Cyrillic                 |                                                               |
-| 131 | Northern Kurdish             | kmr          | kmr             | Latn                     |                                                               |
+| 131 | Northern Kurdish             | kmr          | kmr             | Cyrillic                 |                                                               |
 | 132 | Northern Yukaghir            | ykg          | ykg             | Cyrillic                 |                                                               |
 | 133 | Old Church Slavonic          | chu-old-c    | cu              | Old Cyrillic alphabets   |                                                               |
 | 134 | Old Church Slavonic          | chu-old-g    | cu              | Glagolitic alphabets     |                                                               |
