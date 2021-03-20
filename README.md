@@ -36,7 +36,7 @@ In Windows you can see similar error:
 
 Here all you need to do is two things. 
   1) create a folder 'lua' in 'C:\ProgramData\Miniconda3\'
-  2) copy the entire folder of wikt into 'C:\ProgramData\Miniconda3\lua'
+  2) copy the entire folder of wikt from this project and paste it into 'C:\ProgramData\Miniconda3\lua'
 
 It should be similar to Linux and MacOs.
 
