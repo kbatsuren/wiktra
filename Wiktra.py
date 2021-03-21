@@ -148,6 +148,7 @@ lang_map = {
     'khm' : ('km', 'Khmr'),
     'xbc' : ('xbc', 'Grek'),
     'txh' : ('el', 'Grek'),
+    'ell' : ('el', 'Grek'),
     'san' : ('sa', 'Deva'),
     'inc-ohi' : ('sa', 'Deva'),
     'omr' : ('sa', 'Deva'),
