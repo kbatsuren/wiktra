@@ -167,7 +167,7 @@ tr('हिंदी लिपि', 'hin')
 | 96  | Kyrgyz                       | kir          | ky              | Cyrillic                 |                                                               |
 | 97  | Lak                          | lbe          | lbe             | Cyrillic                 |                                                               |
 | 98  | Lao                          | lao          | lo              | Laoo                     |                                                               |
-| 99  | Latin-to-Tamil               | tam          | en-ta           | Latn                     | [tests](https://en.wiktionary.org/wiki/Module:ta-translit/testcases)|
+| 99  | Latin-to-Tamil               | tam          | en-ta           | Latn                     | |
 | 100 | Laz                          | lzz          | lzz             | Georgian script          | [tests](https://en.wiktionary.org/wiki/Module:Geor-translit/testcases) |
 | 101 | Lepcha                       | lep          | lep             | Lepcha                   |                                                               |
 | 102 | Lezgi                        | lez          | lez             | Cyrillic                 |                                                               |
@@ -238,7 +238,7 @@ tr('हिंदी लिपि', 'hin')
 | 167 | Sogdian                      | sog          | sog             | Manichaean script        |                                                               |
 | 168 | Tajik                        | tgk          | tg              | Cyrillic                 |                                                               |
 | 169 | Takka Apabhramsa             | inc-tak      | inc-tak         | Devanagari               |                                                               |
-| 170 | Tamil                        | tam          | ta              | Tamil                    |                                                               |
+| 170 | Tamil                        | tam          | ta              | Tamil                    |[tests](https://en.wiktionary.org/wiki/Module:ta-translit/testcases)|
 | 171 | Tatar                        | tat          | tt              | Cyrillic                 |                                                               |
 | 172 | Telugu                       | tel          | te              | Telu                     | [tests](https://en.wiktionary.org/wiki/Module:te-translit/testcases)   |
 | 173 | Thai*                        | tha          | th              | Thai                     | [tests](https://en.wiktionary.org/wiki/Module:th-translit/testcases)   |
