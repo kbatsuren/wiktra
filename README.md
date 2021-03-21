@@ -167,7 +167,7 @@ tr('हिंदी लिपि', 'hin')
 | 96  | Kyrgyz                       | kir          | ky              | Cyrillic                 |                                                               |
 | 97  | Lak                          | lbe          | lbe             | Cyrillic                 |                                                               |
 | 98  | Lao                          | lao          | lo              | Laoo                     |                                                               |
-| 99  | Latin-to-Tamil               | tam          | en-ta           | Latn                     |                                                               |
+| 99  | Latin-to-Tamil               | tam          | en-ta           | Latn                     | [tests](https://en.wiktionary.org/wiki/Module:ta-translit/testcases)|
 | 100 | Laz                          | lzz          | lzz             | Georgian script          | [tests](https://en.wiktionary.org/wiki/Module:Geor-translit/testcases) |
 | 101 | Lepcha                       | lep          | lep             | Lepcha                   |                                                               |
 | 102 | Lezgi                        | lez          | lez             | Cyrillic                 |                                                               |
