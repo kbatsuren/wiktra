@@ -1,6 +1,6 @@
 # Wiktra - Python tool of Wiktionary Transliteration modules
 
-Wiktra is a unicode transliteration tool as a python port of Wiktionary transliteration modules that are written in Lua at the following link.
+Wiktra is a unicode transliteration tool as a python port of Wiktionary transliteration modules that are written in Lua by the Wiktionary community at the following link.
 https://en.wiktionary.org/wiki/Category:Transliteration_modules
 
 Currently, Wiktra supports 181 languages and its 60 orthographies, and the table in the supporting languages section displays their language name and corresponding 3-letter codes. This tool is used to build a large-scale, high quality cognate database, called [CogNet](https://github.com/kbatsuren/CogNet).
