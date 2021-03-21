@@ -242,7 +242,7 @@ tr('हिंदी लिपि', 'hin')
 | 171 | Tatar                        | tat          | tt              | Cyrillic                 |                                                               |
 | 172 | Telugu                       | tel          | te              | Telu                     | [tests](https://en.wiktionary.org/wiki/Module:te-translit/testcases)   |
 | 173 | Thai*                        | tha          | th              | Thai                     | [tests](https://en.wiktionary.org/wiki/Module:th-translit/testcases)   |
-| 174 | Thracian                     | txh          | txh             | Greek                    |                                                               |
+| 174 | Thracian                     | txh          | txh             | Greek                    | [tests](https://en.wiktionary.org/wiki/Module:el-translit/testcases)|
 | 175 | Tibetan                      | bod          | bo              | Tibetan                  | [tests](https://en.wiktionary.org/wiki/Module:bo-translit/testcases)   |
 | 176 | Tigre                        | tig          | tig             | Ethiopic                 | [tests](https://en.wiktionary.org/wiki/Module:Ethi-translit/testcases) |
 | 177 | Tigrinya                     | tir          | ti              | Ethiopic                 | [tests](https://en.wiktionary.org/wiki/Module:Ethi-translit/testcases) |
@@ -258,6 +258,8 @@ tr('हिंदी लिपि', 'hin')
 | 187 | Wakhi                        | wbl          | wbl             | Cyrillic                 |                                                               |
 | 188 | Yagnobi                      | yai          | yai             | Cyrillic                 |                                                               |
 | 189 | Yakut                        | sah          | sah             | Cyrillic                 |                                                               |
+| 190 | Modern Greek (new)           | ell          | el              | Greek                    | [tests](https://en.wiktionary.org/wiki/Module:el-translit/testcases)|
+
 
 ## License
 This tool is available under the Creative Commons Attribution-ShareAlike License. Read more about this license from https://creativecommons.org/licenses/by-sa/3.0/.
