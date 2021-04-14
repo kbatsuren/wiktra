@@ -161,7 +161,7 @@ tr('हिंदी लिपि', 'hin')
 | 90  | Komi-Permyak                 | koi          | koi             | Cyrillic                 |                                                               |
 | 91  | Komi-Zyrian                  | kpv          | kpv             | Cyrillic                 |                                                               |
 | 92  | Konkani                      | kok          | kok             | Devanagari               |                                                               |
-| 93  | Korean                       | kor          | ko              | Kore                     |                                                               |
+| 93  | Korean                       | kor          | ko              | Kore                     | [tests](https://en.wiktionary.org/wiki/Module:ko-translit/testcases)|
 | 94  | Kullu Pahari                 | kfx          | kfx             | Devanagari               |                                                               |
 | 95  | Kumyk                        | kum          | kum             | Cyrillic                 |                                                               |
 | 96  | Kyrgyz                       | kir          | ky              | Cyrillic                 |                                                               |
