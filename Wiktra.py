@@ -1,6 +1,8 @@
+import os
 import lupa
 from lupa import LuaRuntime
 
+os.chdir(os.path.dirname(__file__))
 lua = LuaRuntime(unpack_returned_tuples=True)
 #lua.execute("dir = io.popen'cd':read'*l'")
 #lua.execute('package.path = package.path .. ";" .. dir.."\\\?.lua"')
