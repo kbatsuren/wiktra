@@ -45,7 +45,7 @@ It should be similar to Linux and MacOs.
 After placing the package directory inside your project directory or paths subscribed by Python, just run the following:
 
 ```sh
-from wiktra import translite as tr
+from Wiktra import translite as tr
 ```
 The package offers only function `translite` and it prompts you to provide two parameters (text, 639-2 code):
 
