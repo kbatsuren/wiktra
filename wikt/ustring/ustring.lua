@@ -1,6 +1,6 @@
 local ustring = {}
 
-unpack = table.unpack
+local unpack = table.unpack or unpack
 
 -- Copy these, just in case
 local S = {
