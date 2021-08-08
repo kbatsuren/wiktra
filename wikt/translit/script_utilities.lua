@@ -351,7 +351,7 @@ function export.checkScript(text, scriptCode, result)
         if type(result) == "string" then
             error(result)
         else
-            error("The text \"" .. originalText .. "\" contains the letters \"" .. text .. "\" that do not belong to the " .. scriptObject:getCategoryName() .. ".", 2)
+            error("The text \"" .. originalText .. "\" contains the letters \"" .. text .. "\" that do not belong to the " .. scriptObject:getDisplayForm() .. ".", 2)
         end
     end
 end

@@ -1,13 +1,16 @@
 local export = {}
+
 function export.tr(text, lang, sc, debug_mode)
     if not sc then sc = require("scripts").findBestScript(text, require("languages").getByCode(lang)):getCode() end
+
     local language_data = mw.loadData("translit-redirect/data")[lang]
+
     if language_data then
         local script_data = language_data[sc]
 
         if script_data then
             if script_data.module then
-                local success, translit_module = pcall(require, "" .. script_data.module)
+                local success, translit_module = pcall(require, "Module:" .. script_data.module)
 
                 if success then
                     return translit_module.tr(text, lang, sc, debug_mode)

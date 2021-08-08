@@ -5,7 +5,7 @@ function Script:getCode() return self._code end
 
 function Script:getCanonicalName() return self._rawData.canonicalName end
 
-function Script:getDisplayForm() return self:getCategoryName() end
+function Script:getDisplayForm() return self:getCategoryName("nocap") end
 
 function Script:getOtherNames(onlyOtherNames) return require("language-like").getOtherNames(self, onlyOtherNames) end
 
@@ -32,16 +32,14 @@ end
 
 function Script:getType() return "script" end
 
-function Script:getCategoryName()
+function Script:getCategoryName(nocap)
     local name = self._rawData.canonicalName
 
     -- If the name already has "code" or "semaphore" in it, don't add it.
     -- No names contain "script".
-    if name:find("[Cc]ode$") or name:find("[Ss]emaphore$") then
-        return name
-    else
-        return name .. " script"
-    end
+    if not name:find("[Cc]ode$") and not name:find("[Ss]emaphore$") then name = name .. " script" end
+    if not nocap then name = mw.getContentLanguage():ucfirst(name) end
+    return name
 end
 
 function Script:makeCategoryLink() return "[[:Category:" .. self:getCategoryName() .. "|" .. self:getDisplayForm() .. "]]" end
@@ -77,7 +75,7 @@ end
 function Script:getRawData() return self._rawData end
 
 function Script:toJSON()
-    local ret = {canonicalName = self:getCanonicalName(), categoryName = self:getCategoryName(), code = self._code, otherNames = self:getOtherNames(true), aliases = self:getAliases(), varieties = self:getVarieties(), type = self:getType(), direction = self:getDirection(), characters = self:getCharacters(), parent = self:getParent(), systems = self._rawData.systems or {}, wikipediaArticle = self._rawData.wikipedia_article}
+    local ret = {canonicalName = self:getCanonicalName(), categoryName = self:getCategoryName("nocap"), code = self._code, otherNames = self:getOtherNames(true), aliases = self:getAliases(), varieties = self:getVarieties(), type = self:getType(), direction = self:getDirection(), characters = self:getCharacters(), parent = self:getParent(), systems = self._rawData.systems or {}, wikipediaArticle = self._rawData.wikipedia_article}
 
     return require("JSON").toJSON(ret)
 end
@@ -110,7 +108,6 @@ function export.findBestScript(text, lang, forceDetect)
     if not text or not lang or not lang.getScripts then return export.getByCode("None") end
 
     local scripts = lang:getScripts()
-    print(scripts)
 
     if not scripts[2] and not forceDetect then return scripts[1] end
 

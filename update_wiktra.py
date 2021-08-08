@@ -42,12 +42,11 @@ class WiktionaryModuleDownload(object):
         else:
             return True
 
-
     def get_module_code(self, page="Goth-translit"):
         try:
             res = self.wk("parse", page=f"Module:{page}", prop="wikitext")
         except pywikiapi.utils.ApiError:
-            return ''
+            return ""
         return res.parse.wikitext
 
     def write_modules_category(self, cat="Transliteration_modules"):
@@ -62,7 +61,7 @@ class WiktionaryModuleDownload(object):
 
     def special_process(self, page, text):
         text = text
-        if page in ('languages/alldata'):
+        if page in ("languages/alldata"):
             for m in re.findall(r"""\[['"]Module:(languages/.*?)['"]\]""", text):
                 if self.deps:
                     self.write_module(m)
@@ -75,17 +74,21 @@ class WiktionaryModuleDownload(object):
 
     def preprocess_lua_file(self, path):
         cmd = [
-            "lua-format", "--in-place", "--column-limit=999",
-            "--column-table-limit=999", "--single-quote-to-double-quote",
+            "lua-format",
+            "--in-place",
+            "--column-limit=999",
+            "--column-table-limit=999",
+            "--single-quote-to-double-quote",
             "--no-spaces-inside-functiondef-parens",
-            "--no-spaces-inside-functioncall-parens", path
+            "--no-spaces-inside-functioncall-parens",
+            path,
         ]
         res = subprocess.run(cmd, capture_output=True)
         if res.returncode:
             logging.error(f"""Luaformat failed: {res.stderr}""")
 
     def write_module(self, page="Goth-translit", parent=None):
-        text = ''
+        text = ""
         inpath = Path(page)
         outfolder = Path(self.outf, inpath.parent)
         outpath = Path(outfolder, f"{inpath.name}.lua".replace(" ", "_"))
@@ -105,7 +108,6 @@ class WiktionaryModuleDownload(object):
                 with open(outpath, "r", encoding="utf-8") as f:
                     text = f.read()
                 for fun, mod in self.re_require.findall(text):
-                    logging.info(f"""Fixing {fun}("{mod}")""")
                     if mod not in self.downloaded and self.deps:
                         self.write_module(mod, parent=page)
                     text = re.sub(
@@ -115,10 +117,8 @@ class WiktionaryModuleDownload(object):
                         r"\1\2\3" + r"\5".replace(" ", "_") + r"\6",
                         text,
                     )
-                text = text.replace('''loadData("Module:''',
-                                    '''loadData("''')
-                text = text.replace('''require("Module:''',
-                                    '''require("''')
+                text = text.replace("""loadData("Module:""", '''loadData("''')
+                text = text.replace("""require("Module:""", '''require("''')
                 text = self.special_process(page, text)
                 with open(outpath, "w", encoding="utf-8") as f:
                     f.write(text)
@@ -129,9 +129,9 @@ class WiktionaryModuleDownload(object):
             to_exec = f"""{prefix}/{mod}"""
         self.lua = LuaRuntime(unpack_returned_tuples=True)
         logging.info(f"Executing {to_exec}")
-        res = ''
-        path = Path(self.outf, to_exec + '.lua')
-        with open(Path(path), 'r', encoding='utf8') as f:
+        res = ""
+        path = Path(self.outf, to_exec + ".lua")
+        with open(Path(path), "r", encoding="utf8") as f:
             lua_str = f.read()
             try:
                 self.lua.execute(lua_str)
@@ -188,34 +188,22 @@ def cli():
     )
 
     args = parser.parse_args()
-    main(
-        output=args.output,
-        page=args.page,
-        force=args.force,
-        deps=not args.no_deps
-        )
+    main(output=args.output, page=args.page, force=args.force, deps=not args.no_deps)
+
 
 def main(output, page=None, force=False, deps=True):
     wkd = WiktionaryModuleDownload(output, force, deps)
-    print(wkd.deps)
     if page:
         wkd.write_module(page)
     else:
-        logging.info("# WRITING CATEGORY")
+        logging.info("# Writing transliteration modules")
         wkd.write_modules_category("Transliteration_modules")
-        logging.info("# WRITING ADDITIONAL FILES")
+        logging.info("# Writing additional modules")
         for mod in [
-                "languages", "languages/alldata", "languages/byTranslitModule",
-                "wikimedia_languages", "wikimedia_languages/data",
-                "languages/JSON", "language-like", "etymology_languages",
-                "families", "families/data", "scripts", "scripts/data",
-                "scripts/by_name", "scripts/code_to_canonical_name",
-                "writing_systems"
+            "languages/byTranslitModule",
+            "scripts/code_to_canonical_name",
         ]:
             wkd.write_module(mod)
-        logging.info("# WRITING LANGUAGES DATA")
-    wkd.exec_module('languages', 'alldata')
-
 
 if __name__ == "__main__":
     cli()

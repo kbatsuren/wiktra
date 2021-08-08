@@ -30,273 +30,261 @@ local Latn = {"Latn"}
 
 local m = {}
 
-m["gaa"] = {"Ga", 33287, "alv-gda", scripts = Latn}
+m["gaa"] = {"Ga", 33287, "alv-gda", Latn}
 
-m["gab"] = {"Gabri", 3441237, "cdc-est", scripts = Latn}
+m["gab"] = {"Gabri", 3441237, "cdc-est", Latn}
 
-m["gac"] = {"Mixed Great Andamanese", nil, "qfa-adn", scripts = Latn}
+m["gac"] = {"Mixed Great Andamanese", nil, "qfa-adn", Latn}
 
 m["gad"] = { -- not to be confused with gdk, gdg
-    "Gaddang",
-    3438830,
-    "phi",
-    scripts = Latn
+    "Gaddang", 3438830, "phi", Latn
 }
 
-m["gae"] = {"Warekena", 1091095, "awd-nwk", scripts = Latn}
+m["gae"] = {"Warekena", 1091095, "awd-nwk", Latn}
 
-m["gaf"] = {"Gende", 3100425, "paa-kag", scripts = Latn}
+m["gaf"] = {"Gende", 3100425, "paa-kag", Latn}
 
-m["gag"] = {"Gagauz", 33457, "trk-ogz", scripts = {"Latn", "Cyrl"}, ancestors = {"trk-oat"}}
+m["gag"] = {"Gagauz", 33457, "trk-ogz", {"Latn", "Cyrl"}, ancestors = {"trk-oat"}}
 
-m["gah"] = {"Alekano", 3441595, "paa-kag", scripts = Latn}
+m["gah"] = {"Alekano", 3441595, "paa-kag", Latn}
 
-m["gai"] = {"Borei", 6799756, "paa", scripts = Latn}
+m["gai"] = {"Borei", 6799756, "paa", Latn}
 
-m["gaj"] = {"Gadsup", 5516467, "paa-kag", scripts = Latn}
+m["gaj"] = {"Gadsup", 5516467, "paa-kag", Latn}
 
-m["gak"] = {"Gamkonora", 5520226, "paa-wpa", scripts = Latn}
+m["gak"] = {"Gamkonora", 5520226, "paa-wpa", Latn}
 
-m["gal"] = {"Galoli", 35322, "poz-tim", scripts = Latn}
+m["gal"] = {"Galoli", 35322, "poz-tim", Latn}
 
-m["gam"] = {"Kandawo", 6361369, "ngf", scripts = Latn}
+m["gam"] = {"Kandawo", 6361369, "ngf", Latn}
 
-m["gan"] = {"Gan", 33475, "zhx", scripts = {"Hani"}, ancestors = {"ltc"}}
+m["gan"] = {"Gan", 33475, "zhx", {"Hani"}, ancestors = {"ltc"}}
 
-m["gao"] = {"Gants", 5521529, "ngf-mad", scripts = Latn}
+m["gao"] = {"Gants", 5521529, "ngf-mad", Latn}
 
-m["gap"] = {"Gal", 5517742, "ngf-mad", scripts = Latn}
+m["gap"] = {"Gal", 5517742, "ngf-mad", Latn}
 
 m["gaq"] = {"Gata'", 3501920, "mun"}
 
-m["gar"] = {"Galeya", 5518509, "poz-ocw", scripts = Latn}
+m["gar"] = {"Galeya", 5518509, "poz-ocw", Latn}
 
 m["gas"] = {"Adiwasi Garasia", 12953522, "inc-bhi", ancestors = {"bhb"}}
 
-m["gat"] = {"Kenati", 4219330, "paa-kag", scripts = Latn}
+m["gat"] = {"Kenati", 4219330, "paa-kag", Latn}
 
 m["gau"] = {"Kondekor", 12952433, "dra"}
 
-m["gaw"] = {"Nobonob", 11732205, "paa", scripts = Latn}
+m["gaw"] = {"Nobonob", 11732205, "paa", Latn}
 
-m["gay"] = {"Gayo", 33286, "poz-nws", scripts = Latn}
+m["gay"] = {"Gayo", 33286, "poz-nws", Latn}
 
-m["gba"] = {"Gbaya", 3099986, "alv-gba", scripts = Latn}
+m["gba"] = {"Gbaya", 3099986, "alv-gba", Latn}
 
-m["gbb"] = {"Kaytetye", 6380709, "aus-rnd", scripts = Latn}
+m["gbb"] = {"Kaytetye", 6380709, "aus-rnd", Latn}
 
-m["gbd"] = {"Karadjeri", 3913837, "aus-pam", scripts = Latn}
+m["gbd"] = {"Karadjeri", 3913837, "aus-pam", Latn}
 
-m["gbe"] = {"Niksek", 56375, "paa", scripts = Latn}
+m["gbe"] = {"Niksek", 56375, "paa", Latn}
 
-m["gbf"] = {"Gaikundi", 5517032, "paa-spk", scripts = Latn}
+m["gbf"] = {"Gaikundi", 5517032, "paa-spk", Latn}
 
-m["gbg"] = {"Gbanziri", 35306, "nic-nkg", scripts = Latn}
+m["gbg"] = {"Gbanziri", 35306, "nic-nkg", Latn}
 
-m["gbh"] = {"Defi Gbe", 12952446, "alv-gbe", scripts = Latn}
+m["gbh"] = {"Defi Gbe", 12952446, "alv-gbe", Latn}
 
-m["gbi"] = {"Galela", 3094570, "paa-wpa", scripts = Latn}
+m["gbi"] = {"Galela", 3094570, "paa-wpa", Latn}
 
-m["gbj"] = {"Bodo Gadaba", 3347070, "mun", scripts = {"Orya"}}
+m["gbj"] = {"Bodo Gadaba", 3347070, "mun", {"Orya"}}
 
-m["gbk"] = {"Gaddi", 17455500, "him", scripts = {"Deva", "Takr"}, translit_module = "hi-translit"}
+m["gbk"] = {"Gaddi", 17455500, "him", {"Deva", "Takr"}, translit_module = "hi-translit"}
 
-m["gbl"] = {"Gamit", 2731717, "inc-bhi", scripts = {"Deva", "Gujr"}}
+m["gbl"] = {"Gamit", 2731717, "inc-bhi", {"Deva", "Gujr"}}
 
-m["gbm"] = {"Garhwali", 33459, "inc-pah", scripts = {"Deva"}, translit_module = "hi-translit"}
+m["gbm"] = {"Garhwali", 33459, "inc-pah", {"Deva"}, translit_module = "hi-translit"}
 
-m["gbn"] = {"Mo'da", 12755683, "csu-bbk", scripts = Latn}
+m["gbn"] = {"Mo'da", 12755683, "csu-bbk", Latn}
 
-m["gbo"] = {"Northern Grebo", 11157042, "kro-grb", ancestors = {"grb"}, scripts = Latn}
+m["gbo"] = {"Northern Grebo", 11157042, "kro-grb", Latn, ancestors = {"grb"}}
 
-m["gbp"] = {"Gbaya-Bossangoa", 11011295, "alv-gbw", scripts = Latn}
+m["gbp"] = {"Gbaya-Bossangoa", 11011295, "alv-gbw", Latn}
 
-m["gbq"] = {"Gbaya-Bozoum", 4952879, "alv-gbw", scripts = Latn}
+m["gbq"] = {"Gbaya-Bozoum", 4952879, "alv-gbw", Latn}
 
-m["gbr"] = {"Gbagyi", 11015105, "alv-ngb", scripts = Latn}
+m["gbr"] = {"Gbagyi", 11015105, "alv-ngb", Latn}
 
-m["gbs"] = {"Gbesi Gbe", 12952448, "alv-pph", scripts = Latn}
+m["gbs"] = {"Gbesi Gbe", 12952448, "alv-pph", Latn}
 
-m["gbu"] = {"Gagadu", 35677, "aus-arn", scripts = Latn}
+m["gbu"] = {"Gagadu", 35677, "aus-arn", Latn}
 
-m["gbv"] = {"Gbanu", 3914945, "alv-gbf", scripts = Latn}
+m["gbv"] = {"Gbanu", 3914945, "alv-gbf", Latn}
 
-m["gbw"] = {"Gabi", 5515391, "aus-pam", scripts = Latn}
+m["gbw"] = {"Gabi", 5515391, "aus-pam", Latn}
 
-m["gbx"] = {"Eastern Xwla Gbe", 18379975, "alv-pph", scripts = Latn}
+m["gbx"] = {"Eastern Xwla Gbe", 18379975, "alv-pph", Latn}
 
-m["gby"] = {"Gbari", 3915451, "alv-ngb", scripts = Latn}
+m["gby"] = {"Gbari", 3915451, "alv-ngb", Latn}
 
-m["gcc"] = {"Mali", 6743338, "paa-bng", scripts = Latn}
+m["gcc"] = {"Mali", 6743338, "paa-bng", Latn}
 
-m["gcd"] = {"Ganggalida", 3913765, "aus-tnk", scripts = Latn}
+m["gcd"] = {"Ganggalida", 3913765, "aus-tnk", Latn}
 
-m["gce"] = {"Galice", 20711, "ath-pco", scripts = Latn}
+m["gce"] = {"Galice", 20711, "ath-pco", Latn}
 
-m["gcf"] = {"Antillean Creole", 3006280, "crp", scripts = Latn, ancestors = {"fr"}}
+m["gcf"] = {"Antillean Creole", 3006280, "crp", Latn, ancestors = {"fr"}}
 
-m["gcl"] = {"Grenadian Creole English", 4252500, "crp", scripts = Latn, ancestors = {"en"}}
+m["gcl"] = {"Grenadian Creole English", 4252500, "crp", Latn, ancestors = {"en"}}
 
-m["gcn"] = {"Gaina", 11732195, "ngf", scripts = Latn}
+m["gcn"] = {"Gaina", 11732195, "ngf", Latn}
 
-m["gcr"] = {"Guianese Creole", 1363072, "crp", scripts = Latn, ancestors = {"fr"}}
+m["gcr"] = {"Guianese Creole", 1363072, "crp", Latn, ancestors = {"fr"}}
 
-m["gct"] = {"Colonia Tovar German", 1138351, "gmw", scripts = Latn, ancestors = {"gsw"}}
+m["gct"] = {"Colonia Tovar German", 1138351, "gmw", Latn, ancestors = {"gsw"}}
 
 m["gdb"] = {"Ollari", 33906, "dra"}
 
-m["gdc"] = {"Gugu Badhun", 10510360, "aus-pam", scripts = Latn}
+m["gdc"] = {"Gugu Badhun", 10510360, "aus-pam", Latn}
 
-m["gdd"] = {"Gedaged", 35292, "poz-ocw", scripts = Latn}
+m["gdd"] = {"Gedaged", 35292, "poz-ocw", Latn}
 
-m["gde"] = {"Gude", 3441230, "cdc-cbm", scripts = Latn}
+m["gde"] = {"Gude", 3441230, "cdc-cbm", Latn}
 
-m["gdf"] = {"Guduf-Gava", 3441350, "cdc-cbm", scripts = Latn}
+m["gdf"] = {"Guduf-Gava", 3441350, "cdc-cbm", Latn}
 
 m["gdg"] = { -- not to be confused with gad, gdk
     "Ga'dang", 5515189, "phi"
 }
 
-m["gdh"] = {"Gadjerawang", 3913817, "aus-jar", scripts = Latn}
+m["gdh"] = {"Gadjerawang", 3913817, "aus-jar", Latn}
 
-m["gdi"] = {"Gundi", 11137851, "nic-nkb", scripts = Latn}
+m["gdi"] = {"Gundi", 11137851, "nic-nkb", Latn}
 
-m["gdj"] = {"Kurtjar", 5619931, "aus-pmn", scripts = Latn}
+m["gdj"] = {"Kurtjar", 5619931, "aus-pmn", Latn}
 
 m["gdk"] = { -- not to be confused with gad, gdg
-    "Gadang",
-    56256,
-    "cdc-est",
-    scripts = Latn
+    "Gadang", 56256, "cdc-est", Latn
 }
 
-m["gdl"] = {"Dirasha", 56809, "cus", scripts = {"Ethi"}}
+m["gdl"] = {"Dirasha", 56809, "cus", {"Ethi"}}
 
-m["gdm"] = {"Laal", 33436, scripts = Latn}
+m["gdm"] = {"Laal", 33436, nil, Latn}
 
-m["gdn"] = {"Umanakaina", 7881084, "ngf", scripts = Latn}
+m["gdn"] = {"Umanakaina", 7881084, "ngf", Latn}
 
-m["gdo"] = {"Godoberi", 56515, "cau-ava", scripts = {"Cyrl"}}
+m["gdo"] = {"Godoberi", 56515, "cau-ava", {"Cyrl"}}
 
-m["gdq"] = {"Mehri", 13361, "sem-sar", scripts = {"Arab", "Latn"}}
+m["gdq"] = {"Mehri", 13361, "sem-sar", {"Arab", "Latn"}}
 
-m["gdr"] = {"Wipi", 8026711, "paa", scripts = Latn}
+m["gdr"] = {"Wipi", 8026711, "paa", Latn}
 
 m["gds"] = {"Ghandruk Sign Language", 15971577, "sgn"}
 
-m["gdt"] = {"Kungardutyi", 6444517, "aus-kar", scripts = Latn}
+m["gdt"] = {"Kungardutyi", 6444517, "aus-kar", Latn}
 
-m["gdu"] = {"Gudu", 3441172, "cdc-cbm", scripts = Latn}
+m["gdu"] = {"Gudu", 3441172, "cdc-cbm", Latn}
 
 m["gdx"] = {"Godwari", 3540922, "inc-wes", ancestors = {"mwr"}}
 
-m["gea"] = {"Geruma", 3438789, "cdc-wst", scripts = Latn}
+m["gea"] = {"Geruma", 3438789, "cdc-wst", Latn}
 
-m["geb"] = {"Kire", 11129733, "paa", scripts = Latn}
+m["geb"] = {"Kire", 11129733, "paa", Latn}
 
-m["gec"] = {"Gboloo Grebo", 11019342, "kro-grb", ancestors = {"grb"}, scripts = Latn}
+m["gec"] = {"Gboloo Grebo", 11019342, "kro-grb", Latn, ancestors = {"grb"}}
 
-m["ged"] = {"Gade", 3914459, "alv-nup", scripts = Latn}
+m["ged"] = {"Gade", 3914459, "alv-nup", Latn}
 
-m["geg"] = {"Gengle", 3438345, "alv-mye", ancestors = {"kow"}, scripts = Latn}
+m["geg"] = {"Gengle", 3438345, "alv-mye", Latn, ancestors = {"kow"}}
 
-m["geh"] = {"Hutterisch", 33385, "gmw", scripts = Latn, ancestors = {"bar"}}
+m["geh"] = {"Hutterisch", 33385, "gmw", Latn, ancestors = {"bar"}}
 
-m["gei"] = {"Gebe", 3100032, "poz-hce", scripts = Latn}
+m["gei"] = {"Gebe", 3100032, "poz-hce", Latn}
 
-m["gej"] = {"Gen", 33450, "alv-gbe", scripts = Latn}
+m["gej"] = {"Gen", 33450, "alv-gbe", Latn}
 
-m["gek"] = {"Gerka", 3441277, "cdc-wst", scripts = Latn}
+m["gek"] = {"Gerka", 3441277, "cdc-wst", Latn}
 
-m["gel"] = {"Fakkanci", 36627, "nic-knn", scripts = Latn}
+m["gel"] = {"Fakkanci", 36627, "nic-knn", Latn}
 
-m["geq"] = {"Geme", 3915851, "znd", scripts = Latn}
+m["geq"] = {"Geme", 3915851, "znd", Latn}
 
-m["ges"] = {"Geser-Gorom", 5553579, "poz-cma", scripts = Latn}
+m["ges"] = {"Geser-Gorom", 5553579, "poz-cma", Latn}
 
-m["gev"] = {"Viya", 7937974, "bnt-tso", scripts = Latn}
+m["gev"] = {"Viya", 7937974, "bnt-tso", Latn}
 
-m["gew"] = {"Gera", 3438725, "cdc-wst", scripts = Latn}
+m["gew"] = {"Gera", 3438725, "cdc-wst", Latn}
 
-m["gex"] = {"Garre", 56618, "cus", scripts = Latn}
+m["gex"] = {"Garre", 56618, "cus", Latn}
 
-m["gey"] = {"Enya", 5381452, "bnt-mbe", scripts = Latn}
+m["gey"] = {"Enya", 5381452, "bnt-mbe", Latn}
 
-m["gez"] = {"Ge'ez", 35667, "sem-eth", scripts = {"Ethi"}, translit_module = "Ethi-translit"}
+m["gez"] = {"Ge'ez", 35667, "sem-eth", {"Ethi"}, translit_module = "Ethi-translit"}
 
-m["gfk"] = {"Patpatar", 3368846, "poz-ocw", scripts = Latn}
+m["gfk"] = {"Patpatar", 3368846, "poz-ocw", Latn}
 
-m["gft"] = {"Gafat", 56910, "sem-eth", scripts = {"Ethi", "Latn"}}
+m["gft"] = {"Gafat", 56910, "sem-eth", {"Ethi", "Latn"}}
 
-m["gga"] = {"Gao", 3095228, "poz-ocw", scripts = Latn}
+m["gga"] = {"Gao", 3095228, "poz-ocw", Latn}
 
-m["ggb"] = {"Gbii", 3914390, "kro-wkr", scripts = Latn}
+m["ggb"] = {"Gbii", 3914390, "kro-wkr", Latn}
 
-m["ggd"] = {"Gugadj", 5615186, "aus-pmn", scripts = Latn}
+m["ggd"] = {"Gugadj", 5615186, "aus-pmn", Latn}
 
-m["gge"] = {"Guragone", 5619801, "aus-arn", scripts = Latn}
+m["gge"] = {"Guragone", 5619801, "aus-arn", Latn}
 
-m["ggg"] = {"Gurgula", 5620032, "inc-wes", scripts = {"Arab"}, ancestors = {"mwr"}}
+m["ggg"] = {"Gurgula", 5620032, "inc-wes", {"Arab"}, ancestors = {"mwr"}}
 
-m["ggk"] = {"Kungarakany", 6444516, "aus-arn", scripts = Latn}
+m["ggk"] = {"Kungarakany", 6444516, "aus-arn", Latn}
 
-m["ggl"] = {"Ganglau", 5521140, "ngf-mad", scripts = Latn}
+m["ggl"] = {"Ganglau", 5521140, "ngf-mad", Latn}
 
-m["ggn"] = {"Eastern Gurung", 12952472, "sit-tam", scripts = {"Deva", "Latn"}}
+m["ggn"] = {"Eastern Gurung", 12952472, "sit-tam", {"Deva", "Latn"}}
 
-m["ggt"] = {"Gitua", 3107865, "poz-ocw", scripts = Latn}
+m["ggt"] = {"Gitua", 3107865, "poz-ocw", Latn}
 
-m["ggu"] = {"Gban", 3913317, "dmn-nbe", scripts = Latn}
+m["ggu"] = {"Gban", 3913317, "dmn-nbe", Latn}
 
-m["ggw"] = {"Gogodala", 3512161, "paa-pag", scripts = Latn}
+m["ggw"] = {"Gogodala", 3512161, "paa-pag", Latn}
 
 m["gha"] = {
-    "Ghadames",
-    56747,
-    "ber",
-    scripts = Latn -- and other scripts?
+    "Ghadames", 56747, "ber", Latn -- and other scripts?
 }
 
-m["ghe"] = {"Southern Ghale", 12952453, "sit-tam", scripts = {"Deva"}}
+m["ghe"] = {"Southern Ghale", 12952453, "sit-tam", {"Deva"}}
 
-m["ghh"] = {"Northern Ghale", 22662104, "sit-tam", scripts = {"Deva"}}
+m["ghh"] = {"Northern Ghale", 22662104, "sit-tam", {"Deva"}}
 
 m["ghk"] = {"Geko Karen", 5530317, "kar"}
 
 m["ghl"] = {
-    "Ghulfan",
-    16885737,
-    "nub-hil",
-    scripts = Latn -- and others?
+    "Ghulfan", 16885737, "nub-hil", Latn -- and others?
 }
 
-m["ghn"] = {"Ghanongga", 3104772, "poz-ocw", scripts = Latn}
+m["ghn"] = {"Ghanongga", 3104772, "poz-ocw", Latn}
 
 m["gho"] = {"Ghomara", 35315, "ber"}
 
 m["ghr"] = {"Ghera", 22808992, "inc-hiw"}
 
-m["ghs"] = {"Guhu-Samane", 11732219, "ngf", scripts = Latn}
+m["ghs"] = {"Guhu-Samane", 11732219, "ngf", Latn}
 
-m["ght"] = {"Kutang Ghale", 6448337, "sit-tam", scripts = {"Tibt"}}
+m["ght"] = {"Kutang Ghale", 6448337, "sit-tam", {"Tibt"}}
 
-m["gia"] = {"Kitja", 1284877, "aus-jar", scripts = Latn}
+m["gia"] = {"Kitja", 1284877, "aus-jar", Latn}
 
-m["gib"] = {"Gibanawa", 12953530, "crp", ancestors = {"ha"}, scripts = Latn}
+m["gib"] = {"Gibanawa", 12953530, "crp", Latn, ancestors = {"ha"}}
 
-m["gid"] = {"Gidar", 35265, "cdc-cbm", scripts = Latn}
+m["gid"] = {"Gidar", 35265, "cdc-cbm", Latn}
 
-m["gie"] = {"Guébie", nil, "kro-did", scripts = Latn}
+m["gie"] = {"Guébie", nil, "kro-did", Latn}
 
-m["gig"] = {"Goaria", 33269, "inc-wes", scripts = {"Arab"}, ancestors = {"mwr"}}
+m["gig"] = {"Goaria", 33269, "inc-wes", {"Arab"}, ancestors = {"mwr"}}
 
-m["gih"] = {"Githabul", nil, "aus-pam", scripts = Latn}
+m["gih"] = {"Githabul", nil, "aus-pam", Latn}
 
-m["gil"] = {"Gilbertese", 30898, "poz-mic", scripts = Latn}
+m["gil"] = {"Gilbertese", 30898, "poz-mic", Latn}
 
-m["gim"] = {"Gimi (Goroka)", 11732209, "paa", scripts = Latn}
+m["gim"] = {"Gimi (Goroka)", 11732209, "paa", Latn}
 
-m["gin"] = {"Hinukh", 33283, "cau-tsz", scripts = {"Cyrl"}, translit_module = "gin-translit"}
+m["gin"] = {"Hinukh", 33283, "cau-tsz", {"Cyrl"}, translit_module = "gin-translit"}
 
 m["gio"] = {"Gelao", 56401, "qfa-tak"}
 
@@ -314,77 +302,77 @@ m["giu"] = {"Mulao", 11092831, "qfa-gel"}
 
 m["giw"] = {"White Gelao", 8843040, "qfa-gel"}
 
-m["gix"] = {"Gilima", 10977716, "nic-nkm", scripts = Latn}
+m["gix"] = {"Gilima", 10977716, "nic-nkm", Latn}
 
 m["giy"] = {"Giyug", 5565906}
 
 m["giz"] = {"South Giziga", 3502232, "cdc-cbm"}
 
-m["gji"] = {"Geji", 3914890, "cdc-wst", scripts = Latn}
+m["gji"] = {"Geji", 3914890, "cdc-wst", Latn}
 
 m["gjk"] = {"Kachi Koli", 12953646, "inc-wes"}
 
 m["gjm"] = {"Gunditjmara", 6448731, "aus-pam"}
 
-m["gjn"] = {"Gonja", 35267, "alv-gng", scripts = Latn}
+m["gjn"] = {"Gonja", 35267, "alv-gng", Latn}
 
 m["gju"] = {"Gojri", 3241731, "inc-wes", ancestors = {"raj"}}
 
-m["gka"] = {"Guya", 11732221, "ngf-fin", scripts = Latn}
+m["gka"] = {"Guya", 11732221, "ngf-fin", Latn}
 
-m["gkd"] = {"Magɨ", nil, "ngf-mad", scripts = Latn}
+m["gkd"] = {"Magɨ", nil, "ngf-mad", Latn}
 
 m["gke"] = {"Ndai", 6983667, "alv-mbm"}
 
-m["gkn"] = {"Gokana", 3075137, "nic-ogo", scripts = Latn}
+m["gkn"] = {"Gokana", 3075137, "nic-ogo", Latn}
 
-m["gko"] = {"Kok-Nar", 6426526, "aus-pmn", scripts = Latn}
+m["gko"] = {"Kok-Nar", 6426526, "aus-pmn", Latn}
 
 m["gkp"] = {"Guinea Kpelle", 11052867, "dmn-msw", ancestors = {"kpe"}}
 
 m["glc"] = {"Bon Gula", 289816, "alv-bua"}
 
-m["gld"] = {"Nanai", 13303, "tuw", scripts = {"Cyrl"}, entry_name = {from = {"[Ӣ]", "[ӣ]", "[Ӯ]", "[ӯ]", MACRON}, to = {"И", "и", "У", "у"}}}
+m["gld"] = {"Nanai", 13303, "tuw", {"Cyrl"}, entry_name = {from = {"[Ӣ]", "[ӣ]", "[Ӯ]", "[ӯ]", MACRON}, to = {"И", "и", "У", "у"}}}
 
 m["glh"] = {"Northwest Pashayi", 23713532, "inc-dar"}
 
 m["glj"] = {"Kulaal", 33360, "alv-bua"}
 
-m["glk"] = {"Gilaki", 33657, "ira-csp", scripts = {"fa-Arab"}}
+m["glk"] = {"Gilaki", 33657, "ira-csp", {"fa-Arab"}}
 
-m["glo"] = {"Galambu", 2598797, "cdc-wst", scripts = Latn}
+m["glo"] = {"Galambu", 2598797, "cdc-wst", Latn}
 
 m["glr"] = {"Glaro-Twabo", 3915313, "kro-wee"}
 
 m["glu"] = {"Gula", 5617176, "csu-bgr"}
 
-m["glw"] = {"Glavda", 3441285, "cdc-cbm", scripts = Latn}
+m["glw"] = {"Glavda", 3441285, "cdc-cbm", Latn}
 
 m["gly"] = {"Gule", 3120736, "ssa-kom"}
 
 m["gma"] = {"Gambera", 10502327, "aus-wor"}
 
-m["gmb"] = {"Gula'alaa", 3120733, "poz-sls", scripts = Latn}
+m["gmb"] = {"Gula'alaa", 3120733, "poz-sls", Latn}
 
 m["gmd"] = {"Mághdì", 3914475, "alv-bwj"}
 
-m["gmg"] = {"Magiyi", 16926155, "ngf-mad", scripts = Latn}
+m["gmg"] = {"Magiyi", 16926155, "ngf-mad", Latn}
 
-m["gmh"] = {"Middle High German", 837985, "gmw", scripts = Latn, ancestors = {"goh"}, entry_name = {from = {"[ĀÂ]", "[āâ]", "[ĒÊË]", "[ēêë]", "[ĪÎ]", "[īî]", "[ŌÔ]", "[ōô]", "[ŪÛ]", "[ūû]", "[ǣæ̂]", "[ǢÆ̂]"}, to = {"A", "a", "E", "e", "I", "i", "O", "o", "U", "u", "æ", "Æ"}}}
+m["gmh"] = {"Middle High German", 837985, "gmw", Latn, ancestors = {"goh"}, entry_name = {from = {"[ĀÂ]", "[āâ]", "[ĒÊË]", "[ēêë]", "[ĪÎ]", "[īî]", "[ŌÔ]", "[ōô]", "[ŪÛ]", "[ūû]", "[ǣæ̂]", "[ǢÆ̂]"}, to = {"A", "a", "E", "e", "I", "i", "O", "o", "U", "u", "æ", "Æ"}}}
 
-m["gml"] = {"Middle Low German", 505674, "gmw", scripts = Latn, ancestors = {"osx"}, entry_name = {from = {"[ĀÂÄǞ]", "[āâäǟ]", "[ĒÊ]", "[ēê]", "[ĪÎ]", "[īî]", "[ŌÔÖȪ]", "[ōôöȫ]", "[ŪÛÜǕ]", "[ūûüǖ]", "[̂]"}, to = {"A", "a", "E", "e", "I", "i", "O", "o", "U", "u", ""}}}
+m["gml"] = {"Middle Low German", 505674, "gmw", Latn, ancestors = {"osx"}, entry_name = {from = {"[ĀÂÄǞ]", "[āâäǟ]", "[ĒÊ]", "[ēê]", "[ĪÎ]", "[īî]", "[ŌÔÖȪ]", "[ōôöȫ]", "[ŪÛÜǕ]", "[ūûüǖ]", "[̂]"}, to = {"A", "a", "E", "e", "I", "i", "O", "o", "U", "u", ""}}}
 
-m["gmm"] = {"Gbaya-Mbodomo", 6799713, "alv-gbf", scripts = Latn}
+m["gmm"] = {"Gbaya-Mbodomo", 6799713, "alv-gbf", Latn}
 
 m["gmn"] = {"Gimnime", 11016905, "alv-dur"}
 
 m["gmu"] = {"Gumalu", 5618027, "ngf-mad"}
 
-m["gmv"] = {"Gamo", 16116386, "omv-nom", scripts = {"Latn", "Ethi"}}
+m["gmv"] = {"Gamo", 16116386, "omv-nom", {"Latn", "Ethi"}}
 
 m["gmx"] = {"Magoma", 16939552, "bnt-bki"}
 
-m["gmy"] = {"Mycenaean Greek", 668366, "grk", scripts = {"Linb"}, translit_module = "Linb-translit", override_translit = true}
+m["gmy"] = {"Mycenaean Greek", 668366, "grk", {"Linb"}, translit_module = "Linb-translit", override_translit = true}
 
 m["gmz"] = {"Mgbo", 6826835, "alv-igb", ancestors = {"izi"}}
 
@@ -394,7 +382,7 @@ m["gnb"] = {"Gangte", 12952442, "tbq-kuk"}
 
 m["gnc"] = {"Guanche", 35762, "ber"}
 
-m["gnd"] = {"Zulgo-Gemzek", 56800, "cdc-cbm", scripts = Latn}
+m["gnd"] = {"Zulgo-Gemzek", 56800, "cdc-cbm", Latn}
 
 m["gne"] = {"Ganang", nil, "nic-plc", ancestors = {"izr"}}
 
@@ -402,9 +390,9 @@ m["gng"] = {"Ngangam", 35888, "nic-grm"}
 
 m["gnh"] = {"Lere", 3915319, "nic-jer"}
 
-m["gni"] = {"Gooniyandi", 2669219, "aus-bub", scripts = Latn}
+m["gni"] = {"Gooniyandi", 2669219, "aus-bub", Latn}
 
-m["gnj"] = {"Ngen", nil, "dmn-nbe", scripts = Latn}
+m["gnj"] = {"Ngen", nil, "dmn-nbe", Latn}
 
 m["gnk"] = {"ǁGana", 1975199, "khi-kal"}
 
@@ -412,7 +400,7 @@ m["gnl"] = {"Gangulu", 4916329, "aus-pam"}
 
 m["gnm"] = {"Ginuman", 11732210, "ngf"}
 
-m["gnn"] = {"Gumatj", 10510745, "aus-yol", scripts = Latn}
+m["gnn"] = {"Gumatj", 10510745, "aus-yol", Latn}
 
 m["gnq"] = {"Gana", 5520523, "poz-san"}
 
@@ -422,27 +410,27 @@ m["gnt"] = {"Guntai", 12952475, "paa"}
 
 m["gnu"] = {"Gnau", 3915810, "qfa-tor"}
 
-m["gnw"] = {"Western Bolivian Guaraní", 3775037, "tup-gua", scripts = Latn, ancestors = {"gn"}}
+m["gnw"] = {"Western Bolivian Guaraní", 3775037, "tup-gua", Latn, ancestors = {"gn"}}
 
-m["gnz"] = {"Ganzi", 11137942, "nic-nkb", scripts = Latn}
+m["gnz"] = {"Ganzi", 11137942, "nic-nkb", Latn}
 
-m["goa"] = {"Guro", 35251, "dmn-mda", scripts = Latn}
+m["goa"] = {"Guro", 35251, "dmn-mda", Latn}
 
 m["gob"] = {"Playero", 3027923, "sai-guh"}
 
-m["goc"] = {"Gorakor", 12952463, "poz-ocw", scripts = Latn}
+m["goc"] = {"Gorakor", 12952463, "poz-ocw", Latn}
 
 m["god"] = {"Godié", 3914412, "kro-bet"}
 
 m["goe"] = {"Gongduk", 2669221, "sit"}
 
-m["gof"] = {"Gofa", 12631584, "omv-nom", scripts = {"Latn", "Ethi"}}
+m["gof"] = {"Gofa", 12631584, "omv-nom", {"Latn", "Ethi"}}
 
-m["gog"] = {"Gogo", 3272630, "bnt-ruv", scripts = Latn}
+m["gog"] = {"Gogo", 3272630, "bnt-ruv", Latn}
 
-m["goh"] = {"Old High German", 35218, "gmw", scripts = Latn, entry_name = {from = {"[ĀÂ]", "[āâ]", "[ĒÊË]", "[ēêë]", "[ĪÎ]", "[īî]", "[ŌÔ]", "[ōô]", "[ŪÛ]", "[ūû]", "ʒ"}, to = {"A", "a", "E", "e", "I", "i", "O", "o", "U", "u", "z"}}}
+m["goh"] = {"Old High German", 35218, "gmw", Latn, entry_name = {from = {"[ĀÂ]", "[āâ]", "[ĒÊË]", "[ēêë]", "[ĪÎ]", "[īî]", "[ŌÔ]", "[ōô]", "[ŪÛ]", "[ūû]", "ʒ"}, to = {"A", "a", "E", "e", "I", "i", "O", "o", "U", "u", "z"}}}
 
-m["goi"] = {"Gobasi", 5575414, "ngf", scripts = Latn}
+m["goi"] = {"Gobasi", 5575414, "ngf", Latn}
 
 m["goj"] = {"Gowlan", 12953532, "inc-sou"}
 
@@ -450,17 +438,17 @@ m["goj"] = {"Gowlan", 12953532, "inc-sou"}
 
 m["gol"] = {"Gola", 35482, "alv"}
 
-m["gon"] = {"Gondi", 1775361, "dra", scripts = {"Telu", "Gonm", "Gong"}}
+m["gon"] = {"Gondi", 1775361, "dra", {"Telu", "Gonm", "Gong"}}
 
-m["goo"] = {"Gone Dau", 3110470, "poz-occ", scripts = Latn}
+m["goo"] = {"Gone Dau", 3110470, "poz-occ", Latn}
 
-m["gop"] = {"Yeretuar", 8052565, "poz-hce", scripts = Latn}
+m["gop"] = {"Yeretuar", 8052565, "poz-hce", Latn}
 
 m["goq"] = {"Gorap", 3110816, "crp", ancestors = {"ms"}}
 
-m["gor"] = {"Gorontalo", 2501174, "phi", scripts = Latn}
+m["gor"] = {"Gorontalo", 2501174, "phi", Latn}
 
-m["got"] = {"Gothic", 35722, "gme", scripts = {"Goth", "Runr"}, translit_module = "Goth-translit", link_tr = true, entry_name = {from = {"Ā", "ā", "Ē", "ē", "Ī", "ī", "Ō", "ō", "Ū", "ū"}, to = {"A", "a", "E", "e", "I", "i", "O", "o", "U", "u"}}}
+m["got"] = {"Gothic", 35722, "gme", {"Goth", "Runr"}, translit_module = "Goth-translit", link_tr = true, entry_name = {from = {"Ā", "ā", "Ē", "ē", "Ī", "ī", "Ō", "ō", "Ū", "ū"}, to = {"A", "a", "E", "e", "I", "i", "O", "o", "U", "u"}}}
 
 m["gou"] = {"Gavar", 3441180, "cdc-cbm"}
 
@@ -476,7 +464,7 @@ m["gpa"] = {"Gupa-Abawa", 3915352, "alv-ngb"}
 
 m["gpn"] = {"Taiap", 56237, "paa"}
 
-m["gqa"] = {"Ga'anda", 56245, "cdc-cbm", scripts = Latn}
+m["gqa"] = {"Ga'anda", 56245, "cdc-cbm", Latn}
 
 m["gqi"] = {"Guiqiong", 3120647, "sit-qia"}
 
@@ -488,15 +476,15 @@ m["gqr"] = {"Gor", 759992, "csu-sar"}
 
 m["gqu"] = {"Qau", 17284874, "qfa-gel"}
 
-m["gra"] = {"Rajput Garasia", 21041529, "inc-bhi", ancestors = {"bhb"}, scripts = {"Deva", "Gujr"}}
+m["gra"] = {"Rajput Garasia", 21041529, "inc-bhi", {"Deva", "Gujr"}, ancestors = {"bhb"}}
 
-m["grb"] = {"Grebo", 35257, "kro-grb", scripts = Latn}
+m["grb"] = {"Grebo", 35257, "kro-grb", Latn}
 
 m["grc"] = {
     "Ancient Greek",
     35497,
     "grk",
-    scripts = {"polytonic", "Cprt"},
+    {"polytonic", "Cprt"},
     translit_module = "translit-redirect",
     override_translit = true,
     -- Keep this synchronized with el, cpg, pnt; compare ine-pae
@@ -505,213 +493,204 @@ m["grc"] = {
     standardChars = "ͺ;΄-ώϜϝ" .. PUNCTUATION .. "ἀ-῾𐠀-𐠿"
 }
 
-m["grd"] = {"Guruntum", 3441272, "cdc-wst", scripts = Latn}
+m["grd"] = {"Guruntum", 3441272, "cdc-wst", Latn}
 
-m["grg"] = {"Madi", 6727664, "ngf-fin", scripts = Latn}
+m["grg"] = {"Madi", 6727664, "ngf-fin", Latn}
 
-m["grh"] = {"Gbiri-Niragu", 3913936, "nic-kau", scripts = Latn}
+m["grh"] = {"Gbiri-Niragu", 3913936, "nic-kau", Latn}
 
-m["gri"] = {"Ghari", 3104782, "poz-sls", scripts = Latn}
+m["gri"] = {"Ghari", 3104782, "poz-sls", Latn}
 
-m["grj"] = {"Southern Grebo", 3914444, "kro-grb", ancestors = {"grb"}, scripts = Latn}
+m["grj"] = {"Southern Grebo", 3914444, "kro-grb", Latn, ancestors = {"grb"}}
 
-m["grm"] = {"Kota Marudu Talantang", 6433808, "poz-san", scripts = Latn}
+m["grm"] = {"Kota Marudu Talantang", 6433808, "poz-san", Latn}
 
 m["gro"] = {"Groma", 56551, "sit-tib"}
 
-m["grq"] = {"Gorovu", 56355, "paa", scripts = Latn}
+m["grq"] = {"Gorovu", 56355, "paa", Latn}
 
 m["grr"] = {"Taznatit", 3063974, "ber"}
 
-m["grs"] = {"Gresi", 5607612, "paa-nim", scripts = Latn}
+m["grs"] = {"Gresi", 5607612, "paa-nim", Latn}
 
-m["grt"] = {"Garo", 36137, "tbq-bdg", scripts = {"Latn", "Beng", "Brai"}}
+m["grt"] = {"Garo", 36137, "tbq-bdg", {"Latn", "Beng", "Brai"}}
 
-m["gru"] = {"Kistane", 13273, "sem-eth", scripts = Latn}
+m["gru"] = {"Kistane", 13273, "sem-eth", Latn}
 
-m["grv"] = {"Central Grebo", 18385114, "kro-grb", ancestors = {"grb"}, scripts = Latn}
+m["grv"] = {"Central Grebo", 18385114, "kro-grb", Latn, ancestors = {"grb"}}
 
-m["grw"] = {"Gweda", 5623387, "poz-ocw", scripts = Latn}
+m["grw"] = {"Gweda", 5623387, "poz-ocw", Latn}
 
-m["grx"] = {"Guriaso", 12631954, "paa-kwm", scripts = Latn}
+m["grx"] = {"Guriaso", 12631954, "paa-kwm", Latn}
 
-m["gry"] = {"Barclayville Grebo", 11157342, "kro-grb", ancestors = {"grb"}, scripts = Latn}
+m["gry"] = {"Barclayville Grebo", 11157342, "kro-grb", Latn, ancestors = {"grb"}}
 
-m["grz"] = {"Guramalum", 3120935, "poz-ocw", scripts = Latn}
+m["grz"] = {"Guramalum", 3120935, "poz-ocw", Latn}
 
 m["gse"] = {
-    "Ghanaian Sign Language",
-    35289,
-    "sgn",
-    scripts = Latn -- when documented
+    "Ghanaian Sign Language", 35289, "sgn", Latn -- when documented
 }
 
-m["gsg"] = {"German Sign Language", 33282, "sgn-gsl", scripts = {"Sgnw"}}
+m["gsg"] = {"German Sign Language", 33282, "sgn-gsl", {"Sgnw"}}
 
-m["gsl"] = {"Gusilay", 35439, "alv-jol", scripts = Latn}
+m["gsl"] = {"Gusilay", 35439, "alv-jol", Latn}
 
 m["gsm"] = {
-    "Guatemalan Sign Language",
-    2886781,
-    "sgn",
-    scripts = Latn -- when documented
+    "Guatemalan Sign Language", 2886781, "sgn", Latn -- when documented
 }
 
-m["gsn"] = {"Gusan", 11732224, "ngf-fin", scripts = Latn}
+m["gsn"] = {"Gusan", 11732224, "ngf-fin", Latn}
 
-m["gso"] = {"Southwest Gbaya", 4919322, "alv-gbs", scripts = Latn}
+m["gso"] = {"Southwest Gbaya", 4919322, "alv-gbs", Latn}
 
-m["gsp"] = {"Wasembo", 7971402, "ngf-mad", scripts = Latn}
+m["gsp"] = {"Wasembo", 7971402, "ngf-mad", Latn}
 
 m["gss"] = {"Greek Sign Language", 3565084, "sgn"}
 
-m["gsw"] = {"Alemannic German", 131339, "gmw", scripts = Latn, ancestors = {"gmh"}, wikimedia_codes = {"als"}}
+m["gsw"] = {"Alemannic German", 131339, "gmw", Latn, ancestors = {"gmh"}, wikimedia_codes = {"als"}}
 
-m["gta"] = {"Guató", 3027940, "qfa-iso", scripts = Latn}
+m["gta"] = {"Guató", 3027940, "qfa-iso", Latn}
 
-m["gtu"] = {"Aghu Tharrnggala", 16825981, "aus-pmn", scripts = Latn}
+m["gtu"] = {"Aghu Tharrnggala", 16825981, "aus-pmn", Latn}
 
-m["gua"] = {"Shiki", 3913946, "nic-jrn", scripts = Latn}
+m["gua"] = {"Shiki", 3913946, "nic-jrn", Latn}
 
-m["gub"] = {"Guajajára", 7699720, "tup-gua", scripts = Latn}
+m["gub"] = {"Guajajára", 7699720, "tup-gua", Latn}
 
-m["guc"] = {"Wayuu", 891085, "awd-taa", ancestors = {"awd-taa-pro"}, scripts = Latn}
+m["guc"] = {"Wayuu", 891085, "awd-taa", Latn, ancestors = {"awd-taa-pro"}}
 
-m["gud"] = {"Yocoboué Dida", 21074781, "kro-did", scripts = Latn}
+m["gud"] = {"Yocoboué Dida", 21074781, "kro-did", Latn}
 
-m["gue"] = {"Gurindji", 10511016, "aus-pam", scripts = Latn}
+m["gue"] = {"Gurindji", 10511016, "aus-pam", Latn}
 
-m["guf"] = {"Gupapuyngu", 10511004, "aus-yol", scripts = Latn}
+m["guf"] = {"Gupapuyngu", 10511004, "aus-yol", Latn}
 
-m["gug"] = {"Paraguayan Guaraní", 17478066, "tup-gua", scripts = Latn, ancestors = {"gn"}}
+m["gug"] = {"Paraguayan Guaraní", 17478066, "tup-gua", Latn, ancestors = {"gn"}}
 
-m["guh"] = {"Guahibo", 2669193, "sai-guh", scripts = Latn}
+m["guh"] = {"Guahibo", 2669193, "sai-guh", Latn}
 
-m["gui"] = {"Eastern Bolivian Guaraní", 2963912, "tup-gua", scripts = Latn, ancestors = {"gn"}}
+m["gui"] = {"Eastern Bolivian Guaraní", 2963912, "tup-gua", Latn, ancestors = {"gn"}}
 
-m["guk"] = {"Gumuz", 2396970, "ssa", scripts = {"Latn", "Ethi"}}
+m["guk"] = {"Gumuz", 2396970, "ssa", {"Latn", "Ethi"}}
 
-m["gul"] = {"Gullah", 33395, "crp", scripts = Latn, ancestors = {"en"}}
+m["gul"] = {"Gullah", 33395, "crp", Latn, ancestors = {"en"}}
 
-m["gum"] = {"Guambiano", 2744745, "sai-bar", scripts = Latn}
+m["gum"] = {"Guambiano", 2744745, "sai-bar", Latn}
 
-m["gun"] = {"Mbyá Guaraní", 3915584, "tup-gua", scripts = Latn, ancestors = {"gn"}}
+m["gun"] = {"Mbyá Guaraní", 3915584, "tup-gua", Latn, ancestors = {"gn"}}
 
-m["guo"] = {"Guayabero", 2980375, "sai-guh", scripts = Latn}
+m["guo"] = {"Guayabero", 2980375, "sai-guh", Latn}
 
-m["gup"] = {"Gunwinggu", 1406574, "aus-gun", scripts = Latn}
+m["gup"] = {"Gunwinggu", 1406574, "aus-gun", Latn}
 
-m["guq"] = {"Aché", 383701, "tup", scripts = Latn}
+m["guq"] = {"Aché", 383701, "tup", Latn}
 
-m["gur"] = {"Farefare", 35331, "nic-mre", scripts = Latn}
+m["gur"] = {"Farefare", 35331, "nic-mre", Latn}
 
 m["gus"] = {
-    "Guinean Sign Language",
-    15983937,
-    "sgn",
-    scripts = Latn -- when documented
+    "Guinean Sign Language", 15983937, "sgn", Latn -- when documented
 }
 
-m["gut"] = {"Maléku Jaíka", 3915782, "cba", scripts = Latn}
+m["gut"] = {"Maléku Jaíka", 3915782, "cba", Latn}
 
-m["guu"] = {"Yanomamö", 8048928, "sai-ynm", scripts = Latn}
+m["guu"] = {"Yanomamö", 8048928, "sai-ynm", Latn}
 
-m["guv"] = {"Gey", nil, "alv-sav", scripts = Latn}
+m["guv"] = {"Gey", nil, "alv-sav", Latn}
 
-m["guw"] = {"Gun", 3111668, "alv-gbe", scripts = Latn}
+m["guw"] = {"Gun", 3111668, "alv-gbe", Latn}
 
-m["gux"] = {"Gourmanchéma", 35474, "nic-grm", scripts = Latn}
+m["gux"] = {"Gourmanchéma", 35474, "nic-grm", Latn}
 
-m["guz"] = {"Gusii", 33603, "bnt-lok", scripts = Latn}
+m["guz"] = {"Gusii", 33603, "bnt-lok", Latn}
 
-m["gva"] = {"Kaskihá", 3033534, "sai-mas", scripts = Latn}
+m["gva"] = {"Kaskihá", 3033534, "sai-mas", Latn}
 
-m["gvc"] = {"Guanano", 3566001, "sai-tuc", scripts = Latn}
+m["gvc"] = {"Guanano", 3566001, "sai-tuc", Latn}
 
-m["gve"] = {"Duwet", 5317647, "poz-ocw", scripts = Latn}
+m["gve"] = {"Duwet", 5317647, "poz-ocw", Latn}
 
-m["gvf"] = {"Golin", 3110291, "ngf", scripts = Latn}
+m["gvf"] = {"Golin", 3110291, "ngf", Latn}
 
-m["gvj"] = {"Guajá", 3915506, "tup", scripts = Latn}
+m["gvj"] = {"Guajá", 3915506, "tup", Latn}
 
-m["gvl"] = {"Gulay", 641737, "csu-sar", scripts = Latn}
+m["gvl"] = {"Gulay", 641737, "csu-sar", Latn}
 
-m["gvm"] = {"Gurmana", 3913363, "nic-shi", scripts = Latn}
+m["gvm"] = {"Gurmana", 3913363, "nic-shi", Latn}
 
-m["gvn"] = {"Kuku-Yalanji", 5621973, "aus-pam", scripts = Latn}
+m["gvn"] = {"Kuku-Yalanji", 5621973, "aus-pam", Latn}
 
-m["gvo"] = {"Gavião do Jiparaná", 5528335, "tup", scripts = Latn}
+m["gvo"] = {"Gavião do Jiparaná", 5528335, "tup", Latn}
 
-m["gvp"] = {"Pará Gavião", 3365443, "sai-nje", scripts = Latn}
+m["gvp"] = {"Pará Gavião", 3365443, "sai-nje", Latn}
 
-m["gvr"] = {"Western Gurung", 2392342, "sit-tam", scripts = {"Deva"}}
+m["gvr"] = {"Western Gurung", 2392342, "sit-tam", {"Deva"}}
 
-m["gvs"] = {"Gumawana", 5618041, "poz-ocw", scripts = Latn}
+m["gvs"] = {"Gumawana", 5618041, "poz-ocw", Latn}
 
-m["gvy"] = {"Guyani", 10511230, "aus-pam", scripts = Latn}
+m["gvy"] = {"Guyani", 10511230, "aus-pam", Latn}
 
-m["gwa"] = {"Mbato", 3914941, "alv-ptn", scripts = Latn}
+m["gwa"] = {"Mbato", 3914941, "alv-ptn", Latn}
 
-m["gwb"] = {"Gwa", 5623219, "nic-jrn", scripts = Latn}
+m["gwb"] = {"Gwa", 5623219, "nic-jrn", Latn}
 
-m["gwc"] = {"Kalami", 1675961, "inc-dar", scripts = {"Arab"}}
+m["gwc"] = {"Kalami", 1675961, "inc-dar", {"Arab"}}
 
 m["gwd"] = {"Gawwada", 3032135, "cus"}
 
-m["gwe"] = {"Gweno", 3358211, "bnt-chg", scripts = Latn}
+m["gwe"] = {"Gweno", 3358211, "bnt-chg", Latn}
 
 m["gwf"] = {"Gowro", 3812403, "inc-dar"}
 
-m["gwg"] = {"Moo", 6907057, "alv-bwj", scripts = Latn}
+m["gwg"] = {"Moo", 6907057, "alv-bwj", Latn}
 
-m["gwi"] = {"Gwich'in", 21057, "ath-nor", scripts = Latn}
+m["gwi"] = {"Gwich'in", 21057, "ath-nor", Latn}
 
-m["gwj"] = {"Gcwi", 12631978, "khi-kal", scripts = {"Latinx"}}
+m["gwj"] = {"Gcwi", 12631978, "khi-kal", {"Latinx"}}
 
-m["gwm"] = {"Awngthim", 4830109, "aus-pmn", scripts = Latn}
+m["gwm"] = {"Awngthim", 4830109, "aus-pmn", Latn}
 
-m["gwn"] = {"Gwandara", 56521, "cdc-wst", scripts = Latn}
+m["gwn"] = {"Gwandara", 56521, "cdc-wst", Latn}
 
-m["gwr"] = {"Gwere", 5623559, "bnt-nyg", scripts = Latn}
+m["gwr"] = {"Gwere", 5623559, "bnt-nyg", Latn}
 
 m["gwt"] = {"Gawar-Bati", 33894, "inc-dar"}
 
-m["gwu"] = {"Guwamu", 10511225, "aus-pam", scripts = Latn}
+m["gwu"] = {"Guwamu", 10511225, "aus-pam", Latn}
 
-m["gww"] = {"Kwini", 10551249, "aus-wor", scripts = Latn}
+m["gww"] = {"Kwini", 10551249, "aus-wor", Latn}
 
-m["gwx"] = {"Gua", 35422, "alv-gng", scripts = Latn}
+m["gwx"] = {"Gua", 35422, "alv-gng", Latn}
 
-m["gxx"] = {"Wè Southern", 19921582, "kro-wee", scripts = Latn}
+m["gxx"] = {"Wè Southern", 19921582, "kro-wee", Latn}
 
-m["gya"] = {"Northwest Gbaya", 36594, "alv-gbw", scripts = Latn}
+m["gya"] = {"Northwest Gbaya", 36594, "alv-gbw", Latn}
 
-m["gyb"] = {"Garus", 5524492, "ngf-mad", scripts = Latn}
+m["gyb"] = {"Garus", 5524492, "ngf-mad", Latn}
 
-m["gyd"] = {"Kayardild", 3913770, "aus-tnk", scripts = Latn}
+m["gyd"] = {"Kayardild", 3913770, "aus-tnk", Latn}
 
-m["gye"] = {"Gyem", 5624046, "nic-jer", scripts = Latn}
+m["gye"] = {"Gyem", 5624046, "nic-jer", Latn}
 
-m["gyf"] = {"Gungabula", 10510783, "aus-pam", scripts = Latn}
+m["gyf"] = {"Gungabula", 10510783, "aus-pam", Latn}
 
-m["gyg"] = {"Gbayi", 11137618, "nic-ngd", scripts = Latn}
+m["gyg"] = {"Gbayi", 11137618, "nic-ngd", Latn}
 
-m["gyi"] = {"Gyele", 35434, "bnt-mnj", scripts = Latn}
+m["gyi"] = {"Gyele", 35434, "bnt-mnj", Latn}
 
-m["gyl"] = {"Gayil", 5528771, "omv-aro", scripts = Latn}
+m["gyl"] = {"Gayil", 5528771, "omv-aro", Latn}
 
-m["gym"] = {"Ngäbere", 3915581, "cba", scripts = Latn}
+m["gym"] = {"Ngäbere", 3915581, "cba", Latn}
 
-m["gyn"] = {"Guyanese Creole English", 3305477, "crp", scripts = Latn, ancestors = {"en"}}
+m["gyn"] = {"Guyanese Creole English", 3305477, "crp", Latn, ancestors = {"en"}}
 
 m["gyo"] = {"Gyalsumdo", 53575940, "sit-kyk"}
 
-m["gyr"] = {"Guarayu", 3118779, "tup", scripts = Latn}
+m["gyr"] = {"Guarayu", 3118779, "tup", Latn}
 
-m["gyy"] = {"Gunya", 10511001, "aus-pam", scripts = Latn}
+m["gyy"] = {"Gunya", 10511001, "aus-pam", Latn}
 
-m["gza"] = {"Ganza", 5521556, "omv-mao", scripts = Latn}
+m["gza"] = {"Ganza", 5521556, "omv-mao", Latn}
 
-m["gzn"] = {"Gane", 3095108, "poz-hce", scripts = Latn}
+m["gzn"] = {"Gane", 3095108, "poz-hce", Latn}
 
 return m

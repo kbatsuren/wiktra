@@ -148,13 +148,13 @@ function Language:getScripts()
         local m_scripts = require("scripts")
         self._scriptObjects = {}
 
-        for _, sc in ipairs(self._rawData.scripts or {"None"}) do table.insert(self._scriptObjects, m_scripts.getByCode(sc)) end
+        for _, sc in ipairs(self:getScriptCodes()) do table.insert(self._scriptObjects, m_scripts.getByCode(sc)) end
     end
 
     return self._scriptObjects
 end
 
-function Language:getScriptCodes() return self._rawData.scripts or {"None"} end
+function Language:getScriptCodes() return self._rawData.scripts or self._rawData[4] or {"None"} end
 
 function Language:getFamily()
     if self._familyObject then return self._familyObject end
@@ -223,18 +223,16 @@ function Language:hasAncestor(otherlang)
     return iterateOverAncestorTree(self, compare) or false
 end
 
-function Language:getCategoryName()
+function Language:getCategoryName(nocap)
     local name = self:getCanonicalName()
 
     -- If the name already has "language" in it, don't add it.
-    if name:find("[Ll]anguage$") then
-        return name
-    else
-        return name .. " language"
-    end
+    if not name:find("[Ll]anguage$") then name = name .. " language" end
+    if not nocap then name = mw.getContentLanguage():ucfirst(name) end
+    return name
 end
 
-function Language:makeCategoryLink() return "[[:Category:" .. self:getCategoryName() .. "|" .. self:getCanonicalName() .. "]]" end
+function Language:makeCategoryLink() return "[[:Category:" .. self:getCategoryName() .. "|" .. self:getDisplayForm() .. "]]" end
 
 function Language:getStandardCharacters() return self._rawData.standardChars end
 
@@ -330,7 +328,7 @@ function Language:toJSON()
         end
     end
 
-    local ret = {ancestors = self._rawData.ancestors, canonicalName = self:getCanonicalName(), categoryName = self:getCategoryName(), code = self._code, entryNamePatterns = entryNamePatterns, entryNameRemoveDiacritics = entryNameRemoveDiacritics, family = self._rawData[3] or self._rawData.family, otherNames = self:getOtherNames(true), aliases = self:getAliases(), varieties = self:getVarieties(), scripts = self._rawData.scripts, type = self:getType(), wikimediaLanguages = self._rawData.wikimedia_codes, wikidataItem = self:getWikidataItem()}
+    local ret = {ancestors = self._rawData.ancestors, canonicalName = self:getCanonicalName(), categoryName = self:getCategoryName("nocap"), code = self._code, entryNamePatterns = entryNamePatterns, entryNameRemoveDiacritics = entryNameRemoveDiacritics, family = self._rawData[3] or self._rawData.family, otherNames = self:getOtherNames(true), aliases = self:getAliases(), varieties = self:getVarieties(), scripts = self._rawData.scripts or self._rawData[4], type = self:getType(), wikimediaLanguages = self._rawData.wikimedia_codes, wikidataItem = self:getWikidataItem()}
 
     return require("JSON").toJSON(ret)
 end

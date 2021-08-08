@@ -18,9 +18,13 @@ function EtymologyLanguage:getVarieties(flatten) return require("language-like")
 --	return self._rawData.names
 -- end
 
-function EtymologyLanguage:getCategoryName() return self:getCanonicalName() end
+function EtymologyLanguage:getCategoryName(nocap)
+    local name = self:getCanonicalName()
+    if not nocap then name = mw.getContentLanguage():ucfirst(name) end
+    return name
+end
 
-function EtymologyLanguage:makeCategoryLink() return "[[:Category:" .. self:getCategoryName() .. "|" .. self:getCanonicalName() .. "]]" end
+function EtymologyLanguage:makeCategoryLink() return "[[:Category:" .. self:getCategoryName() .. "|" .. self:getDisplayForm() .. "]]" end
 
 function EtymologyLanguage:getType() return "etymology language" end
 
@@ -51,7 +55,7 @@ function EtymologyLanguage:getWikipediaArticle() return self._rawData.wikipedia_
 function EtymologyLanguage:makeWikipediaLink() return "[[w:" .. self:getWikipediaArticle() .. "|" .. self:getCanonicalName() .. "]]" end
 
 function EtymologyLanguage:toJSON()
-    local ret = {canonicalName = self:getCanonicalName(), categoryName = self:getCategoryName(), code = self._code, otherNames = self:getOtherNames(true), aliases = self:getAliases(), varieties = self:getVarieties(), parent = self._rawData.parent, type = self:getType()}
+    local ret = {canonicalName = self:getCanonicalName(), categoryName = self:getCategoryName("nocap"), code = self._code, otherNames = self:getOtherNames(true), aliases = self:getAliases(), varieties = self:getVarieties(), parent = self._rawData.parent, type = self:getType()}
 
     return require("JSON").toJSON(ret)
 end
