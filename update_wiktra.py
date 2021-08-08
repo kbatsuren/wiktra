@@ -70,6 +70,11 @@ class WiktionaryModuleDownload(object):
                 r"\1\2\3",
                 text,
             )
+        elif page in ("translit-redirect"):
+            text = text.replace(
+                '''pcall(require, "Module:"''',
+                '''pcall(require, ""''',
+            )
         return text
 
     def preprocess_lua_file(self, path):
