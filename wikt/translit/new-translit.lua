@@ -1,87 +1,139 @@
--- This module will transliterate Newari language text.
-
+-- Transliteration for Newar
 local export = {}
+local gsub = mw.ustring.gsub
+local match = mw.ustring.match
 
-local consonants = {
-	['क']='k', ['ख']='kh', ['ग']='g', ['घ']='gh', ['ङ']='ṅ',
-	['च']='c', ['छ']='ch', ['ज']='j', ['झ']='jh', ['ञ']='ñ', 
-	['ट']='ṭ', ['ठ']='ṭh', ['ड']='ḍ', ['ढ']='ḍh', ['ण']='ṇ', 
-	['त']='t', ['थ']='th', ['द']='d', ['ध']='dh', ['न']='n', 
-	['प']='p', ['फ']='ph', ['ब']='b', ['भ']='bh', ['म']='m',
-	['य']='y', ['र']='r', ['ल']='l', ['व']='v', ['ळ']='ḷ',
-	['श']='ś', ['ष']='ṣ', ['स']='s', ['ह']='h',
+local conv = {
+    -- consonants
+    ["क"] = "k",
+    ["ख"] = "kh",
+    ["ग"] = "g",
+    ["घ"] = "gh",
+    ["ङ"] = "ṅ",
+    ["च"] = "c",
+    ["छ"] = "ch",
+    ["ज"] = "j",
+    ["झ"] = "jh",
+    ["ञ"] = "ñ",
+    ["ट"] = "ṭ",
+    ["ठ"] = "ṭh",
+    ["ड"] = "ḍ",
+    ["ढ"] = "ḍh",
+    ["ण"] = "ṇ",
+    ["त"] = "t",
+    ["थ"] = "th",
+    ["द"] = "d",
+    ["ध"] = "dh",
+    ["न"] = "n",
+    ["प"] = "p",
+    ["फ"] = "ph",
+    ["ब"] = "b",
+    ["भ"] = "bh",
+    ["म"] = "m",
+    ["य"] = "y",
+    ["र"] = "r",
+    ["ल"] = "l",
+    ["व"] = "w",
+    ["ळ"] = "ḷ",
+    ["श"] = "ś",
+    ["ष"] = "ṣ",
+    ["स"] = "s",
+    ["ह"] = "h",
+    ["ऴ"] = "ḻ",
+    ["ॽ"] = "ॽ",
+    -- vowel diacritics
+    ["ि"] = "i",
+    ["ु"] = "u",
+    ["े"] = "e",
+    ["ो"] = "o",
+    ["ा"] = "ā",
+    ["ी"] = "ī",
+    ["ू"] = "ū",
+    ["ृ"] = "r̥",
+    ["ॄ"] = "r̥̄",
+    ["ॢ"] = "l̥",
+    ["ॣ"] = "l̥̄",
+    ["ै"] = "ai",
+    ["ौ"] = "au",
+    ["ॉ"] = "ŏ",
+    ["ॅ"] = "ĕ",
+    -- vowel signs
+    ["अ"] = "a",
+    ["इ"] = "i",
+    ["उ"] = "u",
+    ["ए"] = "e",
+    ["ओ"] = "o",
+    ["आ"] = "ā",
+    ["ई"] = "ī",
+    ["ऊ"] = "ū",
+    ["ऋ"] = "r̥",
+    ["ॠ"] = "r̥̄",
+    ["ऌ"] = "l̥",
+    ["ॡ"] = "l̥̄",
+    ["ऐ"] = "ai",
+    ["औ"] = "au",
+    ["ऑ"] = "ŏ",
+    ["ॲ"] = "ĕ",
+    ["ऍ"] = "ĕ",
+    -- chandrabindu
+    ["ँ"] = "̃",
+    -- anusvara
+    ["ं"] = "ṃ",
+    -- visarga
+    ["ः"] = "ḥ",
+    -- virama
+    ["्"] = "",
+    -- om
+    ["ॐ"] = "oḥm",
+    -- avagraha
+    ["ऽ"] = "’",
+    -- numerals
+    ["०"] = "0",
+    ["१"] = "1",
+    ["२"] = "2",
+    ["३"] = "3",
+    ["४"] = "4",
+    ["५"] = "5",
+    ["६"] = "6",
+    ["७"] = "7",
+    ["८"] = "8",
+    ["९"] = "9",
+    -- punctuation
+    ["।"] = ".", -- danda
+    ["॥"] = ".", -- double danda
+    ["+"] = "", -- compound separator
+
+    -- abbreviation sign
+    ["॰"] = "."
 }
 
-local diacritics = {
-	['ा']='ā', ['ि']='i', ['ी']='ī', ['ु']='u', ['ू']='ū', ['ृ']='ṛ', ['ॄ']='ṝ', 
-	['ॢ']='ḷ', ['ॣ']='ḹ', ['े']='e', ['ै']='ai', ['ो']='o', ['ौ']='au',  ['्']='',
-}
+local nasal_assim = {["क"] = "ङ", ["ख"] = "ङ", ["ग"] = "ङ", ["घ"] = "ङ", ["च"] = "ञ", ["छ"] = "ञ", ["ज"] = "ञ", ["झ"] = "ञ", ["ट"] = "ण", ["ठ"] = "ण", ["ड"] = "ण", ["ढ"] = "ण", ["प"] = "म", ["फ"] = "म", ["ब"] = "म", ["भ"] = "म", ["म"] = "म", ["त"] = "न", ["थ"] = "न", ["द"] = "न", ["ध"] = "न", ["न"] = "ँ", ["ष"] = "ँ", ["श"] = "ँ", ["स"] = "ँ", ["य"] = "ँ", ["र"] = "ँ", ["ल"] = "ँ", ["व"] = "ँ", ["ह"] = "ँ"}
+local perm_cl = {["ज्ञ"] = true}
 
-local tt = {
-	-- vowels
-	['अ']='a', ['आ']='ā', ['इ']='i', ['ई']='ī', ['उ']='u', ['ऊ']='ū', ['ऋ']='ṛ', ['ॠ']='ṝ',
-	['ऌ']='ḷ', ['ॡ']='ḹ', ['ए']='e', ['ऐ']='ai', ['ओ']='o', ['औ']='au', 
-	-- chandrabindu    
-	['ँ']='̃',
-	-- anusvara    
-	['ं']='̃',
-	-- visarga    
-	['ः']='ː',
-	-- avagraha
-	['ऽ']='’',
-	--numerals
-	['०']='0', ['१']='1', ['२']='2', ['३']='3', ['४']='4', ['५']='5', ['६']='6', ['७']='7', ['८']='8', ['९']='9',
-	--punctuation        
-    ['॥']='.', --double danda
-	['।']='.', --danda
-    --Om
-    ['ॐ']='oṃ',
-}
+local all_cons, special_cons = "कखगघङचछजझञटठडढणतथदधनपफबभमयरलवसशषह", "कखगघचछजझटठडढणतथदधनपफबभमयरलवशषसह"
+local vowel, vowel_sign = "aिुृेोाीूैौॉॅॆॊॄॢॣ", "अइउएओआईऊऋॠॡऌऐऔऑऍ"
 
-function export.tr(text, lang, sc)
-	text = mw.ustring.gsub(
-		text,
-		'([कखगघङचछजझञटठडढणतथदधनपफबभमयरलळवशषसह])'..
-		'([ािीुूृॄॢॣेैोौ्]?)',
-		function(c, d)
-			if d == "" then        
-				return consonants[c] .. 'a'
-			else
-				return consonants[c] .. diacritics[d]
-			end
-		end)
-
-	text = mw.ustring.gsub(text, '.', tt)
-	
-	return mw.ustring.toNFC(text)
+local function rev_string(text)
+    local result, length = {}, mw.ustring.len(text)
+    for i = length, 1, -1 do table.insert(result, mw.ustring.sub(text, i, i)) end
+    return table.concat(result)
 end
- 
+function export.tr(text, lang, sc)
+    text = gsub(text, "([" .. all_cons .. "]़?)([" .. vowel .. "्]?)", function(c, d) return c .. (d == "" and "a" or d) end)
+    for word in mw.ustring.gmatch(text, "[ऀ-ॿa]+") do
+        local orig_word = word
+        word = rev_string(word)
+        word = gsub(word, "^a(़?)([" .. all_cons .. "])(.)(.?)", function(opt, first, second, third) return (((match(first, "[" .. special_cons .. "]") and match(second, "ं") or match(first, "[" .. special_cons .. "]") and match(second, "्") and not perm_cl[first .. second .. third]) or match(first .. second, "य[aिुृेोाीूैौॉॅॆॊआईउऊइएऐओऔ]") or match(first .. second, "ह[अaिुृेोाीूैौॉॅॆॊआईउऊइएऐओऔ]")) and "a" or "") .. opt .. first .. second .. third end)
+
+        word = gsub(word, "(.?)ं(.)", function(succ, prev) return succ .. (succ .. prev == "" and "्म" or (succ == "" and match(prev, "[" .. vowel .. "]") and "̃" or nasal_assim[succ] or "ṃ")) .. prev end)
+
+        local escaped_orig_word = gsub(orig_word, "%+", "")
+        text = gsub(text, orig_word, rev_string(word))
+        text = gsub(text, "य्", "y")
+    end
+    text = gsub(text, ".़?", conv)
+    text = gsub(text, "a([iu])̃", "a͠%1")
+    text = gsub(text, "[<>]", "")
+    return mw.ustring.toNFC(text)
+end
 return export
-
--- Text	Expected	Actual	Differs at
--- Passed	सर्गः	sargaː	sargaː	
--- Passed	सँक्वः	sãkvaː	sãkvaː	
--- Passed	प्याखं	pyākhã	pyākhã	
--- Passed	नवःघाँय्	navaːghā̃y	navaːghā̃y	
--- Passed	छेँ	chẽ	chẽ	
--- -- Unit tests for [[Module:new-translit]]. Refresh page to run tests.
--- local tests = require('Module:UnitTests')
--- local new_translit = require('Module:new-translit')
-
--- --TO DO
--- function tests:do_test_translit(sans, roman, xlit)
--- 	return self:equals('<span class="Deva" lang="new">[[' .. sans .. '#Newari|' .. sans .. ']]</span>', new_translit.tr(sans, 'new', 'Deva'), roman)
--- end
-
--- function tests:test_translit_newari()
--- 	local examples = {
--- 		{ 'सर्गः', 'sargaː' },
--- 		{ 'सँक्वः', 'sãkvaː' },
--- 		{ 'प्याखं', 'pyākhã' },
--- 		{ 'नवःघाँय्', 'navaːghā̃y' },
--- 		{ 'छेँ', 'chẽ' },
--- 	}
--- 	return self:iterate(examples, "do_test_translit")
--- end
- 
--- return tests

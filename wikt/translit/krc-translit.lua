@@ -1,30 +1,60 @@
--- This module will transliterate Karachay-Balkar language text per WT:KRC TR.
-
 local export = {}
-local tab =  
-             {["А"] ="A" ,    ["Б"] ="B",   ["В"] ="V",   ["Г"] ="G",   ["Д"] ="D",   ["Е"] ="E",                                           ["Ё"] ="Yo", ["Ж"] ="C" ,    ["З"] ="Z",   ["И"] ="I",   ["Й"] ="Y",
-	
-     ["К"]="K",  ["Л"]="L", ["М"]="M", ["Н"]="N",  ["Ҥ"]="Ñ", ["О"]="O",  ["Ө"]="Ö", ["П"]="P", ["Р"]="R", ["С"]="S",  ["Т"]="T",
-["У"]="U",  ["Ү"]="Ü", ["Ф"]="F", ["Х"]="KH", ["Һ"]="H", ["Ц"]="Ts",["Ч"]="Ć", ["Ш"]="Ś",     ["Щ"]="Śç", ["Ъ"]="ʺ", ["Ы"]="İ",
-["Ь"]="ʹ", ["Э"]="E", ["Ю"]="Yu", ["Я"]="Ya",
-['а']='a', ['б']='b', ['в']='v', ['г']='g',  ['д']='d', ['е']='e',  ['ё']='yo', ['ж']='c', ['з']='z', ['и']='i', ['й']='y',
-['к']='k', ['л']='l', ['м']='m', ['н']='n',  ['о']='o', ['ө']='ö',  ['п']='p',  ['р']='r', ['с']='s', ['т']='t',
-['у']='u', ['ү']='ü', ['ф']='f', ['х']='kh', ['һ']='h', ['ц']='ts', ['ч']='ć',  ['ш']='ś', ['щ']='śç',['ъ']='ʺ', ['ы']='ı',
-['ь']='ʹ', ['э']='e', ['ю']='yu', ['я']='ya',
-}
-local mapping = { ['дж']= 'ǵ' , ['Дж']= 'Ĝ', ['ң']='ñ' ,['Ң']='Ñ' ,
-                  ['къ']='q',   ['Къ']='Q' , ['нъ']='ñ',['Нъ']='Ñ'
 
-}
+local digraphs = {["гь"] = "h", ["Гь"] = "H", ["гъ"] = "ğ", ["Гъ"] = "Ğ", ["уь"] = "ü", ["Уь"] = "Ü", ["юь"] = "yü", ["Юь"] = "Yü", ["дж"] = "c", ["Дж"] = "C", ["къ"] = "q", ["Къ"] = "Q", ["нг"] = "ñ", ["Нг"] = "Ñ", ["оь"] = "ö", ["Оь"] = "Ö", ["ёь"] = "yö", ["Ёь"] = "Yö", ["нъ"] = "ñ", ["Нъ"] = "Ñ"}
+
+local single_letters = {["а"] = "a", ["А"] = "A", ["б"] = "b", ["Б"] = "B", ["в"] = "v", ["В"] = "V", ["г"] = "g", ["Г"] = "G", ["д"] = "d", ["Д"] = "D", ["е"] = "e", ["Е"] = "E", ["ё"] = "yo", ["Ё"] = "Yo", ["ж"] = "j", ["Ж"] = "J", ["з"] = "z", ["З"] = "Z", ["и"] = "i", ["И"] = "İ", ["й"] = "y", ["Й"] = "Y", ["к"] = "k", ["К"] = "K", ["л"] = "l", ["Л"] = "L", ["м"] = "m", ["М"] = "M", ["н"] = "n", ["Н"] = "N", ["о"] = "o", ["О"] = "O", ["п"] = "p", ["П"] = "P", ["р"] = "r", ["Р"] = "R", ["с"] = "s", ["С"] = "S", ["т"] = "t", ["Т"] = "T", ["у"] = "u", ["У"] = "U", ["ф"] = "f", ["Ф"] = "F", ["х"] = "x", ["Х"] = "X", ["ц"] = "ts", ["Ц"] = "Ts", ["ч"] = "ç", ["Ч"] = "Č", ["ш"] = "ş", ["Ш"] = "Ş", ["щ"] = "şç", ["Щ"] = "Şç", ["ъ"] = "", ["Ъ"] = "", ["ы"] = "ı", ["Ы"] = "I", ["ь"] = "ʹ", ["Ь"] = "ʹ", ["э"] = "e", ["Э"] = "E", ["ю"] = "yu", ["Ю"] = "Yu", ["я"] = "ya", ["Я"] = "Ya"}
+
 function export.tr(text, lang, sc)
-	-- е after a vowel or at the beginning of a text becomes ye
-	text = mw.ustring.gsub(text, "([АОӨУҮЫЕЯЁЮИЕЪЬаоөуүыэяёюиеъь%A][\204\129\204\128]?)е","%1yö")
-	text = mw.ustring.gsub(text, "^Е","Yö")
-	text = mw.ustring.gsub(text, "^е","yö")
-	text = mw.ustring.gsub(text, "([^Ѐ-ӿ])Е","%1yö")
-	text = mw.ustring.gsub(text, "([^Ѐ-ӿ])е","%1yö")
- 
-	return (mw.ustring.gsub(text,'.',tab))
+    for digraph, replacement in pairs(digraphs) do text = mw.ustring.gsub(text, digraph, replacement) end
+
+    text = mw.ustring.gsub(text, "()([ЕеЮюЁё])", function(pos, iotated)
+        -- modifier letter apostrophe or right single quotation mark
+        local preceding = mw.ustring.sub(text, math.max(1, pos - 2), math.max(0, pos - 1))
+        local capital = iotated == "Е" or iotated == "Ю"
+        local lower = mw.ustring.lower(iotated)
+
+        local translit
+        if preceding == "" or mw.ustring.match(preceding, "[АОӨӘУЫЕЯЁЮИЕаоөәуыэяёюиеъь%A][́̀]?$") then
+            if capital then
+                if lower == "ю" then
+                    return "Yu"
+                elseif lower == "ё" then
+                    return "Yo"
+                else
+                    return "Ye"
+                end
+            else
+                if lower == "ю" then
+                    return "yu"
+                elseif lower == "ё" then
+                    return "yo"
+                else
+                    return "ye"
+                end
+            end
+        else
+            if capital then
+                if lower == "ю" then
+                    return "Ü"
+                elseif lower == "ё" then
+                    return "Ö"
+                else
+                    return "E"
+                end
+            else
+                if lower == "ю" then
+                    return "ü"
+                elseif lower == "ё" then
+                    return "ö"
+                else
+                    return "e"
+                end
+            end
+        end
+        return translit
+    end)
+
+    return (mw.ustring.gsub(text, ".", single_letters))
 end
- 
+
 return export

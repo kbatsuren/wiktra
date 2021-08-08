@@ -1,7 +1,5 @@
 local ustring = {}
 
-local unpack = table.unpack or unpack
-
 -- Copy these, just in case
 local S = {
 	byte = string.byte,
@@ -404,7 +402,7 @@ end
 -- @return string
 function ustring.upper( s )
 	checkString( 'upper', s )
-	local map = require 'wikt.ustring.upper';
+	local map = require 'ustring/upper';
 	local ret = S.gsub( s, '([^\128-\191][\128-\191]*)', map )
 	return ret
 end
@@ -416,7 +414,7 @@ end
 -- @return string
 function ustring.lower( s )
 	checkString( 'lower', s )
-	local map = require 'wikt.ustring.lower';
+	local map = require 'ustring/lower';
 	local ret = S.gsub( s, '([^\128-\191][\128-\191]*)', map )
 	return ret
 end
@@ -443,7 +441,7 @@ setmetatable( charset_cache, { __weak = 'kv' } )
 -- @return int ending index of the match
 -- @return string|int* captures
 local function find( s, cps, rawpat, pattern, init, noAnchor )
-	local charsets = require 'wikt.ustring.charsets'
+	local charsets = require 'ustring/charsets'
 	local anchor = false
 	local ncapt, captures
 	local captparen = {}
@@ -1004,15 +1002,20 @@ function ustring.gsub( s, pattern, repl, n )
 			ret[#ret + 1] = sub( s, cps, init, m[1] - 1 )
 		end
 		local mm = sub( s, cps, m[1], m[2] )
-		local val
+
+		-- This simplifies the code for the function and table cases (tp == 1 and tp == 2) when there are
+		-- no captures in the pattern. As documented it would be incorrect for the string case by making
+		-- %1 act like %0 instead of raising an "invalid capture index" error, but Lua in fact does
+		-- exactly that for string.gsub.
+		if #m < 3 then
+			m[3] = mm
+		end
+
+		local val, valType
 		if tp == 1 then
-			if m[3] then
-				val = repl( unpack( m, 3 ) )
-			else
-				val = repl( mm )
-			end
+			val = repl( unpack( m, 3 ) )
 		elseif tp == 2 then
-			val = repl[m[3] or mm]
+			val = repl[m[3]]
 		elseif tp == 3 then
 			if ct == 0 and #m < 11 then
 				local ss = S.gsub( repl, '%%[%%0-' .. ( #m - 2 ) .. ']', 'x' )
@@ -1036,6 +1039,10 @@ function ustring.gsub( s, pattern, repl, n )
 			}
 			val = S.gsub( repl, '%%[%%0-9]', t )
 		end
+		valType = type( val )
+		if valType ~= 'nil' and valType ~= 'string' and valType ~= 'number' then
+			error( 'invalid replacement value (a ' .. valType .. ')', 2 )
+		end
 		ret[#ret + 1] = val or mm
 		init = m[2] + 1
 		ct = ct + 1
@@ -1052,7 +1059,7 @@ end
 
 local function internalDecompose( cps, decomp )
 	local cp = {}
-	local normal = require 'wikt.ustring.normalization-data'
+	local normal = require 'ustring/normalization-data'
 
 	-- Decompose into cp, using the lookup table and logic for hangul
 	for i = 1, cps.len do
@@ -1088,7 +1095,7 @@ local function internalDecompose( cps, decomp )
 end
 
 local function internalCompose( cp, _, l )
-	local normal = require 'wikt.ustring.normalization-data'
+	local normal = require 'ustring/normalization-data'
 
 	-- Since NFD->NFC can never expand a character sequence, we can do this
 	-- in-place.
@@ -1149,7 +1156,7 @@ function ustring.toNFC( s )
 	if cps == nil then
 		return nil
 	end
-	local normal = require 'wikt.ustring.normalization-data'
+	local normal = require 'ustring/normalization-data'
 
 	-- First, scan through to see if the string is definitely already NFC
 	local ok = true
@@ -1188,7 +1195,7 @@ function ustring.toNFD( s )
 		return nil
 	end
 
-	local normal = require 'wikt.ustring.normalization-data'
+	local normal = require 'ustring/normalization-data'
 	return internalChar( internalDecompose( cps, normal.decomp ) )
 end
 
@@ -1211,7 +1218,7 @@ function ustring.toNFKC( s )
 	if cps == nil then
 		return nil
 	end
-	local normal = require 'wikt.ustring.normalization-data'
+	local normal = require 'ustring/normalization-data'
 
 	-- Next, expand to NFKD then recompose
 	return internalChar( internalCompose( internalDecompose( cps, normal.decompK ) ) )
@@ -1237,7 +1244,7 @@ function ustring.toNFKD( s )
 		return nil
 	end
 
-	local normal = require 'wikt.ustring.normalization-data'
+	local normal = require 'ustring/normalization-data'
 	return internalChar( internalDecompose( cps, normal.decompK ) )
 end
 

@@ -1,5 +1,3 @@
--- This module will transliterate Kalmyk language text per WT:XAL TR.
-
 local export = {}
 
 local trtab = {
@@ -11,7 +9,7 @@ local trtab = {
 	[0x04BA] = "H" , [0x04BB] = "h" , -- SHHA
 	[0x0414] = "D" , [0x0434] = "d" , -- DE
 	                                  -- IE is handled specially
-	[0x0401] = "Jo", [0x0451] = "jo", -- IO
+	[0x0401] = "Yo", [0x0451] = "yo", -- IO
 	[0x0416] = "Ž" , [0x0436] = "ž" , -- ZHE
 	[0x0496] = "J" , [0x0497] = "j" , -- ZHE WITH DESCENDER
 	[0x0417] = "Z" , [0x0437] = "z" , -- ZE
@@ -72,6 +70,16 @@ local gives_e = {
 	[0x0429] = true, [0x0449] = true  -- SHCHA
 }
 
+local tt_Mong = {
+	["ᡃ"] = "ː",		["ᠠ"] = "a",	["ᡄ"] = "e",	["ᡅ"] = "i",	["ᡆ"] = "o",
+	["ᡈ"] = "ö",	["ᡇ"] = "u",	["ᡉ"] = "ü",	["ᠨ"] = "n",	["ᡊ"] = "ng",
+	["ᡋ"] = "b",	["ᡌ"] = "p",	["ᡍ"] = "x",	["ᡎ"] = "g",	["ᡏ"] = "m",	["ᠯ"] = "l",	["ᠰ"] = "s",	["ᠱ"] = "š",
+	["ᡐ"] = "t",	["ᡑ"] = "d",	["ᡒ"] = "ċ",	["ᡓ"] = "j",	["ᡔ"] = "ć",
+	["ᡕ"] = "y",	["ᠷ"] = "r",	["ᡖ"] = "w",	["ᠺ"] = "k",	["ᡗ"] = "ģ",	["ᡙ"] = "h",
+	["ᡚ"] = "ĵ",	["ᡛ"] = "ń",	["ᡜ"] = "ź",	["ᢘ"] = "t",	["ᢙ"] = "ž",
+	["᠎"] = "-",	["︖"] = "?",	["︕"] = "!",	["᠂"] = ",",	["᠃"] = "."
+}
+
 function export.tr(text, lang, sc)
 	local result = {}
 	local last = false
@@ -95,34 +103,3 @@ function export.tr(text, lang, sc)
 end
 
 return export
-
-
--- Text	Expected	Actual
--- Passed	Хальмг Таңһч	Xal'mg Tañhç	Xal'mg Tañhç
--- Passed	мөрн	mörn	mörn
--- Passed	Әрәсә	Äräsä	Äräsä
--- local tests = require('Module:UnitTests')
--- local tr = require('Module:xal-translit').tr
-
--- local tag = mw.text.tag
--- local function tag_Kalmyk(text)
--- 	return tag("span", { class = "Cyrl", lang = "xal" }, text)
--- end
-
--- function tests:check_translit(example, expected)
--- 	self:equals(
--- 		tag_Kalmyk(example),
--- 		tr(example),
--- 		expected)
--- end
-
--- function tests:test_translit()
--- 	local examples = {
--- 		{ "Хальмг Таңһч", "Xal'mg Tañhç" },
--- 		{ "мөрн", "mörn" },
--- 		{ "Әрәсә", "Äräsä" },
--- 	}
--- 	self:iterate(examples, "check_translit")
--- end
-
--- return tests
