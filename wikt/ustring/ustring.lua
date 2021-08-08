@@ -1,5 +1,7 @@
 local ustring = {}
 
+local unpack = table.unpack or unpack
+
 -- Copy these, just in case
 local S = {
 	byte = string.byte,
