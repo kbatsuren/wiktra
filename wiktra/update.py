@@ -5,31 +5,37 @@
 
 import argparse
 import logging
-import os
 import subprocess
 import re
-from pathlib import Path
+from wiktra.Wiktra import *
 
 import pywikiapi
 
-os.chdir(os.path.dirname(__file__))
-
-import lupa
-from lupa import LuaRuntime
-
 logging.basicConfig(level=logging.INFO)
-base_folder = Path(Path(__file__).parent)
 
 
 class WiktionaryModuleDownload(object):
 
     re_require = re.compile(r"""(require|loadData)[\( ]['"][Mm]odule:(.*?)['"]""")
     exclude_modules = [
-        "ja", "ja/k2r-old", "ko-translit", "Shah-translit", "th-translit",
-        "th-hom", "th-pron", "tts-pron", "tts-translit", "zh-sortkey",
-        "transliteration module testcases", "cjs-translit/testcases", "labels",
-        "labels/data", "labels/data/functions", "labels/data/subvarieties",
-        "qualifier", "omk-translit/testcases"
+        "ja",
+        "ja/k2r-old",
+        "ko-translit",
+        "Shah-translit",
+        "th-translit",
+        "th-hom",
+        "th-pron",
+        "tts-pron",
+        "tts-translit",
+        "zh-sortkey",
+        "transliteration module testcases",
+        "cjs-translit/testcases",
+        "labels",
+        "labels/data",
+        "labels/data/functions",
+        "labels/data/subvarieties",
+        "qualifier",
+        "omk-translit/testcases",
     ]
 
     def __init__(self, output_folder, force=False, deps=True):
@@ -77,8 +83,9 @@ class WiktionaryModuleDownload(object):
                 r"\1\2\3",
                 text,
             )
-            text = text.replace('''mname:gsub("data", "extradata")''',
-                                '''mname:gsub("data", "data")''')
+            text = text.replace(
+                """mname:gsub("data", "extradata")""", """mname:gsub("data", "data")"""
+            )
         elif page in ("translit-redirect"):
             text = text.replace(
                 '''pcall(require, "Module:"''',
@@ -173,15 +180,14 @@ class WiktionaryModuleDownload(object):
 
 
 def cli():
-
     parser = argparse.ArgumentParser(
-        prog="download_wiktionary_modules",
+        prog="wiktrapy_update",
         description="""Downloads specified Lua modules from Wiktionary""",
     )
     parser.add_argument(
         "-o",
         "--output",
-        default=Path(base_folder, "wikt", "translit"),
+        default=Path(lua_folder, "wikt", "translit"),
         required=False,
         metavar="folder",
         dest="output",
@@ -210,15 +216,19 @@ def cli():
         dest="no_deps",
         help="""Ignore dependencies""",
     )
+    return parser
 
+
+def main(*args, **kwargs):
+    parser = cli(*args, **kwargs)
     args = parser.parse_args()
-    main(output=args.output, page=args.page, force=args.force, deps=not args.no_deps)
-
-
-def main(output, page=None, force=False, deps=True):
-    wkd = WiktionaryModuleDownload(output, force, deps)
-    if page:
-        wkd.write_module(page)
+    wkd = WiktionaryModuleDownload(
+        args.output,
+        force=args.force,
+        deps=not args.no_deps
+    )
+    if args.page:
+        wkd.write_module(args.page)
     else:
         logging.info("# Writing transliteration modules")
         wkd.write_modules_category("Transliteration_modules")
@@ -231,4 +241,4 @@ def main(output, page=None, force=False, deps=True):
 
 
 if __name__ == "__main__":
-    cli()
+    main()

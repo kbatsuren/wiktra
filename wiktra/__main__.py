@@ -48,14 +48,14 @@ def cli():
 
 def main(*args, **kwargs):
     parser = cli(*args, **kwargs)
-    opts = parser.parse_args()
-    opts.verbose = 40 - (10 * opts.verbose) if opts.verbose > 0 else 0
+    args = parser.parse_args()
+    args.verbose = 40 - (10 * args.verbose) if args.verbose > 0 else 0
     logging.basicConfig(
-        level=opts.verbose,
+        level=args.verbose,
         format="%(asctime)s %(levelname)s: %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
     )
-    opts = vars(opts)
+    opts = vars(args)
     logging.debug("Running with options:\n%s" % repr(opts))
     del opts["verbose"]
     if opts["in_file"]:
