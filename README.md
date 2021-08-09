@@ -58,6 +58,10 @@ If you get `LuaError: module 'wikt.mw' not found`, try:
 
 ### Command-line
 
+```sh
+wiktrapy -h
+```
+
 ```
 usage: wiktrapy [-h] [-t TEXT] [-i FILE] [-l LANG] [-s SCRIPT] [-v] [-V]
 
@@ -307,6 +311,9 @@ tr('हिंदी लिपि', 'hin')
 
 ![alt text](http://ukc.disi.unitn.it/wp-content/uploads/2019/08/comparison_wiktra.jpg)
 
+## Updating
+
+This tool an update its stored Wiktionary modules. See `wiktrapy_update -h` for details.
 
 ## License
 
