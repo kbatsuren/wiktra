@@ -307,10 +307,6 @@ tr('हिंदी लिपि', 'hin')
 | 189 | Yakut                        | sah          | sah             | Cyrillic                 |                                                               |
 | 190 | Modern Greek (new)           | ell          | el              | Greek                    | [tests](https://en.wiktionary.org/wiki/Module:el-translit/testcases)|
 
-#### Example comparison with the state-of-the-art universal transliteration tools
-
-![alt text](http://ukc.disi.unitn.it/wp-content/uploads/2019/08/comparison_wiktra.jpg)
-
 ## Updating
 
 This tool an update its stored Wiktionary modules. See `wiktrapy_update -h` for details.
