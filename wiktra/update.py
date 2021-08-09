@@ -36,6 +36,8 @@ class WiktionaryModuleDownload(object):
         "labels/data/subvarieties",
         "qualifier",
         "omk-translit/testcases",
+        "ky-translit/sandbox/testcases",
+        "ky-translit/testcases",
     ]
 
     def __init__(self, output_folder, force=False, deps=True):
@@ -82,9 +84,6 @@ class WiktionaryModuleDownload(object):
                 r"""(\[['"])Module:(.*?)(['"]\])""",
                 r"\1\2\3",
                 text,
-            )
-            text = text.replace(
-                """mname:gsub("data", "extradata")""", """mname:gsub("data", "data")"""
             )
         elif page in ("translit-redirect"):
             text = text.replace(
@@ -222,11 +221,7 @@ def cli():
 def main(*args, **kwargs):
     parser = cli(*args, **kwargs)
     args = parser.parse_args()
-    wkd = WiktionaryModuleDownload(
-        args.output,
-        force=args.force,
-        deps=not args.no_deps
-    )
+    wkd = WiktionaryModuleDownload(args.output, force=args.force, deps=not args.no_deps)
     if args.page:
         wkd.write_module(args.page)
     else:
@@ -234,8 +229,15 @@ def main(*args, **kwargs):
         wkd.write_modules_category("Transliteration_modules")
         logging.info("# Writing additional modules")
         for mod in [
-            "languages/byTranslitModule",
-            "scripts/code_to_canonical_name",
+                "languages/byTranslitModule",
+                "languages/extradata2",
+                "languages/extradata3",
+                "languages/extradatax",
+                "scripts/code_to_canonical_name",
+        ] + [
+                f"languages/extradata3/{chr(l)}"
+                for l in range(ord("a"),
+                               ord("z") + 1)
         ]:
             wkd.write_module(mod)
 
