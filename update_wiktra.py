@@ -24,6 +24,13 @@ base_folder = Path(Path(__file__).parent)
 class WiktionaryModuleDownload(object):
 
     re_require = re.compile(r"""(require|loadData)[\( ]['"][Mm]odule:(.*?)['"]""")
+    exclude_modules = [
+        "ja", "ja/k2r-old", "ko-translit", "Shah-translit", "th-translit",
+        "th-hom", "th-pron", "tts-pron", "tts-translit", "zh-sortkey",
+        "transliteration module testcases", "cjs-translit/testcases", "labels",
+        "labels/data", "labels/data/functions", "labels/data/subvarieties",
+        "qualifier", "omk-translit/testcases"
+    ]
 
     def __init__(self, output_folder, force=False, deps=True):
         self.outf = output_folder
@@ -66,14 +73,26 @@ class WiktionaryModuleDownload(object):
                 if self.deps:
                     self.write_module(m)
             text = re.sub(
-                r"""(\[['"])Module:languages/(.*?)(['"]\])""",
+                r"""(\[['"])Module:(.*?)(['"]\])""",
                 r"\1\2\3",
                 text,
             )
+            text = text.replace('''mname:gsub("data", "extradata")''',
+                                '''mname:gsub("data", "data")''')
         elif page in ("translit-redirect"):
             text = text.replace(
                 '''pcall(require, "Module:"''',
                 '''pcall(require, ""''',
+            )
+        elif page in ("xal-translit"):
+            text = text.replace(
+                """\ʺ""",
+                """ʺ""",
+            )
+        elif page in ("UnitTests"):
+            text = text.replace(
+                '''require"Module:Unicode data"''',
+                """require("Unicode data")""",
             )
         return text
 
@@ -96,8 +115,8 @@ class WiktionaryModuleDownload(object):
         text = ""
         inpath = Path(page)
         outfolder = Path(self.outf, inpath.parent)
-        outpath = Path(outfolder, f"{inpath.name}.lua".replace(" ", "_"))
-        if self.check_write(outpath):
+        outpath = Path(outfolder, f"{inpath.name}.lua")
+        if self.check_write(outpath) and page not in self.exclude_modules:
             info = f"Page: '{page}'"
             if parent:
                 info = f"Page: '{parent}' > " + info
@@ -119,7 +138,7 @@ class WiktionaryModuleDownload(object):
                         r"""(require|loadData)([\( ])(['"])([Mm]odule:)("""
                         + mod
                         + r""")(['"])""",
-                        r"\1\2\3" + r"\5".replace(" ", "_") + r"\6",
+                        r"\1\2\3" + r"\5" + r"\6",
                         text,
                     )
                 text = text.replace("""loadData("Module:""", '''loadData("''')
@@ -209,6 +228,7 @@ def main(output, page=None, force=False, deps=True):
             "scripts/code_to_canonical_name",
         ]:
             wkd.write_module(mod)
+
 
 if __name__ == "__main__":
     cli()

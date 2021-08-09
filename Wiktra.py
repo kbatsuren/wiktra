@@ -7,14 +7,14 @@ from lupa import LuaRuntime
 
 lua_folder = str(Path(Path(__file__).parent))
 
-os.environ["LUA_PATH"] = ";".join(
-    [
-        f"{lua_folder}/?.lua",
-        f"{lua_folder}/wikt/?.lua",
-        f"{lua_folder}/wikt/translit/?.lua",
-        f"{os.environ.get('LUA_PATH','')}",
-    ]
-)
+os.environ["LUA_PATH"] = ";".join([
+    f"{lua_folder}/?.lua",
+    f"{lua_folder}/wikt/?.lua",
+    f"{lua_folder}/wikt/translit/?.lua",
+    f"{lua_folder}/wikt/legacy/?.lua",
+    f"{lua_folder}/wikt/legacy/translit/?.lua",
+    f"{os.environ.get('LUA_PATH','')}",
+])
 
 
 lang_map = {
@@ -244,6 +244,19 @@ class Transliterator(object):
             )
         return res
 
+    def test_load(self):
+        reqs = []
+        mods = [str(Path(p.parent, p.stem)) for p in Path("wikt","translit").glob("**/*.lua")]
+        for mod in mods:
+            reqs.append(f"""require("{mod}")""")
+        sreqs = "\n".join(reqs)
+        l = f"""
+        {sreqs}
+        res = "OK"
+        """
+        return self.e(l)
+
+
 
 def translite(text, lang):
     tr = Transliterator()
@@ -252,6 +265,7 @@ def translite(text, lang):
 
 if __name__ == "__main__":
     tr = Transliterator()
+    #print(tr.test_load())
     print(tr.tr_legacy("Добро пожаловать в Википедию,", "rus"))
     print(
         tr.tr(

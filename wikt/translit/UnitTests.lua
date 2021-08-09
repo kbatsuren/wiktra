@@ -1,7 +1,7 @@
 local UnitTester = {}
 
 local ustring = mw.ustring
-local is_combining = require"Module:Unicode data".is_combining
+local is_combining = require("Unicode data").is_combining
 local UTF8_char = "[\1-\127\194-\244][\128-\191]*"
 
 local sorted_pairs = require("table").sortedPairs

@@ -3,7 +3,7 @@
 --
 -- Copyright (c) 2020-2021 Tatu Ylonen.  See file LICENSE and https://ylonen.org
 
-local ustring = require("ustring:ustring")
+local ustring = require("ustring.ustring")
 
 -- The fallback data is based on
 -- https://upload.wikimedia.org/wikipedia/commons/2/26/MediaWiki_fallback_chains.svg

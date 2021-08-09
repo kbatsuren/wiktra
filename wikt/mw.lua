@@ -4,13 +4,13 @@
 -- Copyright (c) 2020-2021 Tatu Ylonen.  See file LICENSE and https://ylonen.org
 
 local mw_autoload = {
-   hash = "mw_hash",
-   html = "mw_html",
-   language = "mw_language",
-   site = "mw_site",
-   text = "mw_text",
-   title = "mw_title",
-   uri = "mw_uri",
+   hash = "mw-hash",
+   html = "mw-html",
+   language = "mw-language",
+   site = "mw-site",
+   text = "mw-text",
+   title = "mw-title",
+   uri = "mw-uri",
    ustring = "ustring.ustring",
    getContentLanguage = function(table)
       return table.language.getContentLanguage
