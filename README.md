@@ -1,11 +1,31 @@
-# Wiktra - Python tool of Wiktionary Transliteration modules
+# Wiktra - Transliteration tool using Wiktionary transliteration modules
 
-Wiktra is a unicode transliteration tool as a python port of Wiktionary transliteration modules that are written in Lua by the Wiktionary linguists and developers.
-https://en.wiktionary.org/wiki/Category:Transliteration_modules. Therefore, it offers the highest quality of rule-based transliterations. 
+**Wiktra** is a Unicode transliteration tool, written in Python. It’s available as the `wiktrapy` CLI app and the `wiktra` Python 3 module.
 
-Currently, Wiktra supports 181 languages and its 60 orthographies, and the table in the supporting languages section displays their language name and corresponding 3-letter codes. This tool is used to build a large-scale, high quality cognate database, called [CogNet](https://github.com/kbatsuren/CogNet).
+Internally, it uses transliteration modules [from Wiktionary](https://en.wiktionary.org/wiki/Category:Transliteration_modules). These modules are written in Lua by the Wiktionary linguists and developers. Therefore, Wiktra offers the highest quality of rule-based transliterations.
 
-## Installation && Setup
+This is version 2 of Wiktra, maintained by [Adam Twardoch](https://twardoch.github.io/). It’s based on [Wiktra](https://github.com/kbatsuren/wiktra/) by [Khuyagbaatar Batsuren](https://github.com/kbatsuren).
+
+Wiktra 2 supports nearly all of languages supported by Wiktionary, except Korean, Japanese and Thai. Wiktra 1 supported 181 languages and its 60 orthographies. Wiktra 2 currently has a legacy Python function which uses the language codes supplied by the original developer, and also lets you use Wiktionary’s codes directly.
+
+**This is work in progress**.
+
+## Installation
+
+### macOS
+
+In Terminal, `cd` to the main folder and run:
+
+```
+./install-mac.sh
+python3 -m pip install --upgrade .
+```
+
+This will install `brew` if needed, the installs `lua`, `luarocks`, `lua-format`, `luajit` and `python3`. Finally, it installs the Python dependencies `lupa` and `pywikiapi`.
+
+### Other systems
+
+_This is from the original developer:_
 
 As much as you want to use your favorite version of Python, it is recommended to employ 3.5 version on the grounds that the module utilizes lupa-1.8. Lupa enables Python to adopt functionalities of Lua language, in which most of the transliteration modules are written.
 
@@ -27,27 +47,57 @@ Start your Python (3.5.x):
 $ python
 ```
 
-## Fixing LuaError: module 'wikt.mw' not found:
-This error is raising due to lupa is not able to find a current directory. 
-Easiest way to fix this issue is as follows:
-  
-In Windows you can see similar error: 
-![image](https://user-images.githubusercontent.com/50955407/111557773-4671bc80-87c8-11eb-909d-bbb028b8b4a4.png)
+### Troubleshooting
 
-Here all you need to do is two things. 
-  1) create a folder 'lua' in 'C:\ProgramData\Miniconda3\'
-  2) copy the entire folder of wikt from this project and paste it into 'C:\ProgramData\Miniconda3\lua'
+If you get `LuaError: module 'wikt.mw' not found`, try:
 
-It should be similar to Linux and MacOs.
+- create a folder `lua` in `C:\ProgramData\Miniconda3\`
+- copy the entire folder of wikt from this project and paste it into `C:\ProgramData\Miniconda3\lua`
 
-## Example
+## Usage
 
-After placing the package directory inside your project directory or paths subscribed by Python, just run the following:
+### Command-line
 
 ```sh
-from Wiktra import translite as tr
+wiktrapy -h
 ```
-The package offers only function `translite` and it prompts you to provide two parameters (text, 639-2 code):
+
+```
+usage: wiktrapy [-h] [-t TEXT] [-i FILE] [-l LANG] [-s SCRIPT] [-v] [-V]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -t TEXT, --text TEXT
+  -i FILE, --input FILE
+  -l LANG, --lang LANG  Input language as ISO 639-2 code
+  -s SCRIPT, --script SCRIPT
+                        Input script as ISO 15924 code
+  -v, --verbose         -v show progress, -vv show debug
+  -V, --version         show version and exit
+```
+
+Example:
+
+```sh
+$ wiktrapy -t "Привет" -l ru -s Cyrl
+Privet
+```
+
+### Python (new interface)
+
+```python
+from wiktra.Wiktra import Transliterator
+tr = Transliterator()
+print(tr.tr("Привет", "ru", "Cyrl")
+```
+
+### Python (legacy `translite` function)
+
+```python
+from wiktra.Wiktra import translite as tr
+```
+
+With the function `translite`, you need to provide the text and the lang code (see table below for reference):
 
 ```sh
 #mongolian script
@@ -59,11 +109,8 @@ tr('हिंदी लिपि', 'hin')
 > hindee lipi
 ```
 
-## Example comparison with the state-of-the-art universal transliteration tools
-![alt text](http://ukc.disi.unitn.it/wp-content/uploads/2019/08/comparison_wiktra.jpg)
 
-
-## Supporting Languages
+#### Languages supported by the legacy `translite` function
 
 
 |     | Language                     | iso-3 in use | wiktionary code | Supporting script        | examples                                                      |
@@ -260,12 +307,10 @@ tr('हिंदी लिपि', 'hin')
 | 189 | Yakut                        | sah          | sah             | Cyrillic                 |                                                               |
 | 190 | Modern Greek (new)           | ell          | el              | Greek                    | [tests](https://en.wiktionary.org/wiki/Module:el-translit/testcases)|
 
+## Updating
+
+This tool an update its stored Wiktionary modules. See `wiktrapy_update -h` for details.
 
 ## License
-This tool is available under the Creative Commons Attribution-ShareAlike License. Read more about this license from https://creativecommons.org/licenses/by-sa/3.0/.
 
-
-## Reference
-For the acedemic use, please cite the following article:
-
-Khuyagbaatar Batsuren, Gabor Bella, and Fausto Giunchiglia – CogNet: A large-scale cognate database, Proceedings of The 57th Annual Meeting of the Association for Computational Linguistics (ACL), 2019.
+This tool is available under the [GPLv2](./LICENSE) license.
