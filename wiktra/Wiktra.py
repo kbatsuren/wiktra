@@ -261,14 +261,3 @@ class Transliterator(object):
 def translite(text, lang):
     tr = Transliterator()
     return tr.tr_legacy(text, lang)
-
-
-if __name__ == "__main__":
-    tr = Transliterator()
-    #print(tr.test_load())
-    print(tr.tr_legacy("Добро пожаловать в Википедию,", "rus"))
-    print(
-        tr.tr(
-            "𑀲𑀭𑁆𑀯𑁂 𑀫𑀸𑀦𑀯𑀸𑀂 𑀲𑁆𑀯𑀢𑀦𑁆𑀢𑁆𑀭𑀸𑀂 𑀲𑀫𑀼𑀢𑁆𑀧𑀦𑁆𑀦𑀸𑀂 𑀯𑀭𑁆𑀢𑀦𑁆𑀢𑁂 𑀅𑀧𑀺 𑀘", "sa", "Brah"
-        )
-    )

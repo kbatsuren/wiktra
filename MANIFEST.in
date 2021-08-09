@@ -1,0 +1,1 @@
+recursive-include wiktra/wikt *.lua
