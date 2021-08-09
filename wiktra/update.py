@@ -7,6 +7,7 @@ import argparse
 import logging
 import subprocess
 import re
+import json
 from wiktra.Wiktra import *
 
 import pywikiapi
@@ -39,13 +40,16 @@ class WiktionaryModuleDownload(object):
         "ky-translit/sandbox/testcases",
         "ky-translit/testcases",
     ]
+    tr = Transliterator()
 
     def __init__(self, output_folder, force=False, deps=True):
-        self.outf = output_folder
+        self.lua_folder = Path(output_folder, "translit")
+        self.data_folder = Path(output_folder, "data")
         self.force = force
         self.deps = deps
-        if not Path(self.outf).is_dir():
-            Path(self.outf).mkdir(parents=True, exist_ok=True)
+        for p in (self.lua_folder, self.data_folder):
+            if not Path(p).is_dir():
+                Path(p).mkdir(parents=True, exist_ok=True)
         self.wk = pywikiapi.Site(
             "https://en.wiktionary.org/w/api.php", json_object_hook=pywikiapi.AttrDict
         )
@@ -120,7 +124,7 @@ class WiktionaryModuleDownload(object):
     def write_module(self, page="Goth-translit", parent=None):
         text = ""
         inpath = Path(page)
-        outfolder = Path(self.outf, inpath.parent)
+        outfolder = Path(self.lua_folder, inpath.parent)
         outpath = Path(outfolder, f"{inpath.name}.lua")
         if self.check_write(outpath) and page not in self.exclude_modules:
             info = f"Page: '{page}'"
@@ -157,15 +161,13 @@ class WiktionaryModuleDownload(object):
         to_exec = mod
         if len(prefix):
             to_exec = f"""{prefix}/{mod}"""
-        self.lua = LuaRuntime(unpack_returned_tuples=True)
         logging.info(f"Executing {to_exec}")
         res = ""
-        path = Path(self.outf, to_exec + ".lua")
+        path = Path(self.lua_folder, to_exec + ".lua")
         with open(Path(path), "r", encoding="utf8") as f:
             lua_str = f.read()
             try:
-                self.lua.execute(lua_str)
-                res = self.lua.globals().res
+                res = self.tr.e(lua_str)
             except lupa._lupa.LuaError as err:
                 mods = re.findall(r"""module '(.*?)' not found""", str(err))
                 for smod in mods:
@@ -177,6 +179,12 @@ class WiktionaryModuleDownload(object):
                         self.write_module(sto_exec)
         return None
 
+    def update_data(self):
+        lua_str = f'''res = require("JSON").toJSON(require("make-data-lang"))'''
+        res = self.tr.e(lua_str)
+        with open(Path(self.data_folder, 'data_lang.json'), 'w', encoding='utf-8') as f:
+            json.dump(json.loads(res), f)
+
 
 def cli():
     parser = argparse.ArgumentParser(
@@ -186,7 +194,7 @@ def cli():
     parser.add_argument(
         "-o",
         "--output",
-        default=Path(lua_folder, "wikt", "translit"),
+        default=Path(lua_folder, "wikt"),
         required=False,
         metavar="folder",
         dest="output",
@@ -240,6 +248,8 @@ def main(*args, **kwargs):
                                ord("z") + 1)
         ]:
             wkd.write_module(mod)
+        logging.info("# Updating data")
+        wkd.update_data()
 
 
 if __name__ == "__main__":

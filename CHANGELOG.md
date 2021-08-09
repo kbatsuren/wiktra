@@ -1,4 +1,9 @@
+
 # Changelog
+
+## Version 2.0.2 (2021-08-10)
+
+- added `wiktra/wikt/data/data_lang.json`
 
 ## Version 2.0.1 (2021-08-09)
 

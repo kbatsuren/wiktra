@@ -1,1 +1,2 @@
 recursive-include wiktra/wikt *.lua
+recursive-include wiktra/wikt *.json

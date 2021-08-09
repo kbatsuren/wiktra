@@ -11,8 +11,8 @@ os.environ["LUA_PATH"] = ";".join([
     f"{lua_folder}/?.lua",
     f"{lua_folder}/wikt/?.lua",
     f"{lua_folder}/wikt/translit/?.lua",
-    f"{lua_folder}/wikt/legacy/?.lua",
-    f"{lua_folder}/wikt/legacy/translit/?.lua",
+    f"{lua_folder}/wikt/data/?.lua",
+    f"{lua_folder}/wikt/data/translit/?.lua",
     f"{os.environ.get('LUA_PATH','')}",
 ])
 
