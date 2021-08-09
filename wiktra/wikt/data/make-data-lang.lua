@@ -19,19 +19,22 @@ for code, data in pairs(require("languages/alldata")) do
             i = i + 1
             if script ~= "Latn" and script ~= "Latinx" then
                 if mod == "translit-redirect" then
-                    if m_redirect[code]
-                    and m_redirect[code][script]
-                    and m_redirect[code][script].module
-                    then
-                        mod = m_redirect[code][script].module
+                    if m_redirect[code] then
+                        for script_redir, script_rec in pairs(m_redirect[code]) do
+                            if script_redir == script then
+                                lr_mod = script_rec.module
+                            end
+                        end
                     end
+                else
+                    lr_mod = mod
                 end
                 local lr = {}
-                lr.code = code
+                lr.lang = code
                 lr.script = script
                 lr.name = name
                 lr.family = family
-                lr.translit = mod
+                lr.translit = lr_mod
                 lr.translit_override = data.override_translit
                 lr.type = data.type
                 lr.ancestors = data.ancestors

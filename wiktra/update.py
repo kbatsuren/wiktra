@@ -9,6 +9,7 @@ import subprocess
 import re
 import json
 from wiktra.Wiktra import *
+from yaplon import reader, writer
 
 import pywikiapi
 
@@ -180,10 +181,17 @@ class WiktionaryModuleDownload(object):
         return None
 
     def update_data(self):
-        lua_str = f'''res = require("JSON").toJSON(require("make-data-lang"))'''
-        res = self.tr.e(lua_str)
-        with open(Path(self.data_folder, 'data_lang.json'), 'w', encoding='utf-8') as f:
-            json.dump(json.loads(res), f)
+        lua_str = f"""res = require("JSON").toJSON(require("make-data-lang"))"""
+        data_lang = json.loads(self.tr.e(lua_str))
+        with open(
+            Path(self.data_folder, "data_custom.yaml"), "r", encoding="utf-8"
+        ) as f:
+            data_custom = reader.yaml(f)
+        data_lang.update(data_custom)
+        with open(Path(self.data_folder, "data_lang.json"), "w", encoding="utf-8") as f:
+            json.dump(data_lang, f)
+        with open(Path(self.data_folder, "data_lang.yaml"), "w", encoding="utf-8") as f:
+            writer.yaml(data_lang, f)
 
 
 def cli():
@@ -223,6 +231,13 @@ def cli():
         dest="no_deps",
         help="""Ignore dependencies""",
     )
+    parser.add_argument(
+        "-d",
+        "--data",
+        action="store_true",
+        dest="data_only",
+        help="""Only update data""",
+    )
     return parser
 
 
@@ -232,21 +247,20 @@ def main(*args, **kwargs):
     wkd = WiktionaryModuleDownload(args.output, force=args.force, deps=not args.no_deps)
     if args.page:
         wkd.write_module(args.page)
+    elif args.data_only:
+        logging.info("# Updating data")
+        wkd.update_data()
     else:
         logging.info("# Writing transliteration modules")
         wkd.write_modules_category("Transliteration_modules")
         logging.info("# Writing additional modules")
         for mod in [
-                "languages/byTranslitModule",
-                "languages/extradata2",
-                "languages/extradata3",
-                "languages/extradatax",
-                "scripts/code_to_canonical_name",
-        ] + [
-                f"languages/extradata3/{chr(l)}"
-                for l in range(ord("a"),
-                               ord("z") + 1)
-        ]:
+            "languages/byTranslitModule",
+            "languages/extradata2",
+            "languages/extradata3",
+            "languages/extradatax",
+            "scripts/code_to_canonical_name",
+        ] + [f"languages/extradata3/{chr(l)}" for l in range(ord("a"), ord("z") + 1)]:
             wkd.write_module(mod)
         logging.info("# Updating data")
         wkd.update_data()
