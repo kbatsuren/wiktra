@@ -43,7 +43,7 @@ def get_requirements(*args):
 
 setup(
     name=f"{NAME}",
-    version="2.0.0",
+    version=get_version(),
     description="Transliteration tool using Wiktionary transliteration modules",
     long_description=long_description,
     long_description_content_type="text/markdown",
