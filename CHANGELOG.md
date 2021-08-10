@@ -3,7 +3,7 @@
 
 ## Version 2.0.3 (2021-08-10)
 
-- allows for auto-detection of explicit input of ISO 15924 script 
+- allows for auto-detection of explicit input of ISO 15924 script
 - allows for fuzzy or explicit input of ISO 639-2/Wiktionary language code
 - new CLI options
 
