@@ -251,7 +251,7 @@ class Transliterator(object):
         if not lang:
             lang = 'und'
         sc = langrec.script
-        if not sc: 
+        if not sc:
             sc = 'Zyyy'
         return lang, sc
 
@@ -260,17 +260,17 @@ class Transliterator(object):
         lua_str = f"""res = require("wikt.translit.{lang}-translit").tr("{text}", "{lang}", "{sc}")"""
         return self.e(lua_str)
 
-    def tr(self, text, lang='und', sc=None, to_sc='Latn', strict=False):
+    def tr(self, text, lang='und', sc=None, to_sc='Latn', explicit=False):
         if not lang:
             lang='und'
-        if strict:
+        if explicit:
             if not sc:
                 sc = 'Latn'
         else:
             lang, sc = self.auto_script_lang(text, lang, sc)
         mod = self.mod_map.get(sc, {}).get(lang, {}).get(to_sc, {}).get('translit')
         logging.debug({
-            'lang': lang, 'script': sc, 'to_script': to_sc, 'strict': strict, 'module': mod
+            'lang': lang, 'script': sc, 'to_script': to_sc, 'explicit': explicit, 'module': mod
         })
         if not mod:
             return text
@@ -283,6 +283,9 @@ class Transliterator(object):
             res = self.e(
                 f"""res = require("wikt.translit.{mod}").tr("{text}", "{lang}", "{sc}")"""
             )
+        if not res:
+            logging.debug('Problem: not transliterated')
+            res = text
         return res
 
 

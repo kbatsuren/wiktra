@@ -32,6 +32,21 @@ def cli():
         help="Input script as ISO 15924 code",
     )
     parser.add_argument(
+        "-o",
+        "--to-script",
+        metavar="SCRIPT",
+        dest="out_script",
+        default="Latn",
+        help="Output script as ISO 15924 code",
+    )
+    parser.add_argument(
+        "-x",
+        "--explicit",
+        action="store_true",
+        dest="explicit",
+        help="""Explicit language/script, no fuzzy matching""",
+    )
+    parser.add_argument(
         "-v",
         "--verbose",
         action="count",
@@ -66,7 +81,13 @@ def main(*args, **kwargs):
     else:
         text = opts["text"]
     tr = wiktra.Wiktra.Transliterator()
-    res = tr.tr(text, opts["in_lang"], opts["in_script"])
+    res = tr.tr(
+        text,
+        lang=opts["in_lang"],
+        sc=opts["in_script"],
+        to_sc=opts["out_script"],
+        explicit=opts["explicit"],
+    )
     print(res)
 
 

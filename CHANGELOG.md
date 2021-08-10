@@ -1,9 +1,15 @@
 
 # Changelog
 
+## Version 2.0.3 (2021-08-10)
+
+- allows for auto-detection of explicit input of ISO 15924 script 
+- allows for fuzzy or explicit input of ISO 639-2/Wiktionary language code
+- new CLI options
+
 ## Version 2.0.2 (2021-08-10)
 
-- added `wiktra/wikt/data/data_lang.json`
+- added `wiktra/wikt/data/data.json`
 
 ## Version 2.0.1 (2021-08-09)
 
