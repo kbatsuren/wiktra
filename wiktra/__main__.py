@@ -20,6 +20,7 @@ def cli():
         "--lang",
         metavar="LANG",
         dest="in_lang",
+        default=None,
         help="Input language as ISO 639-2 code",
     )
     parser.add_argument(
@@ -27,6 +28,7 @@ def cli():
         "--script",
         metavar="SCRIPT",
         dest="in_script",
+        default=None,
         help="Input script as ISO 15924 code",
     )
     parser.add_argument(

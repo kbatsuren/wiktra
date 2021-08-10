@@ -188,47 +188,47 @@ ks-Arab/ks>Deva:
   script: ks-Arab
   to_script: Deva
   translit: ks-Arab-to-Deva-translit
-pi/Latn>Beng:
+Latn/pi>Beng:
   script: Latn
   to_script: Beng
   translit: pi-Latn-translit
   translit_tr_arg: Beng
-pi/Latn>Brah:
+Latn/pi>Brah:
   script: Latn
   to_script: Brah
   translit: pi-Latn-translit
   translit_tr_arg: Brah
-pi/Latn>Deva:
+Latn/pi>Deva:
   script: Latn
   to_script: Deva
   translit: pi-Latn-translit
   translit_tr_arg: Deva
-pi/Latn>Khmr:
+Latn/pi>Khmr:
   script: Latn
   to_script: Khmr
   translit: pi-Latn-translit
   translit_tr_arg: Khmr
-pi/Latn>Lana:
+Latn/pi>Lana:
   script: Latn
   to_script: Lana
   translit: pi-Latn-translit
   translit_tr_arg: Lana
-pi/Latn>Laoo:
+Latn/pi>Laoo:
   script: Latn
   to_script: Laoo
   translit: pi-Latn-translit
   translit_tr_arg: Laoo
-pi/Latn>Mymr:
+Latn/pi>Mymr:
   script: Latn
   to_script: Mymr
   translit: pi-Latn-translit
   translit_tr_arg: Mymr
-pi/Latn>Sinh:
+Latn/pi>Sinh:
   script: Latn
   to_script: Sinh
   translit: pi-Latn-translit
   translit_tr_arg: Sinh
-pi/Latn>Thai:
+Latn/pi>Thai:
   script: Latn
   to_script: Thai
   translit: pi-Latn-translit

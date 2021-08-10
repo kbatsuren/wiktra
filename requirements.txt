@@ -1,2 +1,4 @@
 lupa
 pywikiapi
+langcodes[data]
+fonttools[unicode]

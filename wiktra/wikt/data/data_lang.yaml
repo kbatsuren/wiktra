@@ -199,7 +199,7 @@ Armn/kmr:
     other_names:
     - Kurmanji
     script: Armn
-    translit: Samr-translit
+    translit: Brah-translit
 Armn/qwm:
     family: trk-kip
     lang: qwm
@@ -865,7 +865,7 @@ Cyrl/kmr:
     other_names:
     - Kurmanji
     script: Cyrl
-    translit: Samr-translit
+    translit: Brah-translit
 Cyrl/koi:
     family: urj-prm
     lang: koi
@@ -2374,6 +2374,51 @@ Laoo/sa:
     name: Sanskrit
     script: Laoo
     translit: pi-translit
+Latn/pi>Beng:
+    script: Latn
+    to_script: Beng
+    translit: pi-Latn-translit
+    translit_tr_arg: Beng
+Latn/pi>Brah:
+    script: Latn
+    to_script: Brah
+    translit: pi-Latn-translit
+    translit_tr_arg: Brah
+Latn/pi>Deva:
+    script: Latn
+    to_script: Deva
+    translit: pi-Latn-translit
+    translit_tr_arg: Deva
+Latn/pi>Khmr:
+    script: Latn
+    to_script: Khmr
+    translit: pi-Latn-translit
+    translit_tr_arg: Khmr
+Latn/pi>Lana:
+    script: Latn
+    to_script: Lana
+    translit: pi-Latn-translit
+    translit_tr_arg: Lana
+Latn/pi>Laoo:
+    script: Latn
+    to_script: Laoo
+    translit: pi-Latn-translit
+    translit_tr_arg: Laoo
+Latn/pi>Mymr:
+    script: Latn
+    to_script: Mymr
+    translit: pi-Latn-translit
+    translit_tr_arg: Mymr
+Latn/pi>Sinh:
+    script: Latn
+    to_script: Sinh
+    translit: pi-Latn-translit
+    translit_tr_arg: Sinh
+Latn/pi>Thai:
+    script: Latn
+    to_script: Thai
+    translit: pi-Latn-translit
+    translit_tr_arg: Thai
 Lepc/lep:
     family: sit
     lang: lep
@@ -3699,7 +3744,7 @@ ku-Arab/kmr:
     other_names:
     - Kurmanji
     script: ku-Arab
-    translit: Samr-translit
+    translit: Brah-translit
 ku-Arab/sdh:
     ancestors:
     - ku-pro
@@ -3742,51 +3787,6 @@ pal-Avst/pal:
     - Manichaean Middle Persian
     script: pal-Avst
     translit: Avst-translit
-pi/Latn>Beng:
-    script: Latn
-    to_script: Beng
-    translit: pi-Latn-translit
-    translit_tr_arg: Beng
-pi/Latn>Brah:
-    script: Latn
-    to_script: Brah
-    translit: pi-Latn-translit
-    translit_tr_arg: Brah
-pi/Latn>Deva:
-    script: Latn
-    to_script: Deva
-    translit: pi-Latn-translit
-    translit_tr_arg: Deva
-pi/Latn>Khmr:
-    script: Latn
-    to_script: Khmr
-    translit: pi-Latn-translit
-    translit_tr_arg: Khmr
-pi/Latn>Lana:
-    script: Latn
-    to_script: Lana
-    translit: pi-Latn-translit
-    translit_tr_arg: Lana
-pi/Latn>Laoo:
-    script: Latn
-    to_script: Laoo
-    translit: pi-Latn-translit
-    translit_tr_arg: Laoo
-pi/Latn>Mymr:
-    script: Latn
-    to_script: Mymr
-    translit: pi-Latn-translit
-    translit_tr_arg: Mymr
-pi/Latn>Sinh:
-    script: Latn
-    to_script: Sinh
-    translit: pi-Latn-translit
-    translit_tr_arg: Sinh
-pi/Latn>Thai:
-    script: Latn
-    to_script: Thai
-    translit: pi-Latn-translit
-    translit_tr_arg: Thai
 polytonic/cpg:
     aliases:
     - Cappadocian

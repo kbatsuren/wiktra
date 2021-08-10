@@ -10,10 +10,22 @@ import re
 import json
 from wiktra.Wiktra import *
 from yaplon import reader, writer
+from collections import OrderedDict
+import langcodes
 
 import pywikiapi
 
 logging.basicConfig(level=logging.INFO)
+
+
+def sortOD(od):
+    res = OrderedDict()
+    for k, v in sorted(od.items()):
+        if isinstance(v, dict):
+            res[k] = sortOD(v)
+        else:
+            res[k] = v
+    return res
 
 
 class WiktionaryModuleDownload(object):
@@ -180,18 +192,121 @@ class WiktionaryModuleDownload(object):
                         self.write_module(sto_exec)
         return None
 
-    def update_data(self):
+    def _rebuild_data(self):
         lua_str = f"""res = require("JSON").toJSON(require("make-data-lang"))"""
-        data_lang = json.loads(self.tr.e(lua_str))
+        self.data_lang = json.loads(self.tr.e(lua_str))
         with open(
             Path(self.data_folder, "data_custom.yaml"), "r", encoding="utf-8"
         ) as f:
             data_custom = reader.yaml(f)
-        data_lang.update(data_custom)
-        with open(Path(self.data_folder, "data_lang.json"), "w", encoding="utf-8") as f:
-            json.dump(data_lang, f)
-        with open(Path(self.data_folder, "data_lang.yaml"), "w", encoding="utf-8") as f:
-            writer.yaml(data_lang, f)
+        self.data_lang.update(data_custom)
+
+    def _fix_script(self, script):
+        suffix = ''
+        script_rec = script.split("-")
+        if len(script_rec) > 1:
+            script_iso = script_rec[1]
+        elif script == 'polytonic':
+            script = "Grek-polyton"
+            script_iso = "Grek"
+            suffix += f'''polyton'''
+        else:
+            script_iso = script
+        return script, script_iso, suffix
+
+    def _struct_data(self):
+        self.data = OrderedDict()
+        self.data["Latn"] = OrderedDict()
+        for k, v in self.data_lang.items():
+            script, script_iso, script_suffix = self._fix_script(
+                v.get("script", "Latn"))
+            to_script, to_script_iso, to_script_suffix = self._fix_script(
+                v.get("to_script", "Latn"))
+            lang = v.get("lang", "und")
+            lang_tag = ''
+            lang_code = None
+            lang_suf = None
+            if len(lang):
+                lang_rec = lang.split("-")
+                lang_code = lang_rec[0]
+                if len(lang_rec) > 1:
+                    lang_suf = lang_rec[1]
+            if lang_code:
+                lang_tag += f'{lang_code}-'
+            lang_tag += f'{script_iso}'
+            if script_suffix:
+                lang_tag += f'-x-{script_suffix}'
+            if lang_suf:
+                lang_tag += f'-x-{lang_suf}'
+            lang_data = dict(v)
+            if 'translit' in lang_data:
+                del lang_data['translit']
+                if 'translit_override' in lang_data:
+                    del lang_data['translit_override']
+                self.data[script_iso] = self.data.get(script_iso, OrderedDict())
+                self.data[script_iso][lang] = self.data[script_iso].get(
+                    lang, lang_data)
+                self.data[script_iso][lang][
+                    'script_iso'] = script_iso
+                self.data[script_iso][lang][
+                    'script_suffix'] = script_suffix
+                self.data[script_iso][lang]['lang_tag'] = lang_tag
+                lc = langcodes.Language.get(lang_tag)
+                self.data[script_iso][lang][
+                    'population'] = lc.speaking_population()
+                self.data[script_iso][lang][to_script_iso] = self.data[script_iso][
+                    lang].get(to_script_iso, OrderedDict())
+                self.data[script_iso][lang][to_script_iso]['script_iso'] = to_script_iso
+                self.data[script_iso][lang][to_script_iso]['script'] = to_script
+                self.data[script_iso][lang][to_script_iso]['translit'] = v.get('translit', '')
+                self.data[script_iso][lang][to_script_iso]['override'] = v.get('translit_override', False)
+
+    def _find_best_lang_for_script(self):
+        und = None
+        for script, langs in self.data.items():
+            if 'und' not in langs:
+                und = OrderedDict()
+                und['population'] = -1
+                for lang, langrec in langs.items():
+                    if langrec['population'] > und['population']:
+                        und = langrec
+                langs['und'] = und
+
+    def _save_data(self):
+        data = sortOD(self.data)
+        with open(Path(self.data_folder, "data.json"), "w", encoding="utf-8") as f:
+            json.dump(data, f)
+        with open(Path(self.data_folder, "data.yaml"), "w", encoding="utf-8") as f:
+            writer.yaml(data, f)
+
+    def update_data(self):
+        self._rebuild_data()
+        with open(Path(self.data_folder, "data_lang.json"),
+                  "w",
+                  encoding="utf-8") as f:
+            json.dump(self.data_lang, f)
+        with open(Path(self.data_folder, "data_lang.yaml"),
+                  "w",
+                  encoding="utf-8") as f:
+            writer.yaml(self.data_lang, f)
+        self._struct_data()
+        self._find_best_lang_for_script()
+        self._save_data()
+
+    def test_load(self):
+        reqs = []
+        mods = [
+            str(Path(p.parent, p.stem)).replace(str(self.lua_folder), 'translit')
+            for p in Path(self.lua_folder).glob("**/*.lua")
+        ]
+        for mod in mods:
+            reqs.append(f"""require("{mod}")""")
+        sreqs = "\n".join(reqs)
+        l = f"""
+        {sreqs}
+        res = "OK"
+        """
+        return self.tr.e(l)
 
 
 def cli():
@@ -238,6 +353,13 @@ def cli():
         dest="data_only",
         help="""Only update data""",
     )
+    parser.add_argument(
+        "-t",
+        "--test",
+        action="store_true",
+        dest="test_only",
+        help="""Only test loading Lua""",
+    )
     return parser
 
 
@@ -250,6 +372,9 @@ def main(*args, **kwargs):
     elif args.data_only:
         logging.info("# Updating data")
         wkd.update_data()
+    elif args.test_only:
+        logging.info("# Testing")
+        wkd.test_load()
     else:
         logging.info("# Writing transliteration modules")
         wkd.write_modules_category("Transliteration_modules")
@@ -262,9 +387,10 @@ def main(*args, **kwargs):
             "scripts/code_to_canonical_name",
         ] + [f"languages/extradata3/{chr(l)}" for l in range(ord("a"), ord("z") + 1)]:
             wkd.write_module(mod)
+        logging.info("# Testing")
+        wkd.test_load()
         logging.info("# Updating data")
         wkd.update_data()
-
 
 if __name__ == "__main__":
     main()
