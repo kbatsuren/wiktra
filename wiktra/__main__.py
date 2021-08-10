@@ -47,6 +47,12 @@ def cli():
         help="""Explicit language/script, no fuzzy matching""",
     )
     parser.add_argument(
+        "--stats",
+        action="store_true",
+        dest="stats",
+        help="""Show stats""",
+    )
+    parser.add_argument(
         "-v",
         "--verbose",
         action="count",
@@ -81,14 +87,18 @@ def main(*args, **kwargs):
     else:
         text = opts["text"]
     tr = wiktra.Wiktra.Transliterator()
-    res = tr.tr(
-        text,
-        lang=opts["in_lang"],
-        sc=opts["in_script"],
-        to_sc=opts["out_script"],
-        explicit=opts["explicit"],
-    )
-    print(res)
+    if opts.get("stats", False):
+        print(f'{len(tr.mod_map.keys())} scripts: {" ".join(tr.mod_map.keys())}')
+        print(f'{len(tr.lang_tags)} orthographies: {" ".join(tr.lang_tags)}')
+    else:
+        res = tr.tr(
+            text,
+            lang=opts["in_lang"],
+            sc=opts["in_script"],
+            to_sc=opts["out_script"],
+            explicit=opts["explicit"],
+        )
+        print(res)
 
 
 if __name__ == "__main__":
