@@ -4,15 +4,20 @@
 
 Internally, it uses transliteration modules [from Wiktionary](https://en.wiktionary.org/wiki/Category:Transliteration_modules). These modules are written in Lua by the Wiktionary linguists and developers. Therefore, Wiktra offers the highest quality of rule-based transliterations.
 
-This is version 2 of Wiktra, maintained by [Adam Twardoch](https://twardoch.github.io/). It’s based on [Wiktra](https://github.com/kbatsuren/wiktra/) by [Khuyagbaatar Batsuren](https://github.com/kbatsuren).
+Wiktra 1.0 was originally developed by [Khuyagbaatar Batsuren](https://github.com/kbatsuren). Wiktra 2 was rewritten by [Adam Twardoch](https://twardoch.github.io/).
 
-Wiktra 2 supports nearly all of languages supported by Wiktionary, except Korean, Japanese and Thai. Wiktra 1 supported 181 languages and its 60 orthographies. Wiktra 2 currently has a legacy Python function which uses the language codes supplied by the original developer, and also lets you use Wiktionary’s codes directly.
+Locations:
 
-**This is work in progress**.
+- [kbatsuren/wiktra](https://github.com/kbatsuren/wiktra/) — the upstream location, slower releases
+- [twardoch/wiktra2](https://github.com/twardoch/wiktra2/) — active development
+
+Wiktra 2 supports 514 orthographies in 102 scripts with the new API (nearly all of languages supported by Wiktionary, except Korean, Japanese and Thai), and 181 languages and its 60 orthographies in the legacy API.
 
 ## Installation
 
-### macOS
+### Version 2
+
+_(This has been tested on macOS 11.)_
 
 In Terminal, `cd` to the main folder and run:
 
@@ -21,11 +26,11 @@ In Terminal, `cd` to the main folder and run:
 python3 -m pip install --upgrade .
 ```
 
-This will install `brew` if needed, the installs `lua`, `luarocks`, `lua-format`, `luajit` and `python3`. Finally, it installs the Python dependencies `lupa` and `pywikiapi`.
+This will install `brew` if needed, the installs `lua`, `luarocks`, `lua-format`, `luajit` and `python3`. Finally, it installs some Python dependencies, such as `lupa` or `pywikiapi`.
 
-### Other systems
+### Other systems, version 1
 
-_This is from the original developer:_
+_This is from the original version 1. Quite possibly the Version 2 instructions (see above) should work instead._
 
 As much as you want to use your favorite version of Python, it is recommended to employ 3.5 version on the grounds that the module utilizes lupa-1.8. Lupa enables Python to adopt functionalities of Lua language, in which most of the transliteration modules are written.
 
@@ -49,6 +54,8 @@ $ python
 
 ### Troubleshooting
 
+_This should no longer be an issue with version 2._
+
 If you get `LuaError: module 'wikt.mw' not found`, try:
 
 - create a folder `lua` in `C:\ProgramData\Miniconda3\`
@@ -56,14 +63,12 @@ If you get `LuaError: module 'wikt.mw' not found`, try:
 
 ## Usage
 
-### Command-line
+### Command-line, version 2
 
 ```sh
-wiktrapy -h
-```
+$ wiktrapy -h
 
-```
-usage: wiktrapy [-h] [-t TEXT] [-i FILE] [-l LANG] [-s SCRIPT] [-v] [-V]
+usage: wiktrapy [-h] [-t TEXT] [-i FILE] [-l LANG] [-s SCRIPT] [-o SCRIPT] [-x] [--stats] [-v] [-V]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -72,6 +77,10 @@ optional arguments:
   -l LANG, --lang LANG  Input language as ISO 639-2 code
   -s SCRIPT, --script SCRIPT
                         Input script as ISO 15924 code
+  -o SCRIPT, --to-script SCRIPT
+                        Output script as ISO 15924 code
+  -x, --explicit        Explicit language/script, no fuzzy matching
+  --stats               List supported scripts and orthographies
   -v, --verbose         -v show progress, -vv show debug
   -V, --version         show version and exit
 ```
@@ -83,15 +92,22 @@ $ wiktrapy -t "Привет" -l ru -s Cyrl
 Privet
 ```
 
-### Python (new interface)
+### Python, version 2 new API
 
 ```python
 from wiktra.Wiktra import Transliterator
 tr = Transliterator()
-print(tr.tr("Привет", "ru", "Cyrl")
+
+print(tr.tr("Привет", lang='ru', sc='Cyrl', to_sc='Latn', explicit=True)
 ```
 
-### Python (legacy `translite` function)
+- If `explicit` is `True`, you need to specify `lang` as the input language (using Wiktionary/ISO codes), `sc` as the input script (using ISO 15924 codes), and optionally `to_sc` as the output script (`Latn` is assumed if absent).
+
+- If `explicit` is `False` or omitted, Wiktra will guess the `sc` if it’s not specified, and will assume the `und` (undefined) input language for that script. Sometimes Wiktionary provides a generic script transliterator. If Wiktionary has multiple script transliterators, the language with the largest speaking population also serves as "undefined". For example, for `Cyrl` (Cyrillic script), `ru` (Russian language) serves as `und` (undefined) and is used if you only specify the script or Wiktra guesses `Cyrl` as the script.
+
+Use `wiktrapy --stats` to list all supported script and language codes, or see the [`data.yaml`](wiktra/wikt/data/data.yaml). The YAML file also lists the Wiktionary transliteration modules used.
+
+### Python, legacy `translite` function
 
 ```python
 from wiktra.Wiktra import translite as tr
