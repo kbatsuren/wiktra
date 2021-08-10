@@ -1,6 +1,10 @@
 
 # Changelog
 
+## Version 2.0.4 (2021-08-10)
+
+- added `--stats` CLI option to list supported scripts and orthographies
+
 ## Version 2.0.3 (2021-08-10)
 
 - allows for auto-detection of explicit input of ISO 15924 script

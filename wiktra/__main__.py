@@ -50,7 +50,7 @@ def cli():
         "--stats",
         action="store_true",
         dest="stats",
-        help="""Show stats""",
+        help="""List supported scripts and orthographies""",
     )
     parser.add_argument(
         "-v",
