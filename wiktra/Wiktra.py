@@ -251,6 +251,8 @@ class Transliterator(object):
         if not lang:
             lang = 'und'
         sc = langrec.script
+        if not sc: 
+            sc = 'Zyyy'
         return lang, sc
 
     def tr_legacy(self, text, lang):
