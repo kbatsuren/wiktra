@@ -33,7 +33,7 @@ local m = {}
 
 for mname in pairs(modules) do
     for key, value in pairs(require(mname)) do m[key] = value end
-    local xname = mname:gsub("data", "data")
+    local xname = mname:gsub("data", "extradata")
     for lkey, lvalue in pairs(require(xname)) do if m[lkey] then for key, value in pairs(lvalue) do m[lkey][key] = lvalue[key] end end end
 end
 

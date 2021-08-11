@@ -1,0 +1,235 @@
+Aghb:
+  script: Aghb
+  translit: Aghb-translit
+Ahom:
+  script: Ahom
+  translit: ahom-translit
+Armi:
+  script: Armi
+  translit: Armi-translit
+Armn:
+  script: Armn
+  translit: armn-translit
+Avst:
+  script: Avst
+  translit: avst-translit
+Beng>Deva:
+  script: Beng
+  to_script: Deva
+  translit: Beng-Deva-translit
+Brah:
+  script: Brah
+  translit: brah-translit
+Cans:
+  script: Cans
+  translit: cans-translit
+Cher:
+  script: Cher
+  translit: cher-translit
+Chrs:
+  script: Chrs
+  translit: Chrs-translit
+Copt:
+  script: Copt
+  translit: copt-translit
+Cprt:
+  script: Cprt
+  translit: cprt-translit
+Cyrs>Glag:
+  script: Cyrs
+  to_script: Glag
+  translit: cyrs-glag-translit
+Deva>Beng:
+  script: Deva
+  to_script: Beng
+  translit: Deva-Beng-translit
+Deva>Kthi:
+  script: Deva
+  to_script: Kthi
+  translit: Deva-Kthi-translit
+Deva>Limb:
+  script: Deva
+  to_script: Limb
+  translit: Deva-Limb-translit
+Deva>Newa:
+  script: Deva
+  to_script: Newa
+  translit: Deva-Newa-translit
+Deva>Sind:
+  script: Deva
+  to_script: Sind
+  translit: Deva-Sind-translit
+Deva>Tirh:
+  script: Deva
+  to_script: Tirh
+  translit: Deva-Tirh-translit
+Ethi:
+  script: Ethi
+  translit: ethi-translit
+Geor:
+  script: Geor
+  translit: geor-translit
+Goth:
+  script: Goth
+  translit: goth-translit
+Guru:
+  script: Guru
+  translit: guru-translit
+Ital:
+  script: Ital
+  translit: ital-translit
+Kali:
+  script: Kali
+  translit: Kali-translit
+Kham:
+  script: Kham
+  translit: kham-translit
+Khar:
+  script: Khar
+  translit: khar-translit
+Limb>Deva:
+  script: Limb
+  to_script: Deva
+  translit: Limb-Deva-translit
+Linb:
+  script: Linb
+  translit: linb-translit
+Lyci:
+  script: Lyci
+  translit: lyci-translit
+Lydi:
+  script: Lydi
+  translit: lydi-translit
+Mani:
+  script: Mani
+  translit: mani-translit
+Modi:
+  script: Modi
+  translit: Modi-translit
+Narb:
+  script: Narb
+  translit: Narb-translit
+Newa>Deva:
+  script: Newa
+  to_script: Deva
+  translit: Newa-Deva-translit
+Olck:
+  script: Olck
+  translit: Olck-translit
+Orkh:
+  script: Orkh
+  translit: Orkh-Bitig-translit
+Palm:
+  script: Palm
+  translit: Palm-translit
+Phli:
+  script: Phli
+  translit: phli-translit
+Phlv:
+  script: Phlv
+  translit: Phlv-translit
+Phnx:
+  script: Phnx
+  translit: Phnx-translit
+Prti:
+  script: Prti
+  translit: prti-translit
+Rohg:
+  script: Rohg
+  translit: Rohg-translit
+Runr:
+  script: Runr
+  translit: Runr-translit
+Samr:
+  script: Samr
+  translit: Samr-translit
+Sarb:
+  script: Sarb
+  translit: sarb-translit
+Shrd:
+  script: Shrd
+  translit: Shrd-translit
+Sind:
+  script: Sind
+  translit: Sind-translit
+Sogd:
+  script: Sogd
+  translit: Sogd-translit
+Sogo:
+  script: Sogo
+  translit: Sogo-translit
+Tale:
+  script: Tale
+  translit: Tale-translit
+Talu:
+  script: Talu
+  translit: talu-translit
+Tavt:
+  script: Tavt
+  translit: Tavt-translit
+Tfng:
+  script: Tfng
+  translit: Tfng-translit
+Tirh>Deva:
+  script: Tirh
+  to_script: Deva
+  translit: Tirh-Deva-translit
+Vaii:
+  script: Vaii
+  translit: Vaii-translit
+ks-Arab/ks>Deva:
+  aliases:
+    - Koshur
+  ancestors:
+    - inc-dar-pro
+  family: inc-dar
+  lang: ks
+  name: Kashmiri
+  script: ks-Arab
+  to_script: Deva
+  translit: ks-Arab-to-Deva-translit
+Latn/pi>Beng:
+  script: Latn
+  to_script: Beng
+  translit: pi-Latn-translit
+  translit_tr_arg: Beng
+Latn/pi>Brah:
+  script: Latn
+  to_script: Brah
+  translit: pi-Latn-translit
+  translit_tr_arg: Brah
+Latn/pi>Deva:
+  script: Latn
+  to_script: Deva
+  translit: pi-Latn-translit
+  translit_tr_arg: Deva
+Latn/pi>Khmr:
+  script: Latn
+  to_script: Khmr
+  translit: pi-Latn-translit
+  translit_tr_arg: Khmr
+Latn/pi>Lana:
+  script: Latn
+  to_script: Lana
+  translit: pi-Latn-translit
+  translit_tr_arg: Lana
+Latn/pi>Laoo:
+  script: Latn
+  to_script: Laoo
+  translit: pi-Latn-translit
+  translit_tr_arg: Laoo
+Latn/pi>Mymr:
+  script: Latn
+  to_script: Mymr
+  translit: pi-Latn-translit
+  translit_tr_arg: Mymr
+Latn/pi>Sinh:
+  script: Latn
+  to_script: Sinh
+  translit: pi-Latn-translit
+  translit_tr_arg: Sinh
+Latn/pi>Thai:
+  script: Latn
+  to_script: Thai
+  translit: pi-Latn-translit
+  translit_tr_arg: Thai

@@ -1,0 +1,3851 @@
+Aghb:
+    script: Aghb
+    translit: Aghb-translit
+Aghb/xag:
+    family: cau-lzg
+    lang: xag
+    name: Aghwan
+    other_names:
+    - Caucasian Albanian
+    - Old Udi
+    script: Aghb
+    translit: Aghb-translit
+    translit_override: true
+Ahom:
+    script: Ahom
+    translit: ahom-translit
+Ahom/aho:
+    family: tai-swe
+    lang: aho
+    name: Ahom
+    script: Ahom
+    translit: Ahom-translit
+Arab/ar:
+    aliases:
+    - Standard Arabic
+    - Literary Arabic
+    - High Arabic
+    family: sem-arb
+    lang: ar
+    name: Arabic
+    script: Arab
+    translit: ar-translit
+    varieties:
+    - Modern Standard Arabic
+    - Classical Arabic
+    - Judeo-Arabic
+Arab/bhd:
+    aliases:
+    - Bhadarwahi
+    family: him
+    lang: bhd
+    name: Bhadrawahi
+    script: Arab
+    translit: hi-translit
+Arab/chg:
+    family: trk-kar
+    lang: chg
+    name: Chagatai
+    script: Arab
+    translit: ar-translit
+Arab/dng:
+    ancestors:
+    - cmn
+    family: zhx
+    lang: dng
+    name: Dungan
+    script: Arab
+    translit: dng-translit
+Arab/ky:
+    aliases:
+    - Kirghiz
+    - Kirgiz
+    family: trk-kip
+    lang: ky
+    name: Kyrgyz
+    script: Arab
+    translit: ky-translit
+    translit_override: true
+Arab/nog:
+    family: trk-kno
+    lang: nog
+    name: Nogai
+    other_names:
+    - Nogay
+    script: Arab
+    translit: nog-translit
+    translit_override: true
+Arab/qwm:
+    family: trk-kip
+    lang: qwm
+    name: Kipchak
+    other_names:
+    - Kypchak
+    - Qypchaq
+    - Armeno-Kipchak
+    - Armeno-Qypchaq
+    - Mamluk-Kipchak
+    - Cuman
+    - Kuman
+    - Polovets
+    script: Arab
+Arab/rhg:
+    ancestors:
+    - inc-obn
+    family: inc-eas
+    lang: rhg
+    name: Rohingya
+    script: Arab
+Arab/rif:
+    family: ber
+    lang: rif
+    name: Tarifit
+    other_names:
+    - Rifain
+    script: Arab
+    translit: Tfng-translit
+Arab/shi:
+    family: ber
+    lang: shi
+    name: Tashelhit
+    other_names:
+    - Tachelhit
+    - Chleuh
+    - Shilha
+    - Tashlhiyt
+    - Tashelhit Berber
+    - Tachelhit Berber
+    - Tashlhiyt Berber
+    script: Arab
+    translit: Tfng-translit
+Arab/tzm:
+    family: ber
+    lang: tzm
+    name: Central Atlas Tamazight
+    script: Arab
+    translit: Tfng-translit
+Arab/wbl:
+    family: xsc-skw
+    lang: wbl
+    name: Wakhi
+    script: Arab
+Arab/xco:
+    family: ira-sbc
+    lang: xco
+    name: Khwarezmian
+    other_names:
+    - Chorasmian
+    - Khwarazmian
+    - Khorezmian
+    script: Arab
+    translit: Chrs-translit
+Arab/xng:
+    family: xgn
+    lang: xng
+    name: Middle Mongolian
+    script: Arab
+    translit: mn-translit
+Armi:
+    script: Armi
+    translit: Armi-translit
+Armi/arc:
+    family: sem-ara
+    lang: arc
+    name: Aramaic
+    script: Armi
+    translit: Armi-translit
+Armi/xco:
+    family: ira-sbc
+    lang: xco
+    name: Khwarezmian
+    other_names:
+    - Chorasmian
+    - Khwarazmian
+    - Khorezmian
+    script: Armi
+    translit: Chrs-translit
+Armn:
+    script: Armn
+    translit: armn-translit
+Armn/axm:
+    ancestors:
+    - xcl
+    family: hyx
+    lang: axm
+    name: Middle Armenian
+    script: Armn
+    translit: Armn-translit
+    translit_override: true
+Armn/hy:
+    aliases:
+    - Modern Armenian
+    ancestors:
+    - axm
+    family: hyx
+    lang: hy
+    name: Armenian
+    script: Armn
+    translit: Armn-translit
+    translit_override: true
+    varieties:
+    - Eastern Armenian
+    - Western Armenian
+Armn/kmr:
+    ancestors:
+    - ku-pro
+    family: ku
+    lang: kmr
+    name: Northern Kurdish
+    other_names:
+    - Kurmanji
+    script: Armn
+    translit: Brah-translit
+Armn/qwm:
+    family: trk-kip
+    lang: qwm
+    name: Kipchak
+    other_names:
+    - Kypchak
+    - Qypchaq
+    - Armeno-Kipchak
+    - Armeno-Qypchaq
+    - Mamluk-Kipchak
+    - Cuman
+    - Kuman
+    - Polovets
+    script: Armn
+    translit: Armn-translit
+Armn/rmi:
+    ancestors:
+    - psu
+    - hy
+    family: qfa-mix
+    lang: rmi
+    name: Lomavren
+    script: Armn
+    translit: Armn-translit
+    translit_override: true
+Armn/udi:
+    ancestors:
+    - xag
+    family: cau-nec
+    lang: udi
+    name: Udi
+    script: Armn
+    translit: Armn-translit
+    translit_override: true
+Armn/xcl:
+    family: hyx
+    lang: xcl
+    name: Old Armenian
+    other_names:
+    - Classical Armenian
+    - Liturgical Armenian
+    - Grabar
+    script: Armn
+    translit: Armn-translit
+    translit_override: true
+Avst:
+    script: Avst
+    translit: avst-translit
+Avst/ae:
+    aliases:
+    - Zend
+    - Old Bactrian
+    family: ira-cen
+    lang: ae
+    name: Avestan
+    script: Avst
+    translit: Avst-translit
+Bali/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Bali
+    translit: sa-translit
+Beng/bn:
+    aliases:
+    - Bangla
+    ancestors:
+    - inc-mbn
+    family: inc-eas
+    lang: bn
+    name: Bengali
+    script: Beng
+    translit: bn-translit
+Beng/inc-mbn:
+    ancestors:
+    - inc-obn
+    family: inc-eas
+    lang: inc-mbn
+    name: Middle Bengali
+    script: Beng
+    translit: inc-mbn-translit
+Beng/pi:
+    ancestors:
+    - sa
+    family: inc-mid
+    lang: pi
+    name: Pali
+    script: Beng
+    translit: pi-translit
+Beng/rhg:
+    ancestors:
+    - inc-obn
+    family: inc-eas
+    lang: rhg
+    name: Rohingya
+    script: Beng
+    translit: Rohg-translit
+Beng/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Beng
+    translit: sa-Beng-translit
+Beng/syl:
+    ancestors:
+    - inc-obn
+    family: inc-eas
+    lang: syl
+    name: Sylheti
+    script: Beng
+    translit: syl-translit
+Beng>Deva:
+    script: Beng
+    to_script: Deva
+    translit: Beng-Deva-translit
+Bhks/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Bhks
+    translit: sa-Beng-translit
+Brah:
+    script: Brah
+    translit: brah-translit
+Brah/inc-ash:
+    ancestors:
+    - sa
+    family: inc-mid
+    lang: inc-ash
+    name: Ashokan Prakrit
+    script: Brah
+    translit: Brah-translit
+Brah/inc-mgd:
+    ancestors:
+    - inc-pra
+    family: inc-mid
+    lang: inc-mgd
+    name: Magadhi Prakrit
+    script: Brah
+    translit: Brah-translit
+Brah/inc-pra:
+    ancestors:
+    - inc-ash
+    family: inc-mid
+    lang: inc-pra
+    name: Prakrit
+    script: Brah
+    translit: Brah-translit
+Brah/inc-psc:
+    ancestors:
+    - inc-ash
+    family: inc-mid
+    lang: inc-psc
+    name: Paisaci Prakrit
+    script: Brah
+    translit: Brah-translit
+Brah/kho:
+    family: xsc-sak
+    lang: kho
+    name: Khotanese
+    script: Brah
+    translit: Brah-translit
+Brah/oty:
+    family: dra
+    lang: oty
+    name: Old Tamil
+    script: Brah
+    translit: Brah-translit
+Brah/pi:
+    ancestors:
+    - sa
+    family: inc-mid
+    lang: pi
+    name: Pali
+    script: Brah
+    translit: Brah-translit
+Brah/pka:
+    ancestors:
+    - inc-pra
+    family: inc-mid
+    lang: pka
+    name: Ardhamagadhi Prakrit
+    script: Brah
+    translit: Brah-translit
+Brah/pmh:
+    ancestors:
+    - inc-pra
+    family: inc-mid
+    lang: pmh
+    name: Maharastri Prakrit
+    other_names:
+    - Maharashtri Prakrit
+    - Maharastri
+    - Maharashtri
+    script: Brah
+    translit: Brah-translit
+Brah/psu:
+    ancestors:
+    - inc-pra
+    family: inc-psu
+    lang: psu
+    name: Sauraseni Prakrit
+    other_names:
+    - Sauraseni
+    - Shauraseni
+    script: Brah
+    translit: Brah-translit
+Brah/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Brah
+    translit: Brah-translit
+Brah/xtq:
+    family: xsc-sak
+    lang: xtq
+    name: Tumshuqese
+    script: Brah
+    translit: Brah-translit
+Brai/ar:
+    aliases:
+    - Standard Arabic
+    - Literary Arabic
+    - High Arabic
+    family: sem-arb
+    lang: ar
+    name: Arabic
+    script: Brai
+    translit: ar-translit
+    varieties:
+    - Modern Standard Arabic
+    - Classical Arabic
+    - Judeo-Arabic
+Brai/el:
+    aliases:
+    - Modern Greek
+    - Neo-Hellenic
+    ancestors:
+    - grc
+    family: grk
+    lang: el
+    name: Greek
+    script: Brai
+    translit: el-translit
+    translit_override: true
+Brai/hy:
+    aliases:
+    - Modern Armenian
+    ancestors:
+    - axm
+    family: hyx
+    lang: hy
+    name: Armenian
+    script: Brai
+    translit: Armn-translit
+    translit_override: true
+    varieties:
+    - Eastern Armenian
+    - Western Armenian
+Brai/ko:
+    aliases:
+    - Modern Korean
+    ancestors:
+    - okm
+    family: qfa-kor
+    lang: ko
+    name: Korean
+    script: Brai
+    translit: ko-translit
+Brai/ru:
+    family: zle
+    lang: ru
+    name: Russian
+    script: Brai
+    translit: ru-translit
+Brai/th:
+    aliases:
+    - Central Thai
+    - Siamese
+    family: tai-swe
+    lang: th
+    name: Thai
+    script: Brai
+    translit: th-translit
+Cans:
+    script: Cans
+    translit: cans-translit
+Cans/cr:
+    family: alg
+    lang: cr
+    name: Cree
+    script: Cans
+    translit: cr-translit
+Cans/crj:
+    ancestors:
+    - cr
+    family: alg
+    lang: crj
+    name: Southern East Cree
+    script: Cans
+    translit: cr-translit
+Cans/crl:
+    ancestors:
+    - cr
+    family: alg
+    lang: crl
+    name: Northern East Cree
+    script: Cans
+    translit: cr-translit
+Cans/iu:
+    family: esx-inu
+    lang: iu
+    name: Inuktitut
+    script: Cans
+    translit: iu-translit
+    translit_override: true
+    varieties:
+    - Aivilimmiut
+    -   - Eastern Canadian Inuktitut
+        - Eastern Canadian Inuit
+    -   - Inuinnaq
+        - Inuinnaqtun
+    -   - Inuvialuktun
+        - Inuvialuk
+        - Western Canadian Inuktitut
+        - Western Canadian Inuit
+        - Western Canadian Inuktun
+    - Kivallirmiut
+    - Natsilingmiut
+    - Nunavimmiutit
+    - Nunatsiavummiut
+    -   - Siglitun
+        - Siglit
+Cans/nsk:
+    ancestors:
+    - cr
+    family: alg
+    lang: nsk
+    name: Naskapi
+    script: Cans
+    translit: nsk-translit
+Cher:
+    script: Cher
+    translit: cher-translit
+Cher/chr:
+    family: iro
+    lang: chr
+    name: Cherokee
+    script: Cher
+    translit: Cher-translit
+Chrs:
+    script: Chrs
+    translit: Chrs-translit
+Chrs/xco:
+    family: ira-sbc
+    lang: xco
+    name: Khwarezmian
+    other_names:
+    - Chorasmian
+    - Khwarazmian
+    - Khorezmian
+    script: Chrs
+    translit: Chrs-translit
+Copt:
+    script: Copt
+    translit: copt-translit
+Copt/cop:
+    ancestors:
+    - egx-dem
+    family: egx
+    lang: cop
+    name: Coptic
+    script: Copt
+    translit: Copt-translit
+Cprt:
+    script: Cprt
+    translit: cprt-translit
+Cprt/grc:
+    family: grk
+    lang: grc
+    name: Ancient Greek
+    script: Cprt
+    translit: Cprt-translit
+    translit_override: true
+Cyrl/ab:
+    aliases:
+    - Abkhazian
+    - Abxazo
+    family: cau-abz
+    lang: ab
+    name: Abkhaz
+    script: Cyrl
+    translit: ab-translit
+    translit_override: true
+Cyrl/abq:
+    family: cau-abz
+    lang: abq
+    name: Abaza
+    script: Cyrl
+    translit: abq-translit
+    translit_override: true
+Cyrl/ady:
+    family: cau-cir
+    lang: ady
+    name: Adyghe
+    other_names:
+    - West Circassian
+    script: Cyrl
+    translit: ady-translit
+    translit_override: true
+Cyrl/alt:
+    aliases:
+    - Southern Altay
+    - Altai
+    - Altay
+    family: trk-sib
+    lang: alt
+    name: Southern Altai
+    script: Cyrl
+    translit: Altai-translit
+Cyrl/atv:
+    family: trk-sib
+    lang: atv
+    name: Northern Altai
+    other_names:
+    - Northern Altay
+    - Altai
+    - Altay
+    script: Cyrl
+    translit: Altai-translit
+Cyrl/av:
+    aliases:
+    - Avaric
+    ancestors:
+    - oav
+    family: cau-nec
+    lang: av
+    name: Avar
+    script: Cyrl
+    translit: av-translit
+    translit_override: true
+Cyrl/ba:
+    family: trk-kbu
+    lang: ba
+    name: Bashkir
+    script: Cyrl
+    translit: ba-translit
+    translit_override: true
+Cyrl/bdk:
+    aliases:
+    - Budugh
+    family: cau-lzg
+    lang: bdk
+    name: Budukh
+    script: Cyrl
+    translit: bdk-translit
+    translit_override: true
+Cyrl/be:
+    aliases:
+    - Belorussian
+    - Belarusan
+    - Bielorussian
+    - Byelorussian
+    - Belarussian
+    - White Russian
+    ancestors:
+    - orv
+    family: zle
+    lang: be
+    name: Belarusian
+    script: Cyrl
+    translit: be-translit
+Cyrl/bg:
+    ancestors:
+    - cu
+    family: zls
+    lang: bg
+    name: Bulgarian
+    script: Cyrl
+    translit: bg-translit
+Cyrl/bua:
+    aliases:
+    - Buriat
+    family: xgn
+    lang: bua
+    name: Buryat
+    script: Cyrl
+    translit: bua-translit
+    translit_override: true
+Cyrl/ce:
+    family: cau-vay
+    lang: ce
+    name: Chechen
+    script: Cyrl
+    translit: ce-translit
+    translit_override: true
+Cyrl/chm:
+    family: urj
+    lang: chm
+    name: Eastern Mari
+    other_names:
+    - Meadow Mari
+    - Lowland Mari
+    - Midland Mari
+    - Standard Mari
+    - Upo Mari
+    - Mari
+    - Mari (Russia)
+    script: Cyrl
+    translit: chm-translit
+    translit_override: true
+Cyrl/cv:
+    ancestors:
+    - xbo
+    family: trk-ogr
+    lang: cv
+    name: Chuvash
+    script: Cyrl
+    translit: cv-translit
+    translit_override: true
+Cyrl/dar:
+    aliases:
+    - Dargin
+    family: cau-drg
+    lang: dar
+    name: Dargwa
+    script: Cyrl
+    translit: dar-translit
+    translit_override: true
+Cyrl/ddo:
+    aliases:
+    - Tsezi
+    - Dido
+    family: cau-tsz
+    lang: ddo
+    name: Tsez
+    script: Cyrl
+    translit: ddo-translit
+Cyrl/dng:
+    ancestors:
+    - cmn
+    family: zhx
+    lang: dng
+    name: Dungan
+    script: Cyrl
+    translit: dng-translit
+Cyrl/eve:
+    family: tuw
+    lang: eve
+    name: Even
+    script: Cyrl
+    translit: eve-translit
+Cyrl/evn:
+    family: tuw
+    lang: evn
+    name: Evenki
+    script: Cyrl
+    translit: evn-translit
+Cyrl/gin:
+    aliases:
+    - Hinuq
+    - Hinux
+    - Ginukh
+    - Ginux
+    family: cau-tsz
+    lang: gin
+    name: Hinukh
+    script: Cyrl
+    translit: gin-translit
+Cyrl/huz:
+    family: cau-tsz
+    lang: huz
+    name: Hunzib
+    script: Cyrl
+    translit: huz-translit
+Cyrl/inh:
+    family: cau-vay
+    lang: inh
+    name: Ingush
+    script: Cyrl
+    translit: inh-translit
+    translit_override: true
+Cyrl/jdt:
+    ancestors:
+    - fa
+    family: ira-swi
+    lang: jdt
+    name: Judeo-Tat
+    other_names:
+    - Juhuri
+    - Juvuri
+    - Juwuri
+    script: Cyrl
+    translit: jdt-translit
+Cyrl/kap:
+    family: cau-tsz
+    lang: kap
+    name: Bezhta
+    other_names:
+    - Bezheta
+    - Kapucha
+    - Bezhita
+    script: Cyrl
+    translit: kap-translit
+Cyrl/kbd:
+    family: cau-cir
+    lang: kbd
+    name: Kabardian
+    other_names:
+    - East Circassian
+    script: Cyrl
+    translit: kbd-translit
+    translit_override: true
+Cyrl/kca:
+    family: urj-ugr
+    lang: kca
+    name: Khanty
+    script: Cyrl
+    translit: kca-translit
+    translit_override: true
+Cyrl/khv:
+    family: cau-tsz
+    lang: khv
+    name: Khvarshi
+    other_names:
+    - Khwarshi
+    - Xvarshi
+    - Inkhokvari
+    script: Cyrl
+    translit: khv-translit
+Cyrl/kjh:
+    family: trk-sib
+    lang: kjh
+    name: Khakas
+    script: Cyrl
+    translit: kjh-translit
+    translit_override: true
+Cyrl/kjj:
+    family: cau-nec
+    lang: kjj
+    name: Khinalug
+    other_names:
+    - Khinalig
+    - Xinalug
+    - Xinalugh
+    - Khinalugh
+    script: Cyrl
+    translit: kjj-translit
+    translit_override: true
+Cyrl/kk:
+    family: trk-kno
+    lang: kk
+    name: Kazakh
+    script: Cyrl
+    translit: kk-translit
+    translit_override: true
+Cyrl/kmr:
+    ancestors:
+    - ku-pro
+    family: ku
+    lang: kmr
+    name: Northern Kurdish
+    other_names:
+    - Kurmanji
+    script: Cyrl
+    translit: Brah-translit
+Cyrl/koi:
+    family: urj-prm
+    lang: koi
+    name: Komi-Permyak
+    script: Cyrl
+    translit: kv-translit
+    translit_override: true
+Cyrl/kpv:
+    family: urj-prm
+    lang: kpv
+    name: Komi-Zyrian
+    other_names:
+    - Komi
+    script: Cyrl
+    translit: kv-translit
+    translit_override: true
+Cyrl/krc:
+    family: trk-kcu
+    lang: krc
+    name: Karachay-Balkar
+    script: Cyrl
+    translit: krc-translit
+Cyrl/kum:
+    family: trk-kcu
+    lang: kum
+    name: Kumyk
+    script: Cyrl
+    translit: kum-translit
+Cyrl/ky:
+    aliases:
+    - Kirghiz
+    - Kirgiz
+    family: trk-kip
+    lang: ky
+    name: Kyrgyz
+    script: Cyrl
+    translit: ky-translit
+    translit_override: true
+Cyrl/lbe:
+    family: cau-nec
+    lang: lbe
+    name: Lak
+    script: Cyrl
+    translit: lbe-translit
+    translit_override: true
+Cyrl/lez:
+    family: cau-lzg
+    lang: lez
+    name: Lezgi
+    other_names:
+    - Lezgian
+    - Lezgin
+    script: Cyrl
+    translit: lez-translit
+    translit_override: true
+Cyrl/mdf:
+    family: urj-mdv
+    lang: mdf
+    name: Moksha
+    other_names:
+    - Mordvin
+    script: Cyrl
+    translit: mdf-translit
+    translit_override: true
+Cyrl/mk:
+    family: zls
+    lang: mk
+    name: Macedonian
+    script: Cyrl
+    translit: mk-translit
+Cyrl/mn:
+    ancestors:
+    - cmg
+    family: xgn
+    lang: mn
+    name: Mongolian
+    script: Cyrl
+    translit: mn-translit
+    translit_override: true
+    varieties:
+    - Khalkha Mongolian
+Cyrl/mns:
+    family: urj-ugr
+    lang: mns
+    name: Mansi
+    script: Cyrl
+    translit: mns-translit
+    translit_override: true
+Cyrl/mrj:
+    ancestors:
+    - chm
+    family: urj
+    lang: mrj
+    name: Western Mari
+    other_names:
+    - Hill Mari
+    - Mountain Mari
+    - Highland Mari
+    script: Cyrl
+    translit: chm-translit
+Cyrl/myv:
+    family: urj-mdv
+    lang: myv
+    name: Erzya
+    other_names:
+    - Mordvin
+    script: Cyrl
+    translit: myv-translit
+    translit_override: true
+Cyrl/niv:
+    family: qfa-iso
+    lang: niv
+    name: Nivkh
+    script: Cyrl
+    translit: niv-translit
+Cyrl/nog:
+    family: trk-kno
+    lang: nog
+    name: Nogai
+    other_names:
+    - Nogay
+    script: Cyrl
+    translit: nog-translit
+    translit_override: true
+Cyrl/omk:
+    family: qfa-yuk
+    lang: omk
+    name: Omok
+    script: Cyrl
+    translit: omk-translit
+Cyrl/os:
+    aliases:
+    - Ossete
+    - Ossetic
+    ancestors:
+    - oos
+    family: xsc
+    lang: os
+    name: Ossetian
+    script: Cyrl
+    translit: os-translit
+    translit_override: true
+    varieties:
+    - Digor
+    - Iron
+Cyrl/pnt:
+    ancestors:
+    - grc
+    family: grk
+    lang: pnt
+    name: Pontic Greek
+    other_names:
+    - Pontic
+    script: Cyrl
+    translit: grc-translit
+Cyrl/ru:
+    family: zle
+    lang: ru
+    name: Russian
+    script: Cyrl
+    translit: ru-translit
+Cyrl/rue:
+    ancestors:
+    - orv
+    family: zle
+    lang: rue
+    name: Rusyn
+    script: Cyrl
+    translit: rue-translit
+Cyrl/sah:
+    family: trk-sib
+    lang: sah
+    name: Yakut
+    other_names:
+    - Sakha
+    script: Cyrl
+    translit: sah-translit
+    translit_override: true
+Cyrl/sgh:
+    ancestors:
+    - ira-shr-pro
+    family: ira-shy
+    lang: sgh
+    name: Shughni
+    script: Cyrl
+    translit: sgh-translit
+    translit_override: true
+Cyrl/sjd:
+    family: smi
+    lang: sjd
+    name: Kildin Sami
+    script: Cyrl
+    translit: sjd-translit
+Cyrl/sva:
+    family: ccs
+    lang: sva
+    name: Svan
+    script: Cyrl
+    translit: sva-translit
+    translit_override: true
+Cyrl/tab:
+    family: cau-lzg
+    lang: tab
+    name: Tabasaran
+    other_names:
+    - Tabassaran
+    script: Cyrl
+    translit: tab-translit
+    translit_override: true
+Cyrl/tg:
+    aliases:
+    - Eastern Persian
+    - Tadjik
+    - Tadzhik
+    - Tajiki
+    - Tajik Persian
+    - Tajiki Persian
+    ancestors:
+    - pal
+    family: ira-swi
+    lang: tg
+    name: Tajik
+    script: Cyrl
+    translit: tg-translit
+    translit_override: true
+Cyrl/tt:
+    family: trk-kbu
+    lang: tt
+    name: Tatar
+    script: Cyrl
+    translit: tt-translit
+    translit_override: true
+Cyrl/tyv:
+    family: trk-sib
+    lang: tyv
+    name: Tuvan
+    other_names:
+    - Tyvan
+    script: Cyrl
+    translit: tyv-translit
+    translit_override: true
+Cyrl/udi:
+    ancestors:
+    - xag
+    family: cau-nec
+    lang: udi
+    name: Udi
+    script: Cyrl
+    translit: udi-translit
+    translit_override: true
+Cyrl/udm:
+    family: urj-prm
+    lang: udm
+    name: Udmurt
+    script: Cyrl
+    translit: udm-translit
+    translit_override: true
+Cyrl/ug:
+    aliases:
+    - Uigur
+    - Uighur
+    - Uygur
+    ancestors:
+    - chg
+    family: trk-kar
+    lang: ug
+    name: Uyghur
+    script: Cyrl
+    translit: ug-translit
+    translit_override: true
+Cyrl/uk:
+    ancestors:
+    - orv
+    family: zle
+    lang: uk
+    name: Ukrainian
+    script: Cyrl
+    translit: uk-translit
+Cyrl/wbl:
+    family: xsc-skw
+    lang: wbl
+    name: Wakhi
+    script: Cyrl
+    translit: tg-translit
+Cyrl/xal:
+    ancestors:
+    - xwo
+    family: xgn
+    lang: xal
+    name: Kalmyk
+    other_names:
+    - Oirat
+    - Modern Oirat
+    script: Cyrl
+    translit: xal-translit
+    translit_override: true
+Cyrl/yai:
+    aliases:
+    - Yaghnobi
+    - Yaghnabi
+    - Yagnabi
+    family: ira-sgc
+    lang: yai
+    name: Yagnobi
+    script: Cyrl
+    translit: tg-translit
+Cyrl/ykg:
+    family: qfa-yuk
+    lang: ykg
+    name: Northern Yukaghir
+    other_names:
+    - Tundra Yukaghir
+    script: Cyrl
+    translit: ykg-translit
+Cyrl/yux:
+    family: qfa-yuk
+    lang: yux
+    name: Southern Yukaghir
+    other_names:
+    - Forest Yukaghir
+    - Kolyma Yukaghir
+    script: Cyrl
+    translit: yux-translit
+Cyrs/cu:
+    aliases:
+    - Old Church Slavic
+    family: zls
+    lang: cu
+    name: Old Church Slavonic
+    script: Cyrs
+    translit: Cyrs-Glag-translit
+Cyrs/orv:
+    family: zle
+    lang: orv
+    name: Old East Slavic
+    other_names:
+    - Old Russian
+    script: Cyrs
+    translit: Cyrs-Glag-translit
+Cyrs/zle-ono:
+    family: zle
+    lang: zle-ono
+    name: Old Novgorodian
+    script: Cyrs
+    translit: Cyrs-Glag-translit
+Cyrs>Glag:
+    script: Cyrs
+    to_script: Glag
+    translit: cyrs-glag-translit
+Deva/awa:
+    ancestors:
+    - inc-pra
+    family: inc-hie
+    lang: awa
+    name: Awadhi
+    script: Deva
+    translit: hi-translit
+Deva/bfy:
+    ancestors:
+    - inc-pra
+    family: inc-hie
+    lang: bfy
+    name: Bagheli
+    script: Deva
+    translit: hi-translit
+Deva/bfz:
+    family: him
+    lang: bfz
+    name: Mahasu Pahari
+    script: Deva
+    translit: hi-translit
+Deva/bgc:
+    ancestors:
+    - inc-ohi
+    family: inc-cen
+    lang: bgc
+    name: Haryanvi
+    script: Deva
+    translit: hi-translit
+Deva/bhd:
+    aliases:
+    - Bhadarwahi
+    family: him
+    lang: bhd
+    name: Bhadrawahi
+    script: Deva
+    translit: hi-translit
+Deva/bho:
+    ancestors:
+    - bh
+    family: inc-hie
+    lang: bho
+    name: Bhojpuri
+    script: Deva
+    translit: bho-translit
+Deva/bns:
+    ancestors:
+    - inc-ohi
+    family: inc-cen
+    lang: bns
+    name: Bundeli
+    other_names:
+    - Bundelkhandi
+    script: Deva
+    translit: hi-translit
+Deva/bpx:
+    ancestors:
+    - psu
+    family: inc-bhi
+    lang: bpx
+    name: Palya Bareli
+    script: Deva
+    translit: hi-translit
+Deva/bra:
+    ancestors:
+    - inc-ohi
+    family: inc-cen
+    lang: bra
+    name: Braj
+    other_names:
+    - Braj Bhasha
+    script: Deva
+    translit: hi-translit
+Deva/brx:
+    family: tbq-bdg
+    lang: brx
+    name: Bodo (India)
+    other_names:
+    - Bodo
+    - Boro
+    - Boro (India)
+    - Mech
+    script: Deva
+    translit: brx-translit
+Deva/cdh:
+    family: him
+    lang: cdh
+    name: Chambeali
+    script: Deva
+    translit: hi-translit
+Deva/cdj:
+    family: him
+    lang: cdj
+    name: Churahi
+    script: Deva
+    translit: hi-translit
+Deva/doi:
+    family: him
+    lang: doi
+    name: Dogri
+    script: Deva
+    translit: hi-translit
+Deva/dty:
+    aliases:
+    - Dotyali
+    ancestors:
+    - ne
+    family: inc-pah
+    lang: dty
+    name: Doteli
+    script: Deva
+    translit: ne-translit
+Deva/gbk:
+    family: him
+    lang: gbk
+    name: Gaddi
+    script: Deva
+    translit: hi-translit
+Deva/gbm:
+    family: inc-pah
+    lang: gbm
+    name: Garhwali
+    script: Deva
+    translit: hi-translit
+Deva/hi:
+    ancestors:
+    - inc-ohi
+    family: inc-hnd
+    lang: hi
+    name: Hindi
+    other_names:
+    - Hindavi
+    script: Deva
+    translit: hi-translit
+Deva/inc-ogu:
+    ancestors:
+    - inc-gup
+    family: inc-wes
+    lang: inc-ogu
+    name: Old Gujarati
+    other_names:
+    - Old Western Rajasthani
+    script: Deva
+    translit: sa-translit
+Deva/inc-ohi:
+    ancestors:
+    - inc-sap
+    family: inc-hiw
+    lang: inc-ohi
+    name: Old Hindi
+    script: Deva
+    translit: sa-translit
+Deva/inc-pra:
+    ancestors:
+    - inc-ash
+    family: inc-mid
+    lang: inc-pra
+    name: Prakrit
+    script: Deva
+    translit: inc-pra-Deva-translit
+Deva/inc-tak:
+    ancestors:
+    - inc-pra
+    family: inc-pan
+    lang: inc-tak
+    name: Takka Apabhramsa
+    script: Deva
+    translit: sa-translit
+Deva/inc-vra:
+    ancestors:
+    - inc-pra
+    family: inc-snd
+    lang: inc-vra
+    name: Vracada Apabhramsa
+    script: Deva
+    translit: sa-translit
+Deva/kfs:
+    family: him
+    lang: kfs
+    name: Bilaspuri
+    script: Deva
+    translit: hi-translit
+Deva/kfx:
+    family: him
+    lang: kfx
+    name: Kullu Pahari
+    other_names:
+    - Kullu
+    script: Deva
+    translit: hi-translit
+Deva/kok:
+    ancestors:
+    - pmh
+    family: inc-sou
+    lang: kok
+    name: Konkani
+    script: Deva
+    translit: mr-translit
+Deva/ks:
+    aliases:
+    - Koshur
+    ancestors:
+    - inc-dar-pro
+    family: inc-dar
+    lang: ks
+    name: Kashmiri
+    script: Deva
+    translit: ks-Deva-translit
+Deva/mai:
+    ancestors:
+    - bh
+    family: inc-eas
+    lang: mai
+    name: Maithili
+    script: Deva
+    translit: mai-translit
+Deva/mjl:
+    family: him
+    lang: mjl
+    name: Mandeali
+    script: Deva
+    translit: hi-translit
+Deva/mr:
+    ancestors:
+    - omr
+    family: inc-sou
+    lang: mr
+    name: Marathi
+    script: Deva
+    translit: mr-translit
+Deva/mtr:
+    ancestors:
+    - raj
+    family: inc-wes
+    lang: mtr
+    name: Mewari
+    script: Deva
+    translit: hi-translit
+Deva/mwr:
+    ancestors:
+    - raj
+    family: inc-wes
+    lang: mwr
+    name: Marwari
+    other_names:
+    - Merwari
+    - Dhundari
+    - Shekhawati
+    - Harauti
+    - Goaria
+    - Gurgula
+    script: Deva
+    translit: hi-translit
+Deva/ne:
+    aliases:
+    - Nepalese
+    family: inc-pah
+    lang: ne
+    name: Nepali
+    script: Deva
+    translit: ne-translit
+    varieties:
+    - Palpa
+Deva/new:
+    ancestors:
+    - nwx
+    family: sit-new
+    lang: new
+    name: Newar
+    other_names:
+    - Newari
+    script: Deva
+    translit: new-translit
+Deva/omr:
+    ancestors:
+    - pmh
+    family: inc-sou
+    lang: omr
+    name: Old Marathi
+    script: Deva
+    translit: sa-translit
+Deva/pgd:
+    ancestors:
+    - inc-ash
+    family: inc-mid
+    lang: pgd
+    name: Gandhari
+    other_names:
+    - Gāndhārī
+    - Gāndhārī Prakrit
+    script: Deva
+    translit: Khar-translit
+Deva/pgg:
+    family: him
+    lang: pgg
+    name: Pangwali
+    script: Deva
+    translit: hi-translit
+Deva/pi:
+    ancestors:
+    - sa
+    family: inc-mid
+    lang: pi
+    name: Pali
+    script: Deva
+    translit: sa-translit
+Deva/pka:
+    ancestors:
+    - inc-pra
+    family: inc-mid
+    lang: pka
+    name: Ardhamagadhi Prakrit
+    script: Deva
+    translit: Brah-translit
+Deva/pmh:
+    ancestors:
+    - inc-pra
+    family: inc-mid
+    lang: pmh
+    name: Maharastri Prakrit
+    other_names:
+    - Maharashtri Prakrit
+    - Maharastri
+    - Maharashtri
+    script: Deva
+    translit: Brah-translit
+Deva/psu:
+    ancestors:
+    - inc-pra
+    family: inc-psu
+    lang: psu
+    name: Sauraseni Prakrit
+    other_names:
+    - Sauraseni
+    - Shauraseni
+    script: Deva
+    translit: Brah-translit
+Deva/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Deva
+    translit: sa-translit
+Deva/saz:
+    ancestors:
+    - inc-ogu
+    family: inc-wes
+    lang: saz
+    name: Saurashtra
+    script: Deva
+    translit: saz-translit
+Deva/unr:
+    family: mun
+    lang: unr
+    name: Mundari
+    script: Deva
+    translit: hi-translit
+Deva/xnr:
+    ancestors:
+    - doi
+    family: him
+    lang: xnr
+    name: Kangri
+    script: Deva
+    translit: hi-translit
+Deva/ybi:
+    family: sit-kie
+    lang: ybi
+    name: Yamphu
+    script: Deva
+    translit: ybi-translit
+Deva>Beng:
+    script: Deva
+    to_script: Beng
+    translit: Deva-Beng-translit
+Deva>Kthi:
+    script: Deva
+    to_script: Kthi
+    translit: Deva-Kthi-translit
+Deva>Limb:
+    script: Deva
+    to_script: Limb
+    translit: Deva-Limb-translit
+Deva>Newa:
+    script: Deva
+    to_script: Newa
+    translit: Deva-Newa-translit
+Deva>Sind:
+    script: Deva
+    to_script: Sind
+    translit: Deva-Sind-translit
+Deva>Tirh:
+    script: Deva
+    to_script: Tirh
+    translit: Deva-Tirh-translit
+Dogr/doi:
+    family: him
+    lang: doi
+    name: Dogri
+    script: Dogr
+    translit: hi-translit
+Ethi:
+    script: Ethi
+    translit: ethi-translit
+Ethi/am:
+    family: sem-eth
+    lang: am
+    name: Amharic
+    script: Ethi
+    translit: Ethi-translit
+Ethi/byn:
+    aliases:
+    - Bilin
+    - Bilen
+    - Belen
+    - Bilein
+    family: cus
+    lang: byn
+    name: Blin
+    script: Ethi
+    translit: Ethi-translit
+Ethi/dlk:
+    aliases:
+    - Dahlik
+    family: sem-eth
+    lang: dlk
+    name: Dahalik
+    script: Ethi
+    translit: Ethi-translit
+Ethi/gez:
+    aliases:
+    - Ethiopic
+    - Gi'iz
+    - Geez
+    family: sem-eth
+    lang: gez
+    name: Ge'ez
+    script: Ethi
+    translit: Ethi-translit
+Ethi/har:
+    family: sem-eth
+    lang: har
+    name: Harari
+    script: Ethi
+    translit: Ethi-translit
+Ethi/sem-cha:
+    aliases:
+    - Cheha
+    ancestors:
+    - sem-pro
+    family: sem-eth
+    lang: sem-cha
+    name: Chaha
+    script: Ethi
+    translit: Ethi-translit
+Ethi/ti:
+    aliases:
+    - Tigrigna
+    family: sem-eth
+    lang: ti
+    name: Tigrinya
+    script: Ethi
+    translit: Ethi-translit
+Ethi/tig:
+    family: sem-eth
+    lang: tig
+    name: Tigre
+    script: Ethi
+    translit: Ethi-translit
+Geok/ka:
+    ancestors:
+    - oge
+    family: ccs-gzn
+    lang: ka
+    name: Georgian
+    script: Geok
+    translit: Geor-translit
+    translit_override: true
+    varieties:
+    -   - Judeo-Georgian
+        - Kivruli
+        - Gruzinic
+Geor:
+    script: Geor
+    translit: geor-translit
+Geor/ab:
+    aliases:
+    - Abkhazian
+    - Abxazo
+    family: cau-abz
+    lang: ab
+    name: Abkhaz
+    script: Geor
+    translit: ab-translit
+    translit_override: true
+Geor/bbl:
+    family: cau-nkh
+    lang: bbl
+    name: Bats
+    other_names:
+    - Batsbi
+    - Tsova-Tush
+    script: Geor
+    translit: Geor-translit
+Geor/ka:
+    ancestors:
+    - oge
+    family: ccs-gzn
+    lang: ka
+    name: Georgian
+    script: Geor
+    translit: Geor-translit
+    translit_override: true
+    varieties:
+    -   - Judeo-Georgian
+        - Kivruli
+        - Gruzinic
+Geor/lzz:
+    family: ccs-zan
+    lang: lzz
+    name: Laz
+    script: Geor
+    translit: Geor-translit
+    translit_override: true
+Geor/oge:
+    family: ccs-gzn
+    lang: oge
+    name: Old Georgian
+    script: Geor
+    translit: Geor-translit
+    translit_override: true
+Geor/os:
+    aliases:
+    - Ossete
+    - Ossetic
+    ancestors:
+    - oos
+    family: xsc
+    lang: os
+    name: Ossetian
+    script: Geor
+    translit: os-translit
+    translit_override: true
+    varieties:
+    - Digor
+    - Iron
+Geor/sva:
+    family: ccs
+    lang: sva
+    name: Svan
+    script: Geor
+    translit: sva-translit
+    translit_override: true
+Geor/udi:
+    ancestors:
+    - xag
+    family: cau-nec
+    lang: udi
+    name: Udi
+    script: Geor
+    translit: Geor-translit
+    translit_override: true
+Geor/xmf:
+    family: ccs-zan
+    lang: xmf
+    name: Mingrelian
+    other_names:
+    - Megrelian
+    - Mingrel
+    - Megrel
+    script: Geor
+    translit: Geor-translit
+    translit_override: true
+Glag/cu:
+    aliases:
+    - Old Church Slavic
+    family: zls
+    lang: cu
+    name: Old Church Slavonic
+    script: Glag
+    translit: Cyrs-Glag-translit
+Glag/zle-ono:
+    family: zle
+    lang: zle-ono
+    name: Old Novgorodian
+    script: Glag
+    translit: Cyrs-Glag-translit
+Goth:
+    script: Goth
+    translit: goth-translit
+Goth/got:
+    family: gme
+    lang: got
+    name: Gothic
+    script: Goth
+    translit: Goth-translit
+Gran/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Gran
+    translit: Brah-translit
+Grek/el:
+    aliases:
+    - Modern Greek
+    - Neo-Hellenic
+    ancestors:
+    - grc
+    family: grk
+    lang: el
+    name: Greek
+    script: Grek
+    translit: el-translit
+    translit_override: true
+Grek/oos:
+    ancestors:
+    - os-pro
+    family: xsc
+    lang: oos
+    name: Old Ossetic
+    other_names:
+    - Old Ossetian
+    - Alanic
+    - Sarmatian
+    script: Grek
+    translit: grc-translit
+Grek/pnt:
+    ancestors:
+    - grc
+    family: grk
+    lang: pnt
+    name: Pontic Greek
+    other_names:
+    - Pontic
+    script: Grek
+    translit: grc-translit
+Grek/txh:
+    family: ine
+    lang: txh
+    name: Thracian
+    script: Grek
+    translit: el-translit
+Grek/xbc:
+    family: ira-sbc
+    lang: xbc
+    name: Bactrian
+    other_names:
+    - Greco-Bactrian
+    - Kushan
+    - Kushano-Bactrian
+    script: Grek
+    translit: xbc-translit
+Grek/xpg:
+    family: ine
+    lang: xpg
+    name: Phrygian
+    script: Grek
+    translit: grc-translit
+Grek/xpu:
+    ancestors:
+    - phn
+    family: sem-can
+    lang: xpu
+    name: Punic
+    script: Grek
+Gujr/ae:
+    aliases:
+    - Zend
+    - Old Bactrian
+    family: ira-cen
+    lang: ae
+    name: Avestan
+    script: Gujr
+    translit: Avst-translit
+Gujr/gu:
+    ancestors:
+    - inc-mgu
+    family: inc-wes
+    lang: gu
+    name: Gujarati
+    script: Gujr
+    translit: gu-translit
+Gujr/kfr:
+    ancestors:
+    - inc-vra
+    family: inc-snd
+    lang: kfr
+    name: Kachchi
+    other_names:
+    - Kutchi
+    - Cutchi
+    - Kachchhi
+    - Kutchhi
+    script: Gujr
+    translit: gu-translit
+Gujr/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Gujr
+    translit: sa-Gujr-translit
+Gujr/vgr:
+    family: inc-bhi
+    lang: vgr
+    name: Vaghri
+    script: Gujr
+    translit: gu-translit
+Guru:
+    script: Guru
+    translit: guru-translit
+Guru/inc-opa:
+    ancestors:
+    - inc-tak
+    family: inc-pan
+    lang: inc-opa
+    name: Old Punjabi
+    script: Guru
+    translit: Guru-translit
+Guru/pa:
+    aliases:
+    - Panjabi
+    ancestors:
+    - inc-opa
+    family: inc-pan
+    lang: pa
+    name: Punjabi
+    script: Guru
+    translit: Guru-translit
+Guru/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Guru
+    translit: sa-Gujr-translit
+Hani/dng:
+    ancestors:
+    - cmn
+    family: zhx
+    lang: dng
+    name: Dungan
+    script: Hani
+    translit: dng-translit
+Hatr/arc:
+    family: sem-ara
+    lang: arc
+    name: Aramaic
+    script: Hatr
+    translit: Palm-translit
+Hebr/ar:
+    aliases:
+    - Standard Arabic
+    - Literary Arabic
+    - High Arabic
+    family: sem-arb
+    lang: ar
+    name: Arabic
+    script: Hebr
+    translit: ar-translit
+    varieties:
+    - Modern Standard Arabic
+    - Classical Arabic
+    - Judeo-Arabic
+Hebr/arc:
+    family: sem-ara
+    lang: arc
+    name: Aramaic
+    script: Hebr
+Hebr/jdt:
+    ancestors:
+    - fa
+    family: ira-swi
+    lang: jdt
+    name: Judeo-Tat
+    other_names:
+    - Juhuri
+    - Juvuri
+    - Juwuri
+    script: Hebr
+    translit: jdt-translit
+Hebr/ka:
+    ancestors:
+    - oge
+    family: ccs-gzn
+    lang: ka
+    name: Georgian
+    script: Hebr
+    translit: Geor-translit
+    translit_override: true
+    varieties:
+    -   - Judeo-Georgian
+        - Kivruli
+        - Gruzinic
+Hebr/yi:
+    ancestors:
+    - gmh
+    family: gmw
+    lang: yi
+    name: Yiddish
+    script: Hebr
+    translit: yi-translit
+    varieties:
+    - American Yiddish
+    - Daytshmerish Yiddish
+    - Mideastern Yiddish
+    - Galitzish
+    -   - Northeastern Yiddish
+        - Litvish
+        - Lithuanian Yiddish
+    -   - Northwestern Yiddish
+        - Netherlandic Yiddish
+    -   - Polish Yiddish
+        - Poylish
+    - South African Yiddish
+    -   - Southeastern Yiddish
+        - Ukrainian Yiddish
+        - Ukrainish
+    -   - Southwestern Yiddish
+        - Judeo-Alsatian
+    - Udmurtish
+Ital:
+    script: Ital
+    translit: ital-translit
+Ital/ett:
+    family: qfa-tyn
+    lang: ett
+    name: Etruscan
+    script: Ital
+    translit: Ital-translit
+Ital/itc-ola:
+    aliases:
+    - Archaic Latin
+    - Early Latin
+    - Pre-Classical Latin
+    - Ante-Classical Latin
+    family: itc
+    lang: itc-ola
+    name: Old Latin
+    script: Ital
+    translit: Ital-translit
+Ital/nrp:
+    lang: nrp
+    name: North Picene
+    script: Ital
+    translit: Ital-translit
+Ital/osc:
+    family: itc
+    lang: osc
+    name: Oscan
+    script: Ital
+    translit: Ital-translit
+Ital/spx:
+    family: itc
+    lang: spx
+    name: South Picene
+    other_names:
+    - Old Sabellic
+    - Old Sabellian
+    - Middle Adriatic
+    - Central Adriatic
+    script: Ital
+    translit: Ital-translit
+Ital/xcc:
+    lang: xcc
+    name: Camunic
+    script: Ital
+    translit: Ital-translit
+Ital/xfa:
+    family: itc
+    lang: xfa
+    name: Faliscan
+    script: Ital
+    translit: Ital-translit
+Ital/xle:
+    family: qfa-tyn
+    lang: xle
+    name: Lemnian
+    script: Ital
+    translit: Ital-translit
+Ital/xlp:
+    family: cel
+    lang: xlp
+    name: Lepontic
+    script: Ital
+    translit: Ital-translit
+Ital/xrr:
+    lang: xrr
+    name: Raetic
+    other_names:
+    - Rhaetic
+    - Rhaetian
+    script: Ital
+    translit: Ital-translit
+Ital/xum:
+    family: itc
+    lang: xum
+    name: Umbrian
+    script: Ital
+    translit: Ital-translit
+Ital/xve:
+    family: ine
+    lang: xve
+    name: Venetic
+    script: Ital
+    translit: Ital-translit
+Java/jv:
+    ancestors:
+    - kaw
+    family: poz-sus
+    lang: jv
+    name: Javanese
+    script: Java
+    translit: jv-translit
+Java/kaw:
+    family: poz-sus
+    lang: kaw
+    name: Old Javanese
+    other_names:
+    - Kawi
+    script: Java
+    translit: jv-translit
+Java/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Java
+    translit: sa-Java-translit
+Kali:
+    script: Kali
+    translit: Kali-translit
+Kali/kyu:
+    family: kar
+    lang: kyu
+    name: Western Kayah
+    script: Kali
+    translit: Kali-translit
+Kham:
+    script: Kham
+    translit: kham-translit
+Khar:
+    script: Khar
+    translit: khar-translit
+Khar/inc-ash:
+    ancestors:
+    - sa
+    family: inc-mid
+    lang: inc-ash
+    name: Ashokan Prakrit
+    script: Khar
+    translit: Khar-translit
+Khar/kho:
+    family: xsc-sak
+    lang: kho
+    name: Khotanese
+    script: Khar
+    translit: Brah-translit
+Khar/pgd:
+    ancestors:
+    - inc-ash
+    family: inc-mid
+    lang: pgd
+    name: Gandhari
+    other_names:
+    - Gāndhārī
+    - Gāndhārī Prakrit
+    script: Khar
+    translit: Khar-translit
+Khar/pra-niy:
+    ancestors:
+    - inc-ash
+    family: inc-mid
+    lang: pra-niy
+    name: Niya Prakrit
+    script: Khar
+    translit: Khar-translit
+Khar/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Khar
+    translit: sa-Java-translit
+Khar/xtq:
+    family: xsc-sak
+    lang: xtq
+    name: Tumshuqese
+    script: Khar
+    translit: Brah-translit
+Khmr/km:
+    aliases:
+    - Cambodian
+    - Central Khmer
+    - Modern Khmer
+    ancestors:
+    - mkh-mkm
+    family: mkh-kmr
+    lang: km
+    name: Khmer
+    script: Khmr
+    translit: km-translit
+Khmr/pi:
+    ancestors:
+    - sa
+    family: inc-mid
+    lang: pi
+    name: Pali
+    script: Khmr
+    translit: pi-translit
+Khmr/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Khmr
+    translit: pi-translit
+Knda/dra-mkn:
+    aliases:
+    - Nadugannada
+    ancestors:
+    - dra-okn
+    family: dra
+    lang: dra-mkn
+    name: Middle Kannada
+    script: Knda
+    translit: kn-translit
+Knda/dra-okn:
+    aliases:
+    - Halegannada
+    ancestors:
+    - dra-pro
+    family: dra
+    lang: dra-okn
+    name: Old Kannada
+    script: Knda
+    translit: kn-translit
+Knda/inc-pra:
+    ancestors:
+    - inc-ash
+    family: inc-mid
+    lang: inc-pra
+    name: Prakrit
+    script: Knda
+    translit: inc-pra-Knda-translit
+Knda/kn:
+    ancestors:
+    - dra-mkn
+    family: dra
+    lang: kn
+    name: Kannada
+    script: Knda
+    translit: kn-translit
+Knda/kok:
+    ancestors:
+    - pmh
+    family: inc-sou
+    lang: kok
+    name: Konkani
+    script: Knda
+    translit: mr-translit
+Knda/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Knda
+    translit: sa-Knda-translit
+Knda/tcy:
+    family: dra
+    lang: tcy
+    name: Tulu
+    script: Knda
+    translit: kn-translit
+Kore/ko:
+    aliases:
+    - Modern Korean
+    ancestors:
+    - okm
+    family: qfa-kor
+    lang: ko
+    name: Korean
+    script: Kore
+    translit: ko-translit
+Kthi/awa:
+    ancestors:
+    - inc-pra
+    family: inc-hie
+    lang: awa
+    name: Awadhi
+    script: Kthi
+    translit: hi-translit
+Kthi/bho:
+    ancestors:
+    - bh
+    family: inc-hie
+    lang: bho
+    name: Bhojpuri
+    script: Kthi
+    translit: bho-Kthi-translit
+Kthi/hi:
+    ancestors:
+    - inc-ohi
+    family: inc-hnd
+    lang: hi
+    name: Hindi
+    other_names:
+    - Hindavi
+    script: Kthi
+    translit: hi-translit
+Kthi/mai:
+    ancestors:
+    - bh
+    family: inc-eas
+    lang: mai
+    name: Maithili
+    script: Kthi
+    translit: bho-Kthi-translit
+Lana/khb:
+    aliases:
+    - Lue
+    - Tai Lü
+    - Tai Lue
+    - Dai Lue
+    family: tai-swe
+    lang: khb
+    name: Lü
+    script: Lana
+Lana/pi:
+    ancestors:
+    - sa
+    family: inc-mid
+    lang: pi
+    name: Pali
+    script: Lana
+    translit: pi-translit
+Lana/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Lana
+    translit: pi-translit
+Laoo/lo:
+    aliases:
+    - Laotian
+    family: tai-swe
+    lang: lo
+    name: Lao
+    script: Laoo
+    translit: lo-translit
+Laoo/pi:
+    ancestors:
+    - sa
+    family: inc-mid
+    lang: pi
+    name: Pali
+    script: Laoo
+    translit: pi-translit
+Laoo/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Laoo
+    translit: pi-translit
+Latn/pi>Beng:
+    script: Latn
+    to_script: Beng
+    translit: pi-Latn-translit
+    translit_tr_arg: Beng
+Latn/pi>Brah:
+    script: Latn
+    to_script: Brah
+    translit: pi-Latn-translit
+    translit_tr_arg: Brah
+Latn/pi>Deva:
+    script: Latn
+    to_script: Deva
+    translit: pi-Latn-translit
+    translit_tr_arg: Deva
+Latn/pi>Khmr:
+    script: Latn
+    to_script: Khmr
+    translit: pi-Latn-translit
+    translit_tr_arg: Khmr
+Latn/pi>Lana:
+    script: Latn
+    to_script: Lana
+    translit: pi-Latn-translit
+    translit_tr_arg: Lana
+Latn/pi>Laoo:
+    script: Latn
+    to_script: Laoo
+    translit: pi-Latn-translit
+    translit_tr_arg: Laoo
+Latn/pi>Mymr:
+    script: Latn
+    to_script: Mymr
+    translit: pi-Latn-translit
+    translit_tr_arg: Mymr
+Latn/pi>Sinh:
+    script: Latn
+    to_script: Sinh
+    translit: pi-Latn-translit
+    translit_tr_arg: Sinh
+Latn/pi>Thai:
+    script: Latn
+    to_script: Thai
+    translit: pi-Latn-translit
+    translit_tr_arg: Thai
+Lepc/lep:
+    family: sit
+    lang: lep
+    name: Lepcha
+    script: Lepc
+    translit: lep-translit
+Limb/lif:
+    family: sit-kir
+    lang: lif
+    name: Limbu
+    script: Limb
+    translit: lif-translit
+Limb>Deva:
+    script: Limb
+    to_script: Deva
+    translit: Limb-Deva-translit
+Linb:
+    script: Linb
+    translit: linb-translit
+Linb/gmy:
+    family: grk
+    lang: gmy
+    name: Mycenaean Greek
+    script: Linb
+    translit: Linb-translit
+    translit_override: true
+Lyci:
+    script: Lyci
+    translit: lyci-translit
+Lyci/xlc:
+    family: ine-ana
+    lang: xlc
+    name: Lycian
+    script: Lyci
+    translit: Lyci-translit
+Lydi:
+    script: Lydi
+    translit: lydi-translit
+Lydi/xld:
+    family: ine-ana
+    lang: xld
+    name: Lydian
+    script: Lydi
+    translit: Lydi-translit
+Mahj/mwr:
+    ancestors:
+    - raj
+    family: inc-wes
+    lang: mwr
+    name: Marwari
+    other_names:
+    - Merwari
+    - Dhundari
+    - Shekhawati
+    - Harauti
+    - Goaria
+    - Gurgula
+    script: Mahj
+    translit: hi-translit
+Mand/arc:
+    family: sem-ara
+    lang: arc
+    name: Aramaic
+    script: Mand
+    translit: Palm-translit
+Mani:
+    script: Mani
+    translit: mani-translit
+Mani/pal:
+    ancestors:
+    - peo
+    family: ira-swi
+    lang: pal
+    name: Middle Persian
+    other_names:
+    - Pahlavi
+    - Manichaean Middle Persian
+    script: Mani
+    translit: Mani-translit
+Mani/sog:
+    family: ira-sgc
+    lang: sog
+    name: Sogdian
+    script: Mani
+    translit: Mani-translit
+Mani/xbc:
+    family: ira-sbc
+    lang: xbc
+    name: Bactrian
+    other_names:
+    - Greco-Bactrian
+    - Kushan
+    - Kushano-Bactrian
+    script: Mani
+    translit: xbc-translit
+Mani/xpr:
+    family: ira-mpr
+    lang: xpr
+    name: Parthian
+    script: Mani
+    translit: Mani-translit
+Merc/xmr:
+    family: afa
+    lang: xmr
+    name: Meroitic
+    other_names:
+    - Kushite
+    script: Merc
+    translit: xmr-translit
+Mero/xmr:
+    family: afa
+    lang: xmr
+    name: Meroitic
+    other_names:
+    - Kushite
+    script: Mero
+    translit: xmr-translit
+Mlym/kok:
+    ancestors:
+    - pmh
+    family: inc-sou
+    lang: kok
+    name: Konkani
+    script: Mlym
+    translit: mr-translit
+Mlym/ml:
+    family: dra
+    lang: ml
+    name: Malayalam
+    script: Mlym
+    translit: ml-translit
+    translit_override: true
+Mlym/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Mlym
+    translit: pi-translit
+Modi:
+    script: Modi
+    translit: Modi-translit
+Modi/mr:
+    ancestors:
+    - omr
+    family: inc-sou
+    lang: mr
+    name: Marathi
+    script: Modi
+    translit: mr-translit
+Modi/omr:
+    ancestors:
+    - pmh
+    family: inc-sou
+    lang: omr
+    name: Old Marathi
+    script: Modi
+    translit: Modi-translit
+Modi/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Modi
+    translit: sa-Modi-translit
+Mong/bua:
+    aliases:
+    - Buriat
+    family: xgn
+    lang: bua
+    name: Buryat
+    script: Mong
+    translit: bua-translit
+    translit_override: true
+Mong/cmg:
+    ancestors:
+    - xng
+    family: xgn
+    lang: cmg
+    name: Classical Mongolian
+    script: Mong
+    translit: mn-translit
+Mong/mn:
+    ancestors:
+    - cmg
+    family: xgn
+    lang: mn
+    name: Mongolian
+    script: Mong
+    translit: mn-translit
+    translit_override: true
+    varieties:
+    - Khalkha Mongolian
+Mong/mnc:
+    ancestors:
+    - juc
+    family: tuw
+    lang: mnc
+    name: Manchu
+    script: Mong
+    translit: mnc-translit
+Mong/xng:
+    family: xgn
+    lang: xng
+    name: Middle Mongolian
+    script: Mong
+    translit: mn-translit
+Mong/xwo:
+    family: xgn
+    lang: xwo
+    name: Written Oirat
+    script: Mong
+    translit: xwo-translit
+Mymr/ksw:
+    aliases:
+    - S'gaw Kayin
+    - S'gaw
+    - Sgaw
+    - White Karen
+    family: kar
+    lang: ksw
+    name: S'gaw Karen
+    script: Mymr
+    translit: ksw-translit
+Mymr/kyu:
+    family: kar
+    lang: kyu
+    name: Western Kayah
+    script: Mymr
+Mymr/my:
+    aliases:
+    - Myanmar
+    ancestors:
+    - obr
+    family: tbq-brm
+    lang: my
+    name: Burmese
+    script: Mymr
+    translit: my-translit
+    translit_override: true
+    varieties:
+    - Mandalay Burmese
+    - Myeik Burmese
+    - Palaw Burmese
+    -   - Rangoon Burmese
+        - Yangon Burmese
+    - Yaw Burmese
+Mymr/pi:
+    ancestors:
+    - sa
+    family: inc-mid
+    lang: pi
+    name: Pali
+    script: Mymr
+    translit: pi-translit
+Mymr/rhg:
+    ancestors:
+    - inc-obn
+    family: inc-eas
+    lang: rhg
+    name: Rohingya
+    script: Mymr
+    translit: Rohg-translit
+Mymr/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Mymr
+    translit: pi-translit
+Mymr/shn:
+    family: tai-swe
+    lang: shn
+    name: Shan
+    other_names:
+    - Kwam Tai
+    - Kam Tai
+    - Tai Yai
+    script: Mymr
+    translit: shn-translit
+Narb:
+    script: Narb
+    translit: Narb-translit
+Narb/sem-dad:
+    family: sem-cen
+    lang: sem-dad
+    name: Dadanitic
+    other_names:
+    - Dadanite
+    - Lihyanite
+    - Lihyanitic
+    script: Narb
+    translit: Narb-translit
+Narb/sem-dum:
+    family: sem-cen
+    lang: sem-dum
+    name: Dumaitic
+    script: Narb
+    translit: Narb-translit
+Narb/sem-has:
+    family: sem-cen
+    lang: sem-has
+    name: Hasaitic
+    script: Narb
+    translit: Narb-translit
+Narb/sem-his:
+    family: sem-cen
+    lang: sem-his
+    name: Hismaic
+    other_names:
+    - Thamudic E
+    script: Narb
+    translit: Narb-translit
+Narb/sem-saf:
+    family: sem-cen
+    lang: sem-saf
+    name: Safaitic
+    script: Narb
+    translit: Narb-translit
+Narb/sem-tay:
+    family: sem-cen
+    lang: sem-tay
+    name: Taymanitic
+    other_names:
+    - Taymanite
+    - Thamudic A
+    script: Narb
+    translit: Narb-translit
+Narb/sem-tha:
+    family: sem-cen
+    lang: sem-tha
+    name: Thamudic
+    script: Narb
+    translit: Narb-translit
+Nbat/arc:
+    family: sem-ara
+    lang: arc
+    name: Aramaic
+    script: Nbat
+    translit: Palm-translit
+Newa/bn:
+    aliases:
+    - Bangla
+    ancestors:
+    - inc-mbn
+    family: inc-eas
+    lang: bn
+    name: Bengali
+    script: Newa
+    translit: bn-translit
+Newa/hi:
+    ancestors:
+    - inc-ohi
+    family: inc-hnd
+    lang: hi
+    name: Hindi
+    other_names:
+    - Hindavi
+    script: Newa
+    translit: hi-translit
+Newa/mai:
+    ancestors:
+    - bh
+    family: inc-eas
+    lang: mai
+    name: Maithili
+    script: Newa
+    translit: bho-Kthi-translit
+Newa/ne:
+    aliases:
+    - Nepalese
+    family: inc-pah
+    lang: ne
+    name: Nepali
+    script: Newa
+    translit: ne-translit
+    varieties:
+    - Palpa
+Newa/new:
+    ancestors:
+    - nwx
+    family: sit-new
+    lang: new
+    name: Newar
+    other_names:
+    - Newari
+    script: Newa
+    translit: new-Newa-translit
+Newa/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Newa
+    translit: pi-translit
+Newa>Deva:
+    script: Newa
+    to_script: Deva
+    translit: Newa-Deva-translit
+Ogam/pgl:
+    family: cel-gae
+    lang: pgl
+    name: Primitive Irish
+    script: Ogam
+    translit: pgl-translit
+Olck:
+    script: Olck
+    translit: Olck-translit
+Olck/sat:
+    family: mun
+    lang: sat
+    name: Santali
+    script: Olck
+    translit: Olck-translit
+    translit_override: true
+Orkh:
+    script: Orkh
+    translit: Orkh-Bitig-translit
+Orkh/otk:
+    family: trk
+    lang: otk
+    name: Old Turkic
+    other_names:
+    - Orkhon Turkic
+    - Orkhon
+    script: Orkh
+    translit: Orkh-translit
+Orya/or:
+    aliases:
+    - Odia
+    - Oorya
+    ancestors:
+    - inc-mor
+    family: inc-eas
+    lang: or
+    name: Oriya
+    script: Orya
+    translit: or-translit
+Orya/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Orya
+    translit: sa-Orya-translit
+Orya/spv:
+    ancestors:
+    - or
+    family: inc-eas
+    lang: spv
+    name: Sambalpuri
+    other_names:
+    - Kosali
+    - Koshali
+    script: Orya
+    translit: or-translit
+Palm:
+    script: Palm
+    translit: Palm-translit
+Palm/arc:
+    family: sem-ara
+    lang: arc
+    name: Aramaic
+    script: Palm
+    translit: Palm-translit
+Perm/koi:
+    family: urj-prm
+    lang: koi
+    name: Komi-Permyak
+    script: Perm
+    translit: kv-translit
+    translit_override: true
+Phag/xng:
+    family: xgn
+    lang: xng
+    name: Middle Mongolian
+    script: Phag
+    translit: mn-translit
+Phli:
+    script: Phli
+    translit: phli-translit
+Phli/pal:
+    ancestors:
+    - peo
+    family: ira-swi
+    lang: pal
+    name: Middle Persian
+    other_names:
+    - Pahlavi
+    - Manichaean Middle Persian
+    script: Phli
+    translit: Phli-translit
+Phlp/pal:
+    ancestors:
+    - peo
+    family: ira-swi
+    lang: pal
+    name: Middle Persian
+    other_names:
+    - Pahlavi
+    - Manichaean Middle Persian
+    script: Phlp
+Phlv:
+    script: Phlv
+    translit: Phlv-translit
+Phlv/pal:
+    ancestors:
+    - peo
+    family: ira-swi
+    lang: pal
+    name: Middle Persian
+    other_names:
+    - Pahlavi
+    - Manichaean Middle Persian
+    script: Phlv
+    translit: Phlv-translit
+Phlv/xco:
+    family: ira-sbc
+    lang: xco
+    name: Khwarezmian
+    other_names:
+    - Chorasmian
+    - Khwarazmian
+    - Khorezmian
+    script: Phlv
+    translit: Chrs-translit
+Phlv/xpr:
+    family: ira-mpr
+    lang: xpr
+    name: Parthian
+    script: Phlv
+Phnx:
+    script: Phnx
+    translit: Phnx-translit
+Phnx/arc:
+    family: sem-ara
+    lang: arc
+    name: Aramaic
+    script: Phnx
+    translit: Palm-translit
+Phnx/obm:
+    family: sem-can
+    lang: obm
+    name: Moabite
+    script: Phnx
+    translit: Phnx-translit
+Phnx/phn:
+    family: sem-can
+    lang: phn
+    name: Phoenician
+    script: Phnx
+    translit: Phnx-translit
+Phnx/sem-amm:
+    family: sem-can
+    lang: sem-amm
+    name: Ammonite
+    script: Phnx
+    translit: Phnx-translit
+Phnx/xdm:
+    family: sem-can
+    lang: xdm
+    name: Edomite
+    script: Phnx
+    translit: Phnx-translit
+Phnx/xpu:
+    ancestors:
+    - phn
+    family: sem-can
+    lang: xpu
+    name: Punic
+    script: Phnx
+    translit: Phnx-translit
+Prti:
+    script: Prti
+    translit: prti-translit
+Prti/xpr:
+    family: ira-mpr
+    lang: xpr
+    name: Parthian
+    script: Prti
+    translit: Prti-translit
+Rohg:
+    script: Rohg
+    translit: Rohg-translit
+Rohg/rhg:
+    ancestors:
+    - inc-obn
+    family: inc-eas
+    lang: rhg
+    name: Rohingya
+    script: Rohg
+    translit: Rohg-translit
+Runr:
+    script: Runr
+    translit: Runr-translit
+Runr/ang:
+    aliases:
+    - Anglo-Saxon
+    family: gmw
+    lang: ang
+    name: Old English
+    script: Runr
+    translit: Runr-translit
+Runr/gmq-pro:
+    aliases:
+    - Proto-Scandinavian
+    - Primitive Norse
+    - Proto-Nordic
+    - Ancient Nordic
+    - Ancient Scandinavian
+    - Old Nordic
+    - Old Scandinavian
+    - Proto-North Germanic
+    - North Proto-Germanic
+    - Common Scandinavian
+    family: gmq
+    lang: gmq-pro
+    name: Proto-Norse
+    script: Runr
+    translit: Runr-translit
+Runr/got:
+    family: gme
+    lang: got
+    name: Gothic
+    script: Runr
+    translit: Goth-translit
+Runr/non:
+    family: gmq
+    lang: non
+    name: Old Norse
+    other_names:
+    - Old Icelandic
+    - Old Norwegian
+    script: Runr
+    translit: Runr-translit
+Samr:
+    script: Samr
+    translit: Samr-translit
+Samr/arc:
+    family: sem-ara
+    lang: arc
+    name: Aramaic
+    script: Samr
+    translit: Palm-translit
+Samr/sam:
+    family: sem-arw
+    lang: sam
+    name: Samaritan Aramaic
+    other_names:
+    - Samaritan
+    script: Samr
+    translit: Samr-translit
+Sarb:
+    script: Sarb
+    translit: sarb-translit
+Sarb/inm:
+    family: sem-osa
+    lang: inm
+    name: Minaean
+    script: Sarb
+    translit: Sarb-translit
+Sarb/sem-srb:
+    family: sem-osa
+    lang: sem-srb
+    name: Old South Arabian
+    script: Sarb
+    translit: Sarb-translit
+Sarb/xha:
+    lang: xha
+    name: Harami
+    script: Sarb
+    translit: Sarb-translit
+Sarb/xhd:
+    lang: xhd
+    name: Hadrami
+    script: Sarb
+    translit: Sarb-translit
+Sarb/xqt:
+    family: sem-osa
+    lang: xqt
+    name: Qatabanian
+    script: Sarb
+    translit: Sarb-translit
+Sarb/xsa:
+    family: sem-osa
+    lang: xsa
+    name: Sabaean
+    script: Sarb
+    translit: Sarb-translit
+Saur/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Saur
+    translit: sa-Orya-translit
+Saur/saz:
+    ancestors:
+    - inc-ogu
+    family: inc-wes
+    lang: saz
+    name: Saurashtra
+    script: Saur
+    translit: saz-translit
+Shrd:
+    script: Shrd
+    translit: Shrd-translit
+Shrd/ks:
+    aliases:
+    - Koshur
+    ancestors:
+    - inc-dar-pro
+    family: inc-dar
+    lang: ks
+    name: Kashmiri
+    script: Shrd
+    translit: Shrd-translit
+Shrd/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Shrd
+    translit: sa-Orya-translit
+Sidd/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Sidd
+    translit: sa-Orya-translit
+Sind:
+    script: Sind
+    translit: Sind-translit
+Sinh/pi:
+    ancestors:
+    - sa
+    family: inc-mid
+    lang: pi
+    name: Pali
+    script: Sinh
+    translit: si-translit
+Sinh/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Sinh
+    translit: si-translit
+Sinh/si:
+    aliases:
+    - Singhalese
+    - Sinhala
+    ancestors:
+    - elu-prk
+    family: inc-ins
+    lang: si
+    name: Sinhalese
+    script: Sinh
+    translit: si-translit
+    translit_override: true
+Sogd:
+    script: Sogd
+    translit: Sogd-translit
+Sogd/sog:
+    family: ira-sgc
+    lang: sog
+    name: Sogdian
+    script: Sogd
+    translit: Sogd-translit
+Sogd/xco:
+    family: ira-sbc
+    lang: xco
+    name: Khwarezmian
+    other_names:
+    - Chorasmian
+    - Khwarazmian
+    - Khorezmian
+    script: Sogd
+    translit: Chrs-translit
+Sogo:
+    script: Sogo
+    translit: Sogo-translit
+Sogo/sog:
+    family: ira-sgc
+    lang: sog
+    name: Sogdian
+    script: Sogo
+    translit: Sogo-translit
+Soyo/mn:
+    ancestors:
+    - cmg
+    family: xgn
+    lang: mn
+    name: Mongolian
+    script: Soyo
+    translit: mn-translit
+    translit_override: true
+    varieties:
+    - Khalkha Mongolian
+Sund/su:
+    family: poz-msa
+    lang: su
+    name: Sundanese
+    script: Sund
+    translit: su-translit
+Sylo/syl:
+    ancestors:
+    - inc-obn
+    family: inc-eas
+    lang: syl
+    name: Sylheti
+    script: Sylo
+    translit: syl-translit
+Syrc/arc:
+    family: sem-ara
+    lang: arc
+    name: Aramaic
+    script: Syrc
+Syrc/sog:
+    family: ira-sgc
+    lang: sog
+    name: Sogdian
+    script: Syrc
+Takr/cdh:
+    family: him
+    lang: cdh
+    name: Chambeali
+    script: Takr
+    translit: hi-translit
+Takr/doi:
+    family: him
+    lang: doi
+    name: Dogri
+    script: Takr
+    translit: hi-translit
+Takr/gbk:
+    family: him
+    lang: gbk
+    name: Gaddi
+    script: Takr
+    translit: hi-translit
+Takr/kfs:
+    family: him
+    lang: kfs
+    name: Bilaspuri
+    script: Takr
+    translit: hi-translit
+Takr/mjl:
+    family: him
+    lang: mjl
+    name: Mandeali
+    script: Takr
+    translit: hi-translit
+Takr/pgg:
+    family: him
+    lang: pgg
+    name: Pangwali
+    script: Takr
+    translit: hi-translit
+Takr/xnr:
+    ancestors:
+    - doi
+    family: him
+    lang: xnr
+    name: Kangri
+    script: Takr
+    translit: hi-translit
+Tale:
+    script: Tale
+    translit: Tale-translit
+Tale/tdd:
+    aliases:
+    - Tai Nuea
+    - Dehong Dai
+    - Tai Dehong
+    - Tai Le
+    - Chinese Shan
+    - Chinese Tai
+    family: tai-swe
+    lang: tdd
+    name: Tai Nüa
+    script: Tale
+    translit: Tale-translit
+Talu:
+    script: Talu
+    translit: talu-translit
+Talu/khb:
+    aliases:
+    - Lue
+    - Tai Lü
+    - Tai Lue
+    - Dai Lue
+    family: tai-swe
+    lang: khb
+    name: Lü
+    script: Talu
+    translit: Talu-translit
+Taml/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Taml
+    translit: si-translit
+Taml/saz:
+    ancestors:
+    - inc-ogu
+    family: inc-wes
+    lang: saz
+    name: Saurashtra
+    script: Taml
+    translit: saz-translit
+Taml/ta:
+    ancestors:
+    - oty
+    family: dra
+    lang: ta
+    name: Tamil
+    script: Taml
+    translit: ta-translit
+    translit_override: true
+Tavt:
+    script: Tavt
+    translit: Tavt-translit
+Telu/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Telu
+    translit: si-translit
+Telu/te:
+    family: dra
+    lang: te
+    name: Telugu
+    script: Telu
+    translit: te-translit
+    translit_override: true
+Tfng:
+    script: Tfng
+    translit: Tfng-translit
+Tfng/rif:
+    family: ber
+    lang: rif
+    name: Tarifit
+    other_names:
+    - Rifain
+    script: Tfng
+    translit: Tfng-translit
+Tfng/shi:
+    family: ber
+    lang: shi
+    name: Tashelhit
+    other_names:
+    - Tachelhit
+    - Chleuh
+    - Shilha
+    - Tashlhiyt
+    - Tashelhit Berber
+    - Tachelhit Berber
+    - Tashlhiyt Berber
+    script: Tfng
+    translit: Tfng-translit
+Tfng/tzm:
+    family: ber
+    lang: tzm
+    name: Central Atlas Tamazight
+    script: Tfng
+    translit: Tfng-translit
+Tfng/zgh:
+    aliases:
+    - Standard Moroccan Amazigh
+    - Standard Moroccan Tamazight
+    - Standard Moroccan Berber
+    - Amazigh
+    - Tamazight
+    family: ber
+    lang: zgh
+    name: Moroccan Amazigh
+    script: Tfng
+    translit: Tfng-translit
+Thaa/dv:
+    aliases:
+    - Divehi
+    - Maldivian
+    ancestors:
+    - elu-prk
+    family: inc-ins
+    lang: dv
+    name: Dhivehi
+    script: Thaa
+    translit: dv-translit
+    translit_override: true
+    varieties:
+    -   - Mahal
+        - Mahl
+Thai/pi:
+    ancestors:
+    - sa
+    family: inc-mid
+    lang: pi
+    name: Pali
+    script: Thai
+    translit: pi-translit
+Thai/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Thai
+    translit: pi-translit
+Thai/th:
+    aliases:
+    - Central Thai
+    - Siamese
+    family: tai-swe
+    lang: th
+    name: Thai
+    script: Thai
+    translit: th-translit
+Tibt/bo:
+    ancestors:
+    - xct
+    family: sit-tib
+    lang: bo
+    name: Tibetan
+    script: Tibt
+    translit: bo-translit
+    translit_override: true
+    varieties:
+    -   - Amdo Tibetan
+        - Amdo
+    - Dolpo
+    -   - Khams
+        - Khams Tibetan
+    - Khamba
+    - Gola
+    - Humla
+    - Limi
+    -   - Lhasa
+        - Lhasa Tibetan
+    - Lhomi
+    - Loke
+    - Lowa
+    - Mugom
+    - Mugu
+    - Mustang
+    - Nubri
+    - Panang
+    - Shing Saapa
+    - Thudam
+    - Tichurong
+    - Tseku
+    -   - Ü
+        - Dbus
+    - Walungge
+Tibt/dz:
+    ancestors:
+    - xct
+    family: sit-tib
+    lang: dz
+    name: Dzongkha
+    script: Tibt
+    translit: bo-translit
+    translit_override: true
+Tibt/lbj:
+    family: sit-lab
+    lang: lbj
+    name: Ladakhi
+    other_names:
+    - Bhoti
+    script: Tibt
+    translit: bo-translit
+Tibt/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Tibt
+    translit: pi-translit
+Tibt/sip:
+    aliases:
+    - Bhutia
+    - Dranjongke
+    - Dranjoke
+    - Denjongka
+    - Denzongpeke
+    - Denzongke
+    ancestors:
+    - xct
+    family: sit-tib
+    lang: sip
+    name: Sikkimese
+    script: Tibt
+    translit: bo-translit
+Tirh/mai:
+    ancestors:
+    - bh
+    family: inc-eas
+    lang: mai
+    name: Maithili
+    script: Tirh
+    translit: mai-Tirh-translit
+Tirh/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: Tirh
+    translit: pi-translit
+Tirh>Deva:
+    script: Tirh
+    to_script: Deva
+    translit: Tirh-Deva-translit
+Ugar/uga:
+    family: sem-nwe
+    lang: uga
+    name: Ugaritic
+    script: Ugar
+    translit: uga-translit
+Vaii:
+    script: Vaii
+    translit: Vaii-translit
+Vaii/vai:
+    family: dmn-vak
+    lang: vai
+    name: Vai
+    other_names:
+    - Gallinas
+    - Vy
+    script: Vaii
+    translit: Vaii-translit
+Xpeo/peo:
+    family: ira-swi
+    lang: peo
+    name: Old Persian
+    script: Xpeo
+    translit: peo-translit
+Yiii/ii:
+    aliases:
+    - Nuosu
+    - Nosu
+    - Northern Yi
+    - Liangshan Yi
+    family: tbq-lol
+    lang: ii
+    name: Sichuan Yi
+    script: Yiii
+    translit: ii-translit
+Zanb/mn:
+    ancestors:
+    - cmg
+    family: xgn
+    lang: mn
+    name: Mongolian
+    script: Zanb
+    translit: mn-translit
+    translit_override: true
+    varieties:
+    - Khalkha Mongolian
+as-Beng/as:
+    aliases:
+    - Asamiya
+    ancestors:
+    - inc-mas
+    family: inc-eas
+    lang: as
+    name: Assamese
+    script: as-Beng
+    translit: as-translit
+as-Beng/inc-mas:
+    ancestors:
+    - inc-oas
+    family: inc-eas
+    lang: inc-mas
+    name: Middle Assamese
+    script: as-Beng
+    translit: inc-mas-translit
+as-Beng/inc-oas:
+    ancestors:
+    - inc-kam
+    family: inc-eas
+    lang: inc-oas
+    name: Early Assamese
+    script: as-Beng
+    translit: inc-oas-translit
+as-Beng/inc-ork:
+    ancestors:
+    - inc-kam
+    family: inc-eas
+    lang: inc-ork
+    name: Old Kamta
+    script: as-Beng
+    translit: as-translit
+as-Beng/rkt:
+    ancestors:
+    - inc-ork
+    family: inc-eas
+    lang: rkt
+    name: Kamta
+    other_names:
+    - Rangpuri
+    script: as-Beng
+    translit: as-translit
+as-Beng/sa:
+    family: inc-old
+    lang: sa
+    name: Sanskrit
+    script: as-Beng
+    translit: sa-Beng-translit
+fa-Arab/awa:
+    ancestors:
+    - inc-pra
+    family: inc-hie
+    lang: awa
+    name: Awadhi
+    script: fa-Arab
+    translit: hi-translit
+fa-Arab/cpg:
+    aliases:
+    - Cappadocian
+    ancestors:
+    - grc
+    family: grk
+    lang: cpg
+    name: Cappadocian Greek
+    script: fa-Arab
+    translit: grc-translit
+fa-Arab/doi:
+    family: him
+    lang: doi
+    name: Dogri
+    script: fa-Arab
+    translit: hi-translit
+fa-Arab/kok:
+    ancestors:
+    - pmh
+    family: inc-sou
+    lang: kok
+    name: Konkani
+    script: fa-Arab
+    translit: mr-translit
+fa-Arab/lki:
+    ancestors:
+    - ku-pro
+    family: ku
+    lang: lki
+    name: Laki
+    script: fa-Arab
+    translit: lki-translit
+fa-Arab/tg:
+    aliases:
+    - Eastern Persian
+    - Tadjik
+    - Tadzhik
+    - Tajiki
+    - Tajik Persian
+    - Tajiki Persian
+    ancestors:
+    - pal
+    family: ira-swi
+    lang: tg
+    name: Tajik
+    script: fa-Arab
+    translit: tg-translit
+    translit_override: true
+fa-Arab/xnr:
+    ancestors:
+    - doi
+    family: him
+    lang: xnr
+    name: Kangri
+    script: fa-Arab
+    translit: hi-translit
+kk-Arab/kk:
+    family: trk-kno
+    lang: kk
+    name: Kazakh
+    script: kk-Arab
+    translit: kk-translit
+    translit_override: true
+ks-Arab/ks:
+    aliases:
+    - Koshur
+    ancestors:
+    - inc-dar-pro
+    family: inc-dar
+    lang: ks
+    name: Kashmiri
+    script: ks-Arab
+    translit: ks-Arab-translit
+ks-Arab/ks>Deva:
+    aliases:
+    - Koshur
+    ancestors:
+    - inc-dar-pro
+    family: inc-dar
+    lang: ks
+    name: Kashmiri
+    script: ks-Arab
+    to_script: Deva
+    translit: ks-Arab-to-Deva-translit
+ku-Arab/ckb:
+    aliases:
+    - Sorani
+    ancestors:
+    - ku-pro
+    family: ku
+    lang: ckb
+    name: Central Kurdish
+    script: ku-Arab
+    translit: ckb-translit
+ku-Arab/hac:
+    family: ira-zgr
+    lang: hac
+    name: Gurani
+    other_names:
+    - Gorani
+    - Avromani
+    - Awroman
+    - Awromani
+    - Hawramani
+    - Hawrami
+    - Hewrami
+    - Hourami
+    - Howrami
+    - Ourami
+    script: ku-Arab
+    translit: ckb-translit
+ku-Arab/kmr:
+    ancestors:
+    - ku-pro
+    family: ku
+    lang: kmr
+    name: Northern Kurdish
+    other_names:
+    - Kurmanji
+    script: ku-Arab
+    translit: Brah-translit
+ku-Arab/sdh:
+    ancestors:
+    - ku-pro
+    family: ku
+    lang: sdh
+    name: Southern Kurdish
+    other_names:
+    - Kermanshani
+    - Kermanshahi
+    - Kermanshahi Kurdish
+    - Kermanshani Kurdish
+    script: ku-Arab
+    translit: sdh-translit
+pa-Arab/inc-opa:
+    ancestors:
+    - inc-tak
+    family: inc-pan
+    lang: inc-opa
+    name: Old Punjabi
+    script: pa-Arab
+    translit: pa-Arab-translit
+pa-Arab/pa:
+    aliases:
+    - Panjabi
+    ancestors:
+    - inc-opa
+    family: inc-pan
+    lang: pa
+    name: Punjabi
+    script: pa-Arab
+    translit: pa-Arab-translit
+pal-Avst/pal:
+    ancestors:
+    - peo
+    family: ira-swi
+    lang: pal
+    name: Middle Persian
+    other_names:
+    - Pahlavi
+    - Manichaean Middle Persian
+    script: pal-Avst
+    translit: Avst-translit
+polytonic/cpg:
+    aliases:
+    - Cappadocian
+    ancestors:
+    - grc
+    family: grk
+    lang: cpg
+    name: Cappadocian Greek
+    script: polytonic
+    translit: grc-translit
+polytonic/grc:
+    family: grk
+    lang: grc
+    name: Ancient Greek
+    script: polytonic
+    translit: grc-translit
+    translit_override: true
+polytonic/ine-pae:
+    family: ine
+    lang: ine-pae
+    name: Paeonian
+    script: polytonic
+    translit: grc-translit
+polytonic/xmk:
+    family: grk
+    lang: xmk
+    name: Ancient Macedonian
+    script: polytonic
+    translit: grc-translit
+sd-Arab/kfr:
+    ancestors:
+    - inc-vra
+    family: inc-snd
+    lang: kfr
+    name: Kachchi
+    other_names:
+    - Kutchi
+    - Cutchi
+    - Kachchhi
+    - Kutchhi
+    script: sd-Arab
+    translit: gu-translit
+tt-Arab/tt:
+    family: trk-kbu
+    lang: tt
+    name: Tatar
+    script: tt-Arab
+    translit: tt-translit
+    translit_override: true
+ug-Arab/ug:
+    aliases:
+    - Uigur
+    - Uighur
+    - Uygur
+    ancestors:
+    - chg
+    family: trk-kar
+    lang: ug
+    name: Uyghur
+    script: ug-Arab
+    translit: ug-translit
+    translit_override: true

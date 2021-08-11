@@ -20,6 +20,7 @@ def cli():
         "--lang",
         metavar="LANG",
         dest="in_lang",
+        default=None,
         help="Input language as ISO 639-2 code",
     )
     parser.add_argument(
@@ -27,7 +28,29 @@ def cli():
         "--script",
         metavar="SCRIPT",
         dest="in_script",
+        default=None,
         help="Input script as ISO 15924 code",
+    )
+    parser.add_argument(
+        "-o",
+        "--to-script",
+        metavar="SCRIPT",
+        dest="out_script",
+        default="Latn",
+        help="Output script as ISO 15924 code",
+    )
+    parser.add_argument(
+        "-x",
+        "--explicit",
+        action="store_true",
+        dest="explicit",
+        help="""Explicit language/script, no fuzzy matching""",
+    )
+    parser.add_argument(
+        "--stats",
+        action="store_true",
+        dest="stats",
+        help="""List supported scripts and orthographies""",
     )
     parser.add_argument(
         "-v",
@@ -64,8 +87,18 @@ def main(*args, **kwargs):
     else:
         text = opts["text"]
     tr = wiktra.Wiktra.Transliterator()
-    res = tr.tr(text, opts["in_lang"], opts["in_script"])
-    print(res)
+    if opts.get("stats", False):
+        print(f'{len(tr.mod_map.keys())} scripts: {" ".join(tr.mod_map.keys())}')
+        print(f'{len(tr.lang_tags)} orthographies: {" ".join(tr.lang_tags)}')
+    else:
+        res = tr.tr(
+            text,
+            lang=opts["in_lang"],
+            sc=opts["in_script"],
+            to_sc=opts["out_script"],
+            explicit=opts["explicit"],
+        )
+        print(res)
 
 
 if __name__ == "__main__":
