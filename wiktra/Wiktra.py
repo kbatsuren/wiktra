@@ -239,6 +239,7 @@ class Transliterator(object):
                 self.lang_tags.append(f"""{lang}-{sc}""")
 
     def e(self, lua_str):
+        logging.debug(lua_str)
         self.lua.execute(lua_str)
         return self.lua.globals().res
 
@@ -260,9 +261,12 @@ class Transliterator(object):
             sc = "Zyyy"
         return lang, sc
 
+    def lua_text(self, text):
+        return text.replace('\n',r'\n')
+
     def tr_legacy(self, text, lang):
         lang, sc = lang_map[lang.lower()]
-        lua_str = f"""res = require("wikt.translit.{lang}-translit").tr("{text}", "{lang}", "{sc}")"""
+        lua_str = f"""res = require("wikt.translit.{lang}-translit").tr("{self.lua_text(text)}", "{lang}", "{sc}")"""
         return self.e(lua_str)
 
     def tr(self, text, lang="und", sc=None, to_sc="Latn", explicit=False):
@@ -288,11 +292,11 @@ class Transliterator(object):
         res = None
         if mod == "pi-Latn-translit":
             res = self.e(
-                f"""res = require("wikt.translit.{mod}").tr("{text}", "{to_sc}")"""
+                f"""res = require("wikt.translit.{mod}").tr("{self.lua_text(text)}", "{to_sc}")"""
             )
         else:
             res = self.e(
-                f"""res = require("wikt.translit.{mod}").tr("{text}", "{lang}", "{sc}")"""
+                f"""res = require("wikt.translit.{mod}").tr("{self.lua_text(text)}", "{lang}", "{sc}")"""
             )
         if not res:
             logging.debug("Problem: not transliterated")

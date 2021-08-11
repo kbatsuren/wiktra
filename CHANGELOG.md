@@ -4,6 +4,7 @@
 ## Version 2.0.5 (2021-08-11)
 
 - added `tr` function in addition to `translite`
+- allows reading text from stdin
 
 ## Version 2.0.4 (2021-08-10)
 
