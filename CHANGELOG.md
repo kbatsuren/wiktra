@@ -1,6 +1,10 @@
 
 # Changelog
 
+## Version 2.0.5 (2021-08-11)
+
+- added `tr` function in addition to `translite`
+
 ## Version 2.0.4 (2021-08-10)
 
 - added `--stats` CLI option to list supported scripts and orthographies
