@@ -11,7 +11,7 @@ Locations:
 - [kbatsuren/wiktra](https://github.com/kbatsuren/wiktra/) — the upstream location, slower releases
 - [twardoch/wiktra2](https://github.com/twardoch/wiktra2/) — active development
 
-Wiktra 2 supports 514 orthographies in 102 scripts with the new API (nearly all of languages supported by Wiktionary, except Korean, Japanese and Thai), and 181 languages and its 60 orthographies in the legacy API.
+Wiktra 2 supports 514 languages in 102 scripts with the new API (nearly all of languages supported by Wiktionary, except Korean, Japanese and Thai), and 181 languages and its 60 orthographies in the legacy API.
 
 ## Installation
 
