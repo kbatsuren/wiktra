@@ -2,5 +2,5 @@
 # -*- coding: utf-8 -*-
 from .Wiktra import *
 
-__version__ = "2.0.4"
-__all__ = ['translite']
+__version__ = "2.0.5"
+__all__ = ['translite', 'tr']

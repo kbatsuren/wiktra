@@ -12,14 +12,16 @@ from collections import Counter
 
 lua_folder = str(Path(Path(__file__).parent))
 
-os.environ["LUA_PATH"] = ";".join([
-    f"{lua_folder}/?.lua",
-    f"{lua_folder}/wikt/?.lua",
-    f"{lua_folder}/wikt/translit/?.lua",
-    f"{lua_folder}/wikt/data/?.lua",
-    f"{lua_folder}/wikt/data/translit/?.lua",
-    f"{os.environ.get('LUA_PATH','')}",
-])
+os.environ["LUA_PATH"] = ";".join(
+    [
+        f"{lua_folder}/?.lua",
+        f"{lua_folder}/wikt/?.lua",
+        f"{lua_folder}/wikt/translit/?.lua",
+        f"{lua_folder}/wikt/data/?.lua",
+        f"{lua_folder}/wikt/data/translit/?.lua",
+        f"{os.environ.get('LUA_PATH','')}",
+    ]
+)
 
 lang_map = {
     "inc-mas": ("inc-mas", ""),
@@ -227,12 +229,14 @@ class Transliterator(object):
     def __init__(self):
         self.lua = LuaRuntime(unpack_returned_tuples=True)
         self.lua.execute("mw = require('wikt.mw')")
-        with open(Path(lua_folder, "wikt", "data", "data.json"), "r", encoding="utf-8") as f:
+        with open(
+            Path(lua_folder, "wikt", "data", "data.json"), "r", encoding="utf-8"
+        ) as f:
             self.mod_map = json.load(f)
         self.lang_tags = []
         for sc, langs in self.mod_map.items():
             for lang in langs:
-                self.lang_tags.append(f'''{lang}-{sc}''')
+                self.lang_tags.append(f"""{lang}-{sc}""")
 
     def e(self, lua_str):
         self.lua.execute(lua_str)
@@ -244,15 +248,16 @@ class Transliterator(object):
             sc_count = Counter([ucd.script(c) for c in text])
             sc = sc_count.most_common(1)[0][0]
         if sc:
-            in_lang_tag += f'-{sc}'
+            in_lang_tag += f"-{sc}"
         langrec = langcodes.Language.get(
-            langcodes.closest_match(in_lang_tag, self.lang_tags)[0])
+            langcodes.closest_match(in_lang_tag, self.lang_tags)[0]
+        )
         lang = langrec.language
         if not lang:
-            lang = 'und'
+            lang = "und"
         sc = langrec.script
         if not sc:
-            sc = 'Zyyy'
+            sc = "Zyyy"
         return lang, sc
 
     def tr_legacy(self, text, lang):
@@ -260,22 +265,28 @@ class Transliterator(object):
         lua_str = f"""res = require("wikt.translit.{lang}-translit").tr("{text}", "{lang}", "{sc}")"""
         return self.e(lua_str)
 
-    def tr(self, text, lang='und', sc=None, to_sc='Latn', explicit=False):
+    def tr(self, text, lang="und", sc=None, to_sc="Latn", explicit=False):
         if not lang:
-            lang='und'
+            lang = "und"
         if explicit:
             if not sc:
-                sc = 'Latn'
+                sc = "Latn"
         else:
             lang, sc = self.auto_script_lang(text, lang, sc)
-        mod = self.mod_map.get(sc, {}).get(lang, {}).get(to_sc, {}).get('translit')
-        logging.debug({
-            'lang': lang, 'script': sc, 'to_script': to_sc, 'explicit': explicit, 'module': mod
-        })
+        mod = self.mod_map.get(sc, {}).get(lang, {}).get(to_sc, {}).get("translit")
+        logging.debug(
+            {
+                "lang": lang,
+                "script": sc,
+                "to_script": to_sc,
+                "explicit": explicit,
+                "module": mod,
+            }
+        )
         if not mod:
             return text
         res = None
-        if mod == 'pi-Latn-translit':
+        if mod == "pi-Latn-translit":
             res = self.e(
                 f"""res = require("wikt.translit.{mod}").tr("{text}", "{to_sc}")"""
             )
@@ -284,12 +295,17 @@ class Transliterator(object):
                 f"""res = require("wikt.translit.{mod}").tr("{text}", "{lang}", "{sc}")"""
             )
         if not res:
-            logging.debug('Problem: not transliterated')
+            logging.debug("Problem: not transliterated")
             res = text
         return res
-
 
 
 def translite(text, lang):
     tr = Transliterator()
     return tr.tr_legacy(text, lang)
+
+
+def tr(text, lang="und", sc=None, to_sc="Latn", explicit=False):
+    tr = Transliterator()
+    return tr.tr(text, lang="und", sc=None, to_sc="Latn", explicit=False)
+
