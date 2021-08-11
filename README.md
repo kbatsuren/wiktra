@@ -19,7 +19,9 @@ Wiktra 2 supports 514 languages in 102 scripts with the new API (nearly all of l
 
 _(This has been tested on macOS 11.)_
 
-In Terminal, `cd` to the main folder and run:
+#### First installation
+
+[Download](https://github.com/kbatsuren/wiktra/archive/refs/heads/master.zip) and unzip the current repo content. Then, in Terminal, `cd` to the main folder and run:
 
 ```
 ./install-mac.sh
@@ -27,6 +29,12 @@ python3 -m pip install --upgrade .
 ```
 
 This will install `brew` if needed, the installs `lua`, `luarocks`, `lua-format`, `luajit` and `python3`. Finally, it installs some Python dependencies, such as `lupa` or `pywikiapi`.
+
+#### Updates
+
+```sh
+python3 -m pip install --upgrade git+https://github.com/kbatsuren/wiktra/
+```
 
 ### Other systems, version 1
 
