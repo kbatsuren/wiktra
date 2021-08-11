@@ -100,6 +100,14 @@ $ wiktrapy -t "Привет" -l ru -s Cyrl
 Privet
 ```
 
+Or from stdin / via piping:
+
+```sh
+$ echo Привет | wiktrapy
+Privet
+```
+
+
 ### Python, version 2 new API
 
 ```python
