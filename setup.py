@@ -53,7 +53,7 @@ setup(
     project_urls={"Source": f"https://github.com/kbatsuren/{NAME}/"},
     license="GPLv2",
     download_url=f"https://github.com/kbatsuren/{NAME}/",
-    python_requires=">=3.8",
+    python_requires=">=3.9",
     install_requires=get_requirements("requirements.txt"),
     packages=find_packages(),
     include_package_data=True,
