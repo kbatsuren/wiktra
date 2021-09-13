@@ -15,12 +15,12 @@ def get_absolute_path(*args):
     return os.path.join(directory, *args)
 
 
-with open(get_absolute_path("README.md")) as f:
+with open(get_absolute_path("README.md"), encoding='utf-8') as f:
     long_description = f.read()
 
 
 def get_version(*args):
-    verstrline = open(get_absolute_path(NAME, "__init__.py"), "rt").read()
+    verstrline = open(get_absolute_path(NAME, "__init__.py"), "rt", encoding='utf-8').read()
     VSRE = r"^__version__ = ['\"]([^'\"]*)['\"]"
     mo = re.search(VSRE, verstrline, re.M)
     if mo:
@@ -31,7 +31,7 @@ def get_version(*args):
 def get_requirements(*args):
     """Get requirements from pip requirement files."""
     requirements = set()
-    with open(get_absolute_path(*args)) as handle:
+    with open(get_absolute_path(*args), encoding='utf-8') as handle:
         for line in handle:
             # Strip comments.
             line = re.sub(r"^#.*|\s#.*", "", line)
