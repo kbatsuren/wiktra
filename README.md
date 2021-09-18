@@ -17,7 +17,7 @@ Wiktra 2 supports 514 languages in 102 scripts with the new API (nearly all of l
 
 ### Version 2
 
-_(This has been tested on macOS 11.)_
+_(This has been tested on macOS 11.)_ Unfortunately, it hasn't been working on Ubuntu and Windows 10. We are working on testing these installations and fixing the bugs. 
 
 #### First installation
 
